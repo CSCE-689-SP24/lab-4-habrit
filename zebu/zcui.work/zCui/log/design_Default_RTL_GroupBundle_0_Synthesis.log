@@ -1,0 +1,149 @@
+
+
+
+                                    ZeBu (R)
+                                      zFe
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 02, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+
+#   info : #----------------------------------------------------------------
+#   info : Setup
+#   info : #----------------------------------------------------------------
+# command line is /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin/zFe compile_hdr.tcl script/Bundle_0_synp.tcl -log Bundle_0.log -zlog 1 
+# start time is Sat Apr 20 13:13:50 CDT 2024
+#   step Setup : CVS $Revision: #14 $
+#   step Setup : CVS $Date: 2021/08/23 $
+#   step Setup :         NEXT CALL to cmn::option fe_hcsrc /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vhs/hc ...
+#   step Setup :         NEXT CALL to cmn::option fe_hcsrc /home/grads/h/hbritton/csce689LabsBritton/lab-4-h ...
+#   step Setup :         NEXT CALL to cmn::option fe_hcsrc /home/grads/h/hbritton/csce689LabsBritton/lab-4-h ...
+#   step Setup :         NEXT CALL to cmn::option fe_hcsrc /home/grads/h/hbritton/csce689LabsBritton/lab-4-h ...
+#   step Setup :         NEXT CALL to cmn::option fe_hcsrc hcsrc.iba
+#   step Setup :         NEXT CALL to cmn::option phase synthesis
+#   info : #----------------------------------------------------------------
+#   info : Synth
+#   info : #----------------------------------------------------------------
+#   step Synth :         NEXT CALL to fs::simple_compile -technology vtx7 -mode block_based -version NewMixe ...
+#   step REPORT : Synthesizing module : top
+#   step REPORT : Synthesizing module : stb
+#   step REPORT : [39.349] Optimizing module : top
+#   step REPORT : [6.1690] There are 2 levels of combinational cells
+#   step REPORT : [6.1689] There are 0 distinct nets driving control pins
+#   step REPORT : [6.1696] Total LUT area: 0
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'top' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   2 |                   2 |                   0 |                   0 |                   0 || top
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'top' to 'edif/top/top.edf.gz'
+#   step EDIF GENERATOR : netlist 'zmerge' has changed - regenerate EDIF file 'edif/top/top.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/top/top.edf.gz'
+#   step SERIALIZE : #bytes in: 1175, #bytes out: 642, compression ratio: 1.830218
+#   step REPORT : [87.28] Resource usage for top: 0.159s 32.1M
+#   step REPORT : [39.349] Optimizing module : stb
+### warning in ZFAST : (INTERNAL) no module information for net eVe_init_clk
+#   step REPORT : Got DPI task gate ZDPI_TASK0: zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0
+#   step REPORT : Got DPI task gate ZDPI_TASK1: zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1
+#   step REPORT : [6.1690] There are 14 levels of combinational cells
+#   step REPORT : [6.1689] There are 7 distinct nets driving control pins
+#   step REPORT : [6.1695] 2-input LUTs: 19
+#   step REPORT : [6.1695] 3-input LUTs: 7
+#   step REPORT : [6.1696] Total LUT area: 26
+#   step REPORT : [6.1697] State    : 470
+#   step REPORT : [6.1697]   (FF)   : 470
+#   step REPORT : [6.1697] XORCY    : 156
+#   step REPORT : [6.1697] MUXCY    : 156
+#   step REPORT : [6.1697] incl. CARRY4: 39
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.001 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'stb' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 470 |                  26 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                  29 |                   8 |                   0 |                   0 |                   0 || stb
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'stb' to 'edif/stb/stb.edf.gz'
+#   step EDIF GENERATOR : netlist 'zmerge' has changed - regenerate EDIF file 'edif/stb/stb.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/stb/stb.edf.gz'
+#   step SERIALIZE : #bytes in: 26626, #bytes out: 9748, compression ratio: 2.731432
+#   step REPORT : [87.28] Resource usage for stb: 0.079s 0.0M
+#   step Synth : RhinoDB status is set by default value: rhino_default_status:1.
+#   step Synth : Using zCreateNameDB from /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/bin/zCreateNameDB for RhinoDB population.
+#   step Synth : Running RhinoDB gate population on 2 modules. To skip this step please set SNPS_RHINODB_INTERNAL_3STEP_DISABLE env var.
+Running in 3step flow - bundle population mode, for bundle,modules = Bundle_0,stb,top,
+Got following -X option = show_times
+#     Sat Apr 20 13:13:52 2024 : zCreateNameDB Started
+#      : Reading the Serializing VCS Version
+[2024-04-20 13:13:52.264714] [0x00007f93bfcc7780] [info]    #      : Reading the Serializing VCS Version
+
+#      : Deserializing names dictionary
+[2024-04-20 13:13:52.266937] [0x00007f93bfcc7780] [info]    #      : Deserializing names dictionary
+
+#      : Deserializing libraries
+[2024-04-20 13:13:52.268336] [0x00007f93bfcc7780] [info]    #      : Deserializing libraries
+
+#      : Deserializing RTL
+[2024-04-20 13:13:52.270221] [0x00007f93bfcc7780] [info]    #      : Deserializing RTL
+
+#      : Deserializing Gate
+[2024-04-20 13:13:52.272050] [0x00007f93bfcc7780] [info]    #      : Deserializing Gate
+
+#      : Deserializing design object
+[2024-04-20 13:13:52.274407] [0x00007f93bfcc7780] [info]    #      : Deserializing design object
+
+#      : Populating Dfs Table
+[2024-04-20 13:13:52.275432] [0x00007f93bfcc7780] [info]    #      : Populating Dfs Table
+
+### Sat Apr 20 13:13:52 2024 : RTL Deserialized
+### Sat Apr 20 13:13:52 2024 : Starting CHUNK Population
+#     Sat Apr 20 13:13:52 2024 : Populating CHUNK stb
+#     Sat Apr 20 13:13:52 2024 : Gate Building light signal container for module stb
+#     Sat Apr 20 13:13:52 2024 : End of Gate Building light signal container for module stb
+#     Sat Apr 20 13:13:52 2024 : Populating CHUNK top
+#     Sat Apr 20 13:13:52 2024 : Gate Building light signal container for module top
+#     Sat Apr 20 13:13:52 2024 : End of Gate Building light signal container for module top
+### Sat Apr 20 13:13:52 2024(+0s) : CHUNK Population done
+zCreateNameDB finished without errors or warnings.
+#     Sat Apr 20 13:13:52 2024 : zCreateNameDB Ended
+#   step Synth : Synthesis called the following command: '/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/bin/zCreateNameDB -bundle Bundle_0,stb,top,  -v -X show_times -z /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/design/synth_Default_RTL_Group'
+
+#   step exec summary : time 0m2.65078s
+#   exec summary : Total memory: 124000 kB minimum 
+#   exec summary : Successful execution
+
+# end time is Sat Apr 20 13:13:52 CDT 2024
+zFe exit status: 0
+command exit code is '0'

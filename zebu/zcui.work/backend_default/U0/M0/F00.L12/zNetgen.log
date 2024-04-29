@@ -1,0 +1,1134 @@
+
+                                    ZeBu (R)
+                                    zNetgen
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zNetgen design.tcl 
+
+# start time is Sat Apr 20 13:25:56 2024
+
+
+
+
+# Build Date : Oct 18 2022 - 00:58:44
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.90 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 4.76 7.09 4.54 5/615 39613
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.108.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 171053 MB
+#            Total Free including cache: 185302 MB
+#            Swap cache: 0 MB Cached space: 14249 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 426 MB VmPeak: 426 MB
+# Disk Space Total: 50 GB Available: 48 GB Used: 2 GB
+#            Free inodes: 104830050
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ENV.VAR : LM_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : SNPSLMD_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+#   step ENV.VAR : VERDI_HOME=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12
+#   step ENV.VAR : ZEBU_AURA_FW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/fw
+#   step ENV.VAR : ZEBU_AURA_SW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw
+#   step ENV.VAR : ZEBU_COMPILATION_OBJECTIVE=
+#   step ENV.VAR : ZEBU_DRIVER_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/drivers
+#   step ENV.VAR : ZEBU_FPGA_MODULE_DIR=/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0
+#   step ENV.VAR : ZEBU_FPGA_ORIGINAL_DIR=/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original
+#   step ENV.VAR : ZEBU_FPGA_SRC_DIR=/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.src
+#   step ENV.VAR : ZEBU_MDTMX_PARTONLY=1
+#   step ENV.VAR : ZEBU_MDTMX_TOOL=zBlockPartitioning
+#   step ENV.VAR : ZEBU_MDTMX_USE=1
+#   step ENV.VAR : ZEBU_PARFF_XCUI_FILE_NAME=fpgaparameterset_v7.xcui
+#   step ENV.VAR : ZEBU_PARFF_XCUI_TARGET_NAME=L12_DAP_Triton_GP_SLL_SpreadAll
+#   step ENV.VAR : ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+#   step ENV.VAR : ZEBU_SDF_ANALYSIS=1
+#   step ENV.VAR : ZEBU_SYSTEM_DIR=/mnt/quinn_zebu/ZEBU_SYSTEM_DIR
+#   step ENV.VAR : ZEBU_TRITON_ZS2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs2
+#   step ENV.VAR : ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+#   step ENV.VAR : ZEBU_XIL=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/ise/ISE_DS
+#   step ENV.VAR : ZEBU_XIL_VIVADO=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p2/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p3/ids_lite
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P4=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p4/
+### warning in zNetgen [CCT0300W] : can't set stack to unlimited, zNetgen may randomly crash.
+#   step INIT : Advanced commands have been loaded
+set_timer_log {.zNetgen_timer}
+begin_quiet_timer {znetgen_fpga}
+begin_zmetrics
+hide_log_advanced {true}
+section {1} {0} {LOAD EDIFS}
+##############################################
+# 1 LOAD EDIFS
+##############################################
+begin_quiet_timer {load_edifs}
+read_edif {wrapper.edf.gz}
+#   step ZNF PARSER : reading netlist from ZNF file 'wrapper.edf.gz'
+read_edif {fpga.edf.gz}
+#   step ZNF PARSER : reading netlist from ZNF file 'fpga.edf.gz'
+end_quiet_timer {load_edifs}
+section {2} {0} {MERGE}
+##############################################
+# 2 MERGE
+##############################################
+begin_quiet_timer {merge}
+merge
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step merge : merging file 'wrapper.edf.gz'
+#   step merge : merging file 'fpga.edf.gz'
+set_top {design}
+#   step set_top : setting module 'design' as top of netlist 'zmerge from NULL'
+elaborate
+#   step UNIQUIFY : Netlist with Top 'design'
+#   step UNIQUIFY : 123 modules created
+begin_quiet_timer {smart_metrics_read_edifs}
+report_netlist_metrics -file {fpga_data.info} -prefix {zNetgen_read_edifs}
+#   step NtgTclReportNetlistMetric : The netlist resource usage has been written into fpga_data.info with mode:zNetgen_read_edifs.
+end_quiet_timer {smart_metrics_read_edifs}
+mudb_editor -open
+begin_quiet_timer {instrument_fetch_mode_clocks}
+instrument_fetch_mode_clocks
+#   step FETCH_MODE : Performing fetch mode clock instrumentation for Critical Path Optimization
+end_quiet_timer {instrument_fetch_mode_clocks}
+begin_quiet_timer {instrument_loops}
+instrument_loops
+end_quiet_timer {instrument_loops}
+begin_quiet_timer {check_socket_edif}
+check_socket_edif -verbose
+#   step SOCKET SANITY CHECK : INSTANCE=ClockRegion000SD_40B, MOD=SendClockRegionD1__1, PV=I
+#   step SOCKET SANITY CHECK : INSTANCE=ClockRegion000SD_40B, MOD=SendClockRegionD1__1, PV=O
+end_quiet_timer {check_socket_edif}
+merge_ibufds
+begin_quiet_timer {link_process}
+link_process -unit {0} -module {0} -fpga {0}
+end_quiet_timer {link_process}
+end_quiet_timer {merge}
+section {3} {0} {NETLIST PROCESSING}
+##############################################
+# 3 NETLIST PROCESSING
+##############################################
+begin_quiet_timer {netlist_processing}
+section {3.0} {1} {ZEBU_DONT_TOUCH}
+   ##############################################
+   # 3.0 ZEBU_DONT_TOUCH
+   ##############################################
+begin_quiet_timer {zebu_dont_touch}
+dont_touch -vivado_stop_timing -verbose {0}
+#   step DONT TOUCH : Protect all instances with 'ZEBU_VIVADO_STOP_TIMING' attribute.
+#   step UNIQUIFY : Netlist with Top 'design'
+#   step UNIQUIFY : 0 modules created
+#   step DONT TOUCH : 28 instances have been protected.
+end_quiet_timer {zebu_dont_touch}
+begin_quiet_timer {zebu_gnd_unused_trigger_bits}
+gnd_unused_trigger_bits -verbose {0}
+#   step UNIQUIFY : Netlist with Top 'design'
+#   step UNIQUIFY : 0 modules created
+end_quiet_timer {zebu_gnd_unused_trigger_bits}
+begin_quiet_timer {zpar_mode}
+section {3.0} {2} {INCREMENTAL MANIPULATION}
+      ##############################################
+      # 3.0 INCREMENTAL MANIPULATION
+      ##############################################
+begin_quiet_timer {incremental_manipulation}
+end_quiet_timer {incremental_manipulation}
+section {3.0} {3} {TRISTATE REMAPPING}
+         ##############################################
+         # 3.0 TRISTATE REMAPPING
+         ##############################################
+begin_quiet_timer {tristate_remapping}
+remap_tristate {design} -tristate_type {pullup} -conflict_type {WAND} -keeper_clock {z_dclk_delay2} -keeper_edge {falling}
+#   step UNIQUIFY : Netlist with Top 'design'
+#   step UNIQUIFY : 0 modules created
+#   step TRISTATE_REMAP : 0 lonely zebu_PULL macros were found.
+#   step remap_tristate : 0 tristate buses were remapped as pullup to ISE-compatible logic in context design.
+end_quiet_timer {tristate_remapping}
+timing -analyze {TRISTATE_PATH ZFILTER_ASYNC_SET_RESET_PATH ZFILTER_FETCH_FEEDBACK }
+end_quiet_timer {zpar_mode}
+begin_quiet_timer {target_multi_die}
+end_quiet_timer {target_multi_die}
+section {3.1} {1} {ZVIEW}
+   ##############################################
+   # 3.1 ZVIEW
+   ##############################################
+begin_quiet_timer {zview}
+instr_zview -fpgaFamily {V7} -isOrionpp {0}
+instr_zview -fpgaFamily {V7} -isOrionpp {0}
+#   step zview : 117 zview found
+#   step zview : 117 zview processed (49 fd added, 67 fd instr, 0 zview duplicated, 1 zview gnd)
+end_quiet_timer {zview}
+begin_quiet_timer {zpar_fwc_ip_cmd}
+is_hydra_enabled
+end_quiet_timer {zpar_fwc_ip_cmd}
+begin_quiet_timer {zpar_fwc_ip_cmd_eval}
+fwc {zcg_compositeClock} -optimize {area} -version {gen2} -sampling_frequency {50000} -unit {0} -module {0} -fpga {F0} -clockport {design.U0_M0_F0.zcg_compositeClock} -fwfile {zse_hw_zPar.edf.gz} -forceTopName {top} -originalDesignPath {U0_M0_F0.U0_M0_F0_core} -sabrefwfile {undefined_fx_pas_lib.edf.gz} -isOrionpp {0} -is_dap -process {pre}
+#   step UNIQUIFY : Netlist with Top 'design'
+#   step UNIQUIFY : 0 modules created
+#   step $DUMPVARS : Starting $dumpvar/dpi/ccall preprocessing.
+#   step $DUMPVARS : Configuring for Virtex V7, waveform capture gen2.
+end_quiet_timer {zpar_fwc_ip_cmd_eval}
+begin_quiet_timer {zpar_fwc_ip_zplug}
+zplug {zplwc_ip}
+zplug {zplwc_ip}
+end_quiet_timer {zpar_fwc_ip_zplug}
+section {3.2} {1} {XDL RENAME}
+   ##############################################
+   # 3.2 XDL RENAME
+   ##############################################
+begin_quiet_timer {xdl_rename}
+xdl_rename -designCore=design.U0_M0_F0.U0_M0_F0_core -tool {vivado}
+#   step XDL RENAME : Log file named xdlRename.log
+end_quiet_timer {xdl_rename}
+begin_quiet_timer {znetgen_mode_zpar}
+section {3.4} {1} {MULTI-RTB}
+   ##############################################
+   # 3.4 MULTI-RTB
+   ##############################################
+instr_multi_rtb
+#   step INSTR_MULTI_RTB : Performing multi-rtb manipulation for netlist 'zmerge'.
+#   step INSTR_MULTI_RTB : '0' instances has been manipulated.
+end_quiet_timer {znetgen_mode_zpar}
+section {3.5} {1} {FW MACROS}
+   ##############################################
+   # 3.5 FW MACROS
+   ##############################################
+begin_quiet_timer {fw_macros}
+instr_fw {zse_xc7v_8c_v1} {F00} {V7}
+end_quiet_timer {fw_macros}
+section {3.51} {1} {CLOCKLOOP}
+   ##############################################
+   # 3.51 CLOCKLOOP
+   ##############################################
+begin_quiet_timer {clockloop}
+section {3.52} {1} {SETUP STABILITY}
+   ##############################################
+   # 3.52 SETUP STABILITY
+   ##############################################
+extract_vde_setup_stability
+end_quiet_timer {clockloop}
+section {3.6} {1} {ZXLSYS}
+   ##############################################
+   # 3.6 ZXLSYS
+   ##############################################
+begin_quiet_timer {zxlsys}
+instr_ztig_reg
+#   step instr_ztig_reg : 44 instances of the writeback blackbox registers replaced.
+instr_zxlsys
+#   step instr_zxlsys : zxlsys manipulation 
+end_quiet_timer {zxlsys}
+section {3.7} {1} {ZPLUG}
+   ##############################################
+   # 3.7 ZPLUG
+   ##############################################
+begin_quiet_timer {zplug_zpar}
+handle_pclk_free
+zplug {zpl}
+zplug {zpl}
+zplug -1toN {zpl1ton}
+zplug -1toN {zpl1ton}
+zplug -zpads {zpad}
+zplug -zpads {zpad}
+report_fwc
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                 220 |                   0 |                   0 |                   0 |                   0 || $DUMPVARS
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+section {3.8} {1} {CLEANING CLOCKS}
+   ##############################################
+   # 3.8 CLEANING CLOCKS
+   ##############################################
+end_quiet_timer {zplug_zpar}
+section {3.9} {1} {INSERT ADDITIONAL BUFG}
+   ##############################################
+   # 3.9 INSERT ADDITIONAL BUFG
+   ##############################################
+begin_quiet_timer {additional_bufg}
+insert_additional_bufgs {12} {3} {150000}
+#   step UNIQUIFY : Netlist with Top 'design'
+#   step UNIQUIFY : 50 modules created
+#   step BUFG INSERTION : Bufg 'design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_1.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_3.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clko.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Found 8 BUFGs in the design (max 12)
+end_quiet_timer {additional_bufg}
+section {3.10} {1} {SPLIT FANOUT}
+   ##############################################
+   # 3.10 SPLIT FANOUT
+   ##############################################
+begin_quiet_timer {split_fanout}
+end_quiet_timer {split_fanout}
+section {3.11} {1} {SYNCHRO}
+   ##############################################
+   # 3.11 SYNCHRO
+   ##############################################
+begin_quiet_timer {synchro}
+synchro
+#   step synchro : design synchronization statistics
+#   step CLOCK NETWORK : writing report for design 'design'
+#   info :    #-------- Summary 
+
+#   info :      - 1945 synchronous items
+#   info :      - 4 primary clocks 
+#   info :      - 32 derived clocks 
+#   info :      - 0 multi-driven clock 
+#   info :      - 14 stuck clocks 
+#   info :      - 0 undriven clock
+#   info :      - Total : 50 clocks
+
+#   info :      - 1 zxlsys instance
+
+
+#   info :    #-------- PRIMARY clocks
+
+#   info :        371 items : design.U0_M0_F0.zebu_zdly_z_dclk_delay_12524327392187371745 (BUFG)
+#   info :         98 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.sys_idel_clk (BUFG)
+#   info :         45 items : design.U0_M0_F0.zcgen_w_zcg_filterClock (BUFG)
+#   info :          6 items : design.U0_M0_F0.zcgen_w_zcg_compositeClock (BUFG)
+#   info :  
+
+#   info :    #-------- DERIVED clocks
+
+#   info :        455 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk.u_xst_wrapper_0.O (BUFG)
+#   info :        236 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_srb_clk.u_xst_wrapper_0.O (BUFG)
+#   info :        183 items : design.U0_M0_F0.U0_M0_F0_core.zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk1.zdelay_regFilterPos
+#   info :        178 items : design.U0_M0_F0.U0_M0_F0_core.zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk0.zdelay_regFilterPos
+#   info :        164 items : design.zkprctrl.wrapper.fib_bridge_rx.u_xst_wrapper_0.socket_lvds_sys_slave_0.u_xst_wrapper_0.socket_lvds_gp_in_0.u_xst_wrapper_0.clk_dv
+#   info :         56 items : design.U0_M0_F0.U0_M0_F0_core.u_dut.u_fifo.u0_clkg.zebu_filter_clkout.zdelay_regFilterPos
+#   info :          9 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk_hs.u_xst_wrapper_0.O (BUFG)
+#   info :          7 items : design.zkprctrl.wrapper.fib_bridge_rx.u_xst_wrapper_0.socket_lvds_sys_slave_0.u_xst_wrapper_0.socket_lvds_gp_in_0.u_xst_wrapper_0.clk_hs
+#   info :          2 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_3.u_xst_wrapper_0.O (BUFG)
+#   info :          2 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_1.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : design.zkprctrl.mxfcmxfx_sys_xclk2_zpt_xbuf
+#   info :          1 items : design.zkprctrl.mxfcmxfx_sys_xclk_zpt_xbuf
+#   info :          1 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clko.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.pll_fb
+#   info :          1 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.pll_fb
+#   info :          1 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk2_0.pll_fb
+#   info :          1 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk_0.pll_fb
+#   info :          0 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout0
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout1
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk_hs.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout2
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clko.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout3
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_srb_clk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.clka1d2
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_1.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.clka1d4
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_2.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.clka1d8
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_3.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk2_0.pll_clkout0
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk2_0.pll_clkout1
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk_0.pll_clkout0
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk_0.pll_clkout1
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info : 
+
+#   info :    #-------- STUCK clocks
+
+#   info :          2 items : design.zebu_fake_zview.gnd (STUCK)
+#   info :          1 items : design.ddr3_ctrl_empty_32x64_0.wrapper.zpl_out_srb_data_rd[1] (STUCK)
+#   info :          1 items : design.ddr3_ctrl_empty_32x64_1.wrapper.zpl_out_srb_data_rd[1] (STUCK)
+#   info :          1 items : design.ckpad_AB40.wrapper.x_idelay_0.u_xst_wrapper_0.N0 (STUCK)
+#   info :          1 items : design.ckpad_AC39.wrapper.x_idelay_0.u_xst_wrapper_0.N0 (STUCK)
+#   info :          1 items : design.ckpad_AC41.wrapper.x_idelay_0.u_xst_wrapper_0.N0 (STUCK)
+#   info :          1 items : design.ckpad_AD41.wrapper.x_idelay_0.u_xst_wrapper_0.N0 (STUCK)
+#   info :          1 items : design.ckpad_AE42.wrapper.x_idelay_0.u_xst_wrapper_0.N0 (STUCK)
+#   info :          1 items : design.zMem_multiport_FROM_clk_100_zMem_multiport_TO_clk_100_.gnd (STUCK)
+#   info :          1 items : design.zMem_multiport_FROM_clk_200_zMem_multiport_TO_clk_200_.gnd (STUCK)
+#   info :          1 items : design.zMem_multiport_FROM_clk_25_zMem_multiport_TO_clk_25_.gnd (STUCK)
+#   info :          1 items : design.zMem_multiport_FROM_clk_50_zMem_multiport_TO_clk_50_.gnd (STUCK)
+#   info :          1 items : design.zMem_multiport_FROM_zMem_multiport_TO_.gnd (STUCK)
+#   info :          1 items : design.zebu_fake_ztig.gnd (STUCK)
+#   info : 
+
+
+#   info : # clock buffer list:
+#   info : #        bufg   design.zkprctrl.wrapper.sysclk_mxfx.u_xst_wrapper_0.sysclk_idly_0.bufg_0     net: design.zpl_wr_zkprctrlsys_idel_clk
+#   info : #        bufg   design.U0_M0_F0.zbufg_zebu_zdly_z_dclk_delay_12524327392187371745     net: design.U0_M0_F0.zebu_zdly_z_dclk_delay_12524327392187371745
+#   info : #        bufg   design.U0_M0_F0.zbufg_zcgen_w_zcg_compositeClock     net: design.zpad_dut_clk
+#   info : #        bufg   design.U0_M0_F0.zbufg_zcgen_w_zcg_filterClock     net: design.U0_M0_F0.zcgen_w_zcg_filterClock
+
+#   info : # 4 clock buffer(s) found
+
+end_quiet_timer {synchro}
+end_quiet_timer {netlist_processing}
+section {8.1} {1} {FPGA STATS}
+   ##############################################
+   # 8.1 FPGA STATS
+   ##############################################
+begin_quiet_timer {fpga_stats}
+stat -path {design} -zstatistics {out}
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                1857 |                1154 |                   2 |                   0 |               65536 |                   0 |                  15 |                  16 |                1162 |                  77 |                   0 |                   0 |                   0 || design
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+stat -path {design.U0_M0_F0.U0_M0_F0_core} -zstatistics {in}
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 941 |                 275 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                  56 |                  77 |                   0 |                   0 |                   0 || design.U0_M0_F0.U0_M0_F0_core
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+end_quiet_timer {fpga_stats}
+begin_quiet_timer {muxcy_xorcy_processes}
+section {3.12} {1} {MANIPULATION OF MUXCY/XORCY}
+   ##############################################
+   # 3.12 MANIPULATION OF MUXCY/XORCY
+   ##############################################
+instr_muxcy_xorcy {vivado} {design.U0_M0_F0.U0_M0_F0_core}
+#   step UNIQUIFY : Netlist with Top 'design'
+#   step UNIQUIFY : 0 modules created
+#   step instr_muxcy_xorcy : 0 muxcy chains broken because of size greater then 73
+end_quiet_timer {muxcy_xorcy_processes}
+begin_quiet_timer {undriven_nets_processing}
+query_undriven_nets -file {./fpga_reports/zNetgen/undriven_nets_and_pins.rpt.gz}
+#   step query_undriven_nets : Found 2 undriven nets in the netlist.
+#   step query_undriven_nets : Found 0 undriven pins in the netlist.
+#   step query_undriven_nets : See './fpga_reports/zNetgen/undriven_nets_and_pins.rpt.gz' report for additional information regarding undriven elements in the netlist.
+end_quiet_timer {undriven_nets_processing}
+section {7} {0} {CONSISTENCY CHECK}
+##############################################
+# 7 CONSISTENCY CHECK
+##############################################
+begin_quiet_timer {consistency_check}
+consistency_check {check_xilinx} {check_system} {check_ngo}
+#   step Consistency Check : Performing consistency check on the netlist
+end_quiet_timer {consistency_check}
+section {3.18} {1} {VD}
+   ##############################################
+   # 3.18 VD
+   ##############################################
+begin_quiet_timer {extract_vd}
+extract_vd -isOrionpp {0}
+end_quiet_timer {extract_vd}
+begin_quiet_timer {smart_metrics_before_DAP}
+report_netlist_metrics -file {fpga_data.info} -prefix {zNetgen_before_DAP} -app
+#   step NtgTclReportNetlistMetric : The netlist resource usage has been written into fpga_data.info with mode:zNetgen_before_DAP.
+end_quiet_timer {smart_metrics_before_DAP}
+populateZOptDB -znetgen_mode {zpar} -mode {off} -abcopt_env {} -parff_env {} -octane_env {}
+begin_quiet_timer {cluster_split}
+cluster_split -unitId {0} -moduleId {0} -fpgaName {F00} -virtexType {V7} -fpgaPart {7vlx2000tff1925} -coreDirectory {work.Part_0/} -mdtmxSGMode {default} -advanced_incremental_mode -wcVersion {gen2}
+#   step Property DB : writing property DB into file 'zNetgen_property.db'
+#   step CLUSTER_SPLIT : ZEBU_MDTMX_USE is used
+#   step CLUSTER_SPLIT : ZEBU_MDTMX_SOFT_USE is not used
+#   step CLUSTER_SPLIT : ZEBU_MDTMX_PARTONLY is used
+#   step CLUSTER_SPLIT : ZEBU_MDTMX_FORCE_PDM is not used
+#   step CLUSTER_SPLIT : Applying FLOW_DAP
+#   step CLUSTER_SPLIT : DAP engine: dap - softDAP is not used
+#   step CLUSTER_SPLIT : DAP mode: default
+#   step CLUSTER_SPLIT : ZEBU_POST_OPT_FILTER is not used (Option is 0).
+#   step CLUSTER_SPLIT : Starting
+#   step INIT : Starting
+#   step CLUSTER_SPLIT : Logical FPGA: U0_M0_F0 ; Physical FPGA: U0/M0/F00
+#   step CLUSTER_SPLIT : Target FPGA part: 7vlx2000tff1925(V7) - 4 SLRs
+#   step CLUSTER_SPLIT : FPGA Inter SLR(SLL) Count: 13000 - target cut threshold: 10000
+#   step INIT : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:4.95       fm:166892 m     vm:1623 m       vm:+0 m     um:1260 m       um:+0 m
+#   step EVALUATE : Starting
+#   step Die-level partitioning : Starting
+#   step PARTITIONING : Adding indivisible blocks
+#   step FWC : Configuring for Virtex 7, fast waveform capture gen2
+#   step QIWC : Configuring for Virtex 7
+#   step PARTITIONING : Set lut weighting LUT1 = 0.5
+#   step PARTITIONING : Set lut weighting LUT2 = 0.5
+#   step PARTITIONING : Set lut weighting LUT3 = 0.8
+#   step PARTITIONING : Set lut weighting LUT4 = 0.8
+#   step PARTITIONING : Drive netlist 'design' for partioning process
+#   step write ZBNF : Starting
+#   step PARTITIONING : Logic for user instr. estimate      : 0 register(s), 0 LUT(s), 0 RAMLUT(s), 0 BRAM(s) and 0 DSP(s)
+#   step PARTITIONING : Logic for fast waveform captures estimate  : 40 register(s) and 40 LUT(s) - DPI(0 fwc_ip(s)).
+#   step ZBNF GENERATOR : writing netlist 'zmerge' into ZBNF file 'tools/zBlockPartitioning/908a3b0f/netlist.zbnf'
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module capturee2
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module idelaye2
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module iserdese2
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module mmcme2_base
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module oserdese2
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module startupe2
+#   step ZBNF GENERATOR : set memory module 'ram_ZMEM_mem_base_6ecba9f6' indivisible
+#   step ZBNF GENERATOR : set memory module 'ram_ZMEM_mem_base' indivisible
+#   step ZBNF GENERATOR : set memory module 'ram_ZMEM_mem' indivisible
+#   step ZBNF GENERATOR : set memory module 'rom_ZMEM_mem' indivisible
+#   step write ZBNF : Done in     elapsed:0.7 s    user:0.5 s      system:0 s      %cpu:74.91       load:4.95       fm:166760 m     vm:1637 m       vm:+3 m     um:1282 m       um:+3 m
+#   step PARTITIONING : Launch partitioning process on netlist 'design'
+#   step ZBLACCMD : exec_buffer /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin/zBlockPartitioning tools/zBlockPartitioning/908a3b0f/script.tcl -log tools/zBlockPartitioning/908a3b0f/zBlockPartitioning.log -trace tools/zBlockPartitioning/908a3b0f/zBlockPartitioning_trace.log -work tools/zBlockPartitioning/908a3b0f/ remote_cmd 
+
+                                    ZeBu (R)
+                               zBlockPartitioning
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin/zBlockPartitioning tools/zBlockPartitioning/908a3b0f/script.tcl -log tools/zBlockPartitioning/908a3b0f/zBlockPartitioning.log -trace tools/zBlockPartitioning/908a3b0f/zBlockPartitioning_trace.log -work tools/zBlockPartitioning/908a3b0f/ 
+
+# start time is Sat Apr 20 13:26:07 2024
+
+
+
+
+# Build Date : Oct 18 2022 - 01:00:45
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.90 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 4.95 7.06 4.56 8/638 424
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.108.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 166545 MB
+#            Total Free including cache: 180797 MB
+#            Swap cache: 0 MB Cached space: 14252 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 349 MB VmPeak: 349 MB
+# Disk Space Total: 50 GB Available: 48 GB Used: 2 GB
+#            Free inodes: 104829893
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ENV.VAR : LM_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : SNPSLMD_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+#   step ENV.VAR : VERDI_HOME=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12
+#   step ENV.VAR : ZEBU_AURA_FW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/fw
+#   step ENV.VAR : ZEBU_AURA_SW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw
+#   step ENV.VAR : ZEBU_COMPILATION_OBJECTIVE=
+#   step ENV.VAR : ZEBU_DRIVER_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/drivers
+#   step ENV.VAR : ZEBU_FPGA_MODULE_DIR=/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0
+#   step ENV.VAR : ZEBU_FPGA_ORIGINAL_DIR=/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original
+#   step ENV.VAR : ZEBU_FPGA_SRC_DIR=/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.src
+#   step ENV.VAR : ZEBU_MDTMX_PARTONLY=1
+#   step ENV.VAR : ZEBU_MDTMX_TOOL=zBlockPartitioning
+#   step ENV.VAR : ZEBU_MDTMX_USE=1
+#   step ENV.VAR : ZEBU_PARFF_XCUI_FILE_NAME=fpgaparameterset_v7.xcui
+#   step ENV.VAR : ZEBU_PARFF_XCUI_TARGET_NAME=L12_DAP_Triton_GP_SLL_SpreadAll
+#   step ENV.VAR : ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+#   step ENV.VAR : ZEBU_SDF_ANALYSIS=1
+#   step ENV.VAR : ZEBU_SYSTEM_DIR=/mnt/quinn_zebu/ZEBU_SYSTEM_DIR
+#   step ENV.VAR : ZEBU_TRITON_ZS2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs2
+#   step ENV.VAR : ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+#   step ENV.VAR : ZEBU_XIL=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/ise/ISE_DS
+#   step ENV.VAR : ZEBU_XIL_VIVADO=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p2/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p3/ids_lite
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P4=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p4/
+#   step PARTITIONER : Revision 2_6_3-12
+read_zbnf {tools/zBlockPartitioning/908a3b0f/netlist.zbnf}
+set_max_time {60}
+### warning in zBlockPartitioning don't support the command [BLC0008W] : set_max_time
+set_max_iter {5}
+set_module_resource {zfwc_qiwc*} {REG} {0.1}
+set_module_resource {zfwc_qiwc*} {LUT} {0.3}
+set_module_resource {zfwc_qiwc*} {QIWC_IP_BITS} {1}
+defpart_resource -min {LUT} {0}
+defpart_resource -min {REG} {0}
+defpart_resource -min {RAM} {0}
+defpart_resource -min {DSP} {0}
+defpart_resource -min {RAMLUT} {0}
+defpart_resource -min {LUT6} {0}
+defpart_resource -min {FWC_IP_NUM} {0}
+defpart_resource -min {FWC_IP_BITS} {0}
+defpart_resource -min {QIWC_IP_BITS} {0}
+defpart_resource -min {READ_PORT_IPS} {0}
+defpart_resource -min {READ_PORT_BITS} {0}
+defpart_resource -min {WRITE_PORT_IPS} {0}
+defpart_resource -min {WRITE_PORT_BITS} {0}
+defpart_resource -min {ZC_TRACE_BIT} {0}
+defpart_resource -min {FW_RESOURCES} {0}
+defpart_resource -min {ZPRD_BB} {0}
+defpart_resource -min {ZFORCE} {0}
+defpart_resource -min {ZVIEW} {0}
+defpart_resource -min {ZCEI_MESSAGE_INPUT} {0}
+defpart_resource -min {ZCEI_MESSAGE_OUTPUT} {0}
+defpart_resource -tgt {LUT} {152700}
+defpart_resource -tgt {REG} {152700}
+defpart_resource -tgt {RAM} {161}
+defpart_resource -tgt {DSP} {500}
+defpart_resource -tgt {RAMLUT} {19087}
+defpart_resource -tgt {LUT6} {152700}
+set_target_mode {1}
+set_target_margin {LUT} {10}
+set_target_margin {REG} {10}
+set_target_margin {RAM} {10}
+set_target_margin {LUT6} {10}
+defpart_resource -max {LUT} {229050}
+defpart_resource -max {REG} {190875}
+defpart_resource -max {RAM} {320}
+defpart_resource -max {DSP} {537}
+defpart_resource -max {RAMLUT} {76350}
+defpart_resource -max {LUT6} {229050}
+defpart_resource -max {FWC_IP_NUM} {248}
+defpart_resource -max {FWC_IP_BITS} {90470}
+defpart_resource -max {QIWC_IP_BITS} {131072}
+defpart_resource -max {READ_PORT_IPS} {0}
+defpart_resource -max {READ_PORT_BITS} {0}
+defpart_resource -max {WRITE_PORT_IPS} {0}
+defpart_resource -max {WRITE_PORT_BITS} {0}
+defpart_resource -max {ZC_TRACE_BIT} {0}
+defpart_resource -max {FW_RESOURCES} {2147483647}
+defpart_resource -max {ZPRD_BB} {0}
+defpart_resource -max {ZFORCE} {2147483647}
+defpart_resource -max {ZVIEW} {2147483647}
+defpart_resource -max {ZCEI_MESSAGE_INPUT} {128}
+defpart_resource -max {ZCEI_MESSAGE_OUTPUT} {128}
+defpart_resource -global {LUT} {916200}
+defpart_resource -global {REG} {763500}
+defpart_resource -global {RAM} {1292}
+defpart_resource -global {DSP} {2148}
+defpart_resource -global {RAMLUT} {305400}
+defpart_resource -global {LUT6} {916200}
+defpart_resource -global {FWC_IP_NUM} {992}
+defpart_resource -global {FWC_IP_BITS} {361881}
+defpart_resource -global {QIWC_IP_BITS} {524288}
+defpart_resource -global {READ_PORT_IPS} {0}
+defpart_resource -global {READ_PORT_BITS} {0}
+defpart_resource -global {WRITE_PORT_IPS} {0}
+defpart_resource -global {WRITE_PORT_BITS} {0}
+defpart_resource -global {ZC_TRACE_BIT} {0}
+defpart_resource -global {FW_RESOURCES} {2147483647}
+defpart_resource -global {ZPRD_BB} {0}
+defpart_resource -global {ZFORCE} {2147483647}
+defpart_resource -global {ZVIEW} {2147483647}
+defpart_resource -global {ZCEI_MESSAGE_INPUT} {512}
+defpart_resource -global {ZCEI_MESSAGE_OUTPUT} {512}
+defpart_resource -overflow {LUT} {19087}
+### warning in hmetis don't support overflow argument of the command [ZBLCMD] : defpart_resource
+defpart_resource -overflow {REG} {15906}
+### warning in hmetis don't support overflow argument of the command [ZBLCMD] : defpart_resource
+defpart_resource -overflow {LUT6} {19087}
+### warning in hmetis don't support overflow argument of the command [ZBLCMD] : defpart_resource
+set_lut_weighting {1} {0.5}
+set_lut_weighting {2} {0.5}
+set_lut_weighting {3} {0.8}
+set_lut_weighting {4} {0.8}
+save_defpart {tools/zBlockPartitioning/908a3b0f/defpart.tcl}
+set_max_parts {4}
+set_arch -product {zse} -fpga {V7}
+#   step zBlockPartitioning : set ZEBU type to zse
+#   step zBlockPartitioning : set FPGA type to V7
+set_max_blocks {50000}
+defpart {design.ckpad_AB40} {part_SLR0}
+defpart {design.ckpad_AC39} {part_SLR0}
+defpart {design.ckpad_AC41} {part_SLR0}
+defpart {design.ckpad_AD41} {part_SLR0}
+defpart {design.ckpad_AE42} {part_SLR0}
+defpart {design.ddr3_ctrl_empty_32x64_0} {part_SLR0}
+defpart {design.ddr3_ctrl_empty_32x64_1} {part_SLR0}
+defpart {design.zpad_bus_ins} {part_SLR0}
+defpart {design.socket_00_00_00_08.ClockRegion000SD_40B} {part_SLR3}
+#   step read ZBNF : Starting
+#   step ZBNF READER : reading ZBNF file 'tools/zBlockPartitioning/908a3b0f/netlist.zbnf'
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step read ZBNF : Done in    elapsed:0.18 s   user:0.15 s    system:0.2 s      %cpu:96.73       load:4.95       fm:166391 m      vm:429 m      vm:+19 m      um:143 m      um:+25 m
+#   step zBlockPartitioning : Read zbnf file tools/zBlockPartitioning/908a3b0f/netlist.zbnf
+#   step zBlockPartitioning : Running zBlockPartitioning on 'design'.
+#   step zBlockPartitioning : Check min/max resource values
+#   step zBlockPartitioning : Process Lut Weighting
+#   step zBlockPartitioning : LUT weighting : lut1 -> 0.5
+#   step zBlockPartitioning : LUT weighting : lut2 -> 0.5
+#   step zBlockPartitioning : LUT weighting : lut3 -> 0.8
+#   step zBlockPartitioning : LUT weighting : lut4 -> 0.8
+#   step zBlockPartitioning : Design size : 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|LUT                |LUT6               |RAM                |REG                |DSP                |RAMLUT             |FWC_IP_NUM         |FWC_IP_BITS        |QIWC_IP_BITS       |READ_PORT_IPS      |READ_PORT_BITS     |WRITE_PORT_IPS     |WRITE_PORT_BITS    |ZC_TRACE_BIT       |ZCEI_MESSAGE_INPUT |ZCEI_MESSAGE_OUTPUT|FW_RESOURCES       |ZPRD_BB            |ZFORCE             |ZVIEW              |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|962.90             |172.00             |2.00               |1977.00            |0.00               |72.00              |0.00               |40.00              |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#   step zBlockPartitioning : Fixed part mode 4
+#   step zBlockPartitioning : Fixed part mode 4
+#   step zBlockPartitioning : Using Virtex 7 FPGA
+### warning in zBlockPartitioning [BLC0029W] : Resource 'READ_PORT_IPS' is less than 10% bigger than design! To avoid overflow, the max resource is automaticaly adjusted to 10% bigger than design = 1
+#   step zBlockPartitioning : Using Virtex 7 FPGA
+### warning in zBlockPartitioning [BLC0029W] : Resource 'READ_PORT_BITS' is less than 10% bigger than design! To avoid overflow, the max resource is automaticaly adjusted to 10% bigger than design = 1
+#   step zBlockPartitioning : Using Virtex 7 FPGA
+### warning in zBlockPartitioning [BLC0029W] : Resource 'WRITE_PORT_IPS' is less than 10% bigger than design! To avoid overflow, the max resource is automaticaly adjusted to 10% bigger than design = 1
+#   step zBlockPartitioning : Using Virtex 7 FPGA
+### warning in zBlockPartitioning [BLC0029W] : Resource 'WRITE_PORT_BITS' is less than 10% bigger than design! To avoid overflow, the max resource is automaticaly adjusted to 10% bigger than design = 1
+#   step zBlockPartitioning : Using Virtex 7 FPGA
+### warning in zBlockPartitioning [BLC0029W] : Resource 'ZC_TRACE_BIT' is less than 10% bigger than design! To avoid overflow, the max resource is automaticaly adjusted to 10% bigger than design = 1
+#   step zBlockPartitioning : Using Virtex 7 FPGA
+### warning in zBlockPartitioning [BLC0029W] : Resource 'ZPRD_BB' is less than 10% bigger than design! To avoid overflow, the max resource is automaticaly adjusted to 10% bigger than design = 1
+#   step  : User Assignment
+#   step  : ----------------------------------------------------------
+#   step  : Part name: part_SLR0
+#   step  : design.ckpad_AB40
+#   step  : design.ckpad_AC39
+#   step  : design.ckpad_AC41
+#   step  : design.ckpad_AD41
+#   step  : design.ckpad_AE42
+#   step  : design.ddr3_ctrl_empty_32x64_0
+#   step  : design.ddr3_ctrl_empty_32x64_1
+#   step  : design.zpad_bus_ins
+#   step  : Size :
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|LUT                |LUT6               |RAM                |REG                |DSP                |RAMLUT             |FWC_IP_NUM         |FWC_IP_BITS        |QIWC_IP_BITS       |READ_PORT_IPS      |READ_PORT_BITS     |WRITE_PORT_IPS     |WRITE_PORT_BITS    |ZC_TRACE_BIT       |ZCEI_MESSAGE_INPUT |ZCEI_MESSAGE_OUTPUT|FW_RESOURCES       |ZPRD_BB            |ZFORCE             |ZVIEW              |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|41.70              |24.00              |0.00               |3.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#   step  : ----------------------------------------------------------
+#   step  : Part name: part_SLR3
+#   step  : design.socket_00_00_00_08.ClockRegion000SD_40B
+#   step  : Size :
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|LUT                |LUT6               |RAM                |REG                |DSP                |RAMLUT             |FWC_IP_NUM         |FWC_IP_BITS        |QIWC_IP_BITS       |READ_PORT_IPS      |READ_PORT_BITS     |WRITE_PORT_IPS     |WRITE_PORT_BITS    |ZC_TRACE_BIT       |ZCEI_MESSAGE_INPUT |ZCEI_MESSAGE_OUTPUT|FW_RESOURCES       |ZPRD_BB            |ZFORCE             |ZVIEW              |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|0.50               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#   step zBlockPartitioning : Model generation
+#   step MODELGEN : Starting
+#   step MODELGEN : Block Selection..
+#   step MODELGEN : Number of blocks 52
+#   step MODELGEN : Creating partitioning graph from Block selection using ZVU
+#   step HGraphCSR : Dumping out interco file zNetgen_AC_interco.txt
+#   step MODELGEN : Done in     elapsed:0.7 s    user:0.3 s      system:0 s      %cpu:45.11       load:4.95       fm:166359 m      vm:432 m       vm:+2 m      um:147 m       um:+3 m
+#   step zBlockPartitioning : Do partitioning
+#   step Partitioner : Starting
+#   step Partitioner : Grouping bus structures, FWC and QiWC cells with their drivers
+#   step Partitioner : Number of groups created 1
+#   step Partitioner : Number of blocks absorbed 32
+#   step DAP Partitioner : Grouping MUXF7, MUXF8 cells
+#   step DAP Partitioner : No eligible MUXF7, MUXF8 cells found..
+#   step DAP Partitioner : Grouping carry cells
+#   step DAP Partitioner : No eligible carry chain cells found..
+#   step PARTITIONING : Design size and Partition Size constraints 
+#   step PARTITIONING : 
+# +--------------+------+------+---+------+---+------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+----------+----------+
+# |              |   LUT|  LUT6|RAM|   REG|DSP|RAMLUT|FWC_IP_NUM|FWC_IP_BITS|QIWC_IP_BITS|READ_PORT_IPS|READ_PORT_BITS|WRITE_PORT_IPS|WRITE_PORT_BITS|ZC_TRACE_BIT|ZCEI_MESSAGE_INPUT|ZCEI_MESSAGE_OUTPUT|FW_RESOURCES|ZPRD_BB|    ZFORCE|     ZVIEW|
+# +--------------+------+------+---+------+---+------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+----------+----------+
+# |   Design Size|   963|   172|  2|  1977|  0|    72|         0|         40|           0|            0|             0|             0|              0|           0|                 0|                  0|           0|      0|         0|         0|
+# +--------------+------+------+---+------+---+------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+----------+----------+
+# |part_SLR0(max)|167970|167970|177|167970|500| 19087|       248|      90470|      131072|            1|             1|             1|              1|           1|               128|                128|  2147483647|      1|2147483647|2147483647|
+# +--------------+------+------+---+------+---+------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+----------+----------+
+# |part_SLR1(max)|167970|167970|177|167970|500| 19087|       248|      90470|      131072|            1|             1|             1|              1|           1|               128|                128|  2147483647|      1|2147483647|2147483647|
+# +--------------+------+------+---+------+---+------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+----------+----------+
+# |part_SLR2(max)|167970|167970|177|167970|500| 19087|       248|      90470|      131072|            1|             1|             1|              1|           1|               128|                128|  2147483647|      1|2147483647|2147483647|
+# +--------------+------+------+---+------+---+------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+----------+----------+
+# |part_SLR3(max)|167970|167970|177|167970|500| 19087|       248|      90470|      131072|            1|             1|             1|              1|           1|               128|                128|  2147483647|      1|2147483647|2147483647|
+# +--------------+------+------+---+------+---+------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+----------+----------+
+#   step PARTITIONING : HyperGraph Information: 
+#   step PARTITIONING :  vertices=52, hedges=209, constraints=20
+#   step PARTITIONING : Options: 
+#   step PARTITIONING :  otype=SOED, ctype=H1, rtype=KPM, dbglvl=0, nruns=5, seed=-1, sof(idx_t)=8, sof(wgt_t)=8
+#   step PARTITIONING :  utilfrac=1, cmaxnet=50, rmaxnet=50, npmin=2, npmax= 4
+#   step PARTITIONING : Running iteration 1/5
+#   step PARTITIONING : Running iteration 2/5
+#   step PARTITIONING : Running iteration 3/5
+#   step PARTITIONING : Running iteration 4/5
+#   step PARTITIONING : Running iteration 5/5
+#   step zBlockPartitioning : SLR0-SLR1 cut: 0.000000
+#   step zBlockPartitioning : SLR1-SLR2 cut: 0.000000
+#   step zBlockPartitioning : SLR2-SLR3 cut: 0.000000
+#   step ZMPPARTITIONER : Solution ID  0 SOED      158 maxED     155 max area 0.01172(                 REG) min area 0.00000 valid 1, nparts  4, rlc 0, hop 0.00, tdc cost    0.000
+#   step ZMPPARTITIONER : Solution ID  1 SOED      158 maxED     155 max area 0.01172(                 REG) min area 0.00000 valid 1, nparts  4, rlc 0, hop 0.00, tdc cost    0.000
+#   step ZMPPARTITIONER : Solution ID  2 SOED      158 maxED     155 max area 0.01172(                 REG) min area 0.00000 valid 1, nparts  4, rlc 0, hop 0.00, tdc cost    0.000
+#   step ZMPPARTITIONER : Solution ID  3 SOED      158 maxED     155 max area 0.01172(                 REG) min area 0.00000 valid 1, nparts  4, rlc 0, hop 0.00, tdc cost    0.000
+#   step ZMPPARTITIONER : Solution ID  4 SOED      158 maxED     155 max area 0.01172(                 REG) min area 0.00000 valid 1, nparts  4, rlc 0, hop 0.00, tdc cost    0.000
+#   step ZMPPARTITIONER : Strategy is set to DEFAULT_OPT
+#   step ZMPPARTITIONER : PartSolutionMananger picked solution ID 0 SOED 158 maxED 155 valid 1, nparts  4, rlc 0, hop 0.00
+#   step PARTITIONING : Summary for the   4-way partition
+#   step PARTITIONING : ------------------------------------------------
+#   step PARTITIONING :                     Hyperedge Cut:          0.00
+#   step PARTITIONING :                              SOED:          0.00
+#   step PARTITIONING :                             MAXED:           155
+#   step PARTITIONING : Partition Sizes & IOs
+
+#   step PARTITIONING : 
+# +------------------------------+----------+----------+-----+-----------+--------+-----------+--+
+# |Part Name\ Res(Used/Available)|       LUT|      LUT6|  RAM|        REG|  RAMLUT|FWC_IP_BITS|IO|
+# +------------------------------+----------+----------+-----+-----------+--------+-----------+--+
+# |                     part_SLR0|962/167970|172/167970|2/177|1969/167970|72/19087|   40/90470| 0|
+# |                     part_SLR3|  0/167970|  0/167970|0/177|   8/167970| 0/19087|    0/90470| 0|
+# +------------------------------+----------+----------+-----+-----------+--------+-----------+--+
+# |                           SUM|963/335940|172/335940|2/354|1977/335940|72/38174|  40/180940| 0|
+# +------------------------------+----------+----------+-----+-----------+--------+-----------+--+
+#   step PARTITIONING : Inter Partition Cuts (undirected)
+
+#   step zBlockPartitioning : 
+# +---------+---------+---------+---------+
+# |From \ To|part_SLR0|part_SLR3|Interface|
+# +---------+---------+---------+---------+
+# |part_SLR0|        0|        0|      155|
+# |part_SLR3|        0|        0|        3|
+# |Interface|      155|        3|        0|
+# +---------+---------+---------+---------+
+# |  SUM CUT|      155|        3|      158|
+# +---------+---------+---------+---------+
+#   step Partitioner : Done in     elapsed:0.3 s    user:0.1 s      system:0 s      %cpu:32.00       load:4.95       fm:166338 m      vm:540 m     vm:+108 m      um:155 m       um:+8 m
+#   step DAP_OVERFLOW_CHECK : Balancing value 0.25000000
+#   step PARTITIONING : Dump defpart mapping in tools/zBlockPartitioning/908a3b0f/defpart.tcl
+#   step PARTITIONING : Factorizing defpartmap
+
+#   exec summary :   10 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m0.391s, sys 0m0.154s
+#   exec summary : Total memory: 594508 kB - RSS memory: 163556 kB - Data memory: 300112 kB
+#   exec summary : Successful execution
+
+# end time is Sat Apr 20 13:26:07 2024
+#   step PARTITIONING : Read partitioning results from file 'tools/zBlockPartitioning/908a3b0f/defpart.tcl'
+#   step PARTITIONING : Import partitioning result file 'tools/zBlockPartitioning/908a3b0f/defpart.tcl'
+#   step DAP : Reference partition folder at, tools/zBlockPartitioning.
+#   step Die-level partitioning : Done in    elapsed:0.99 s   user:0.14 s    system:0.3 s      %cpu:17.29       load:4.95       fm:166426 m     vm:1637 m      vm:+14 m     um:1282 m      um:+22 m
+#   step Prepare SplitDB : Starting
+#   step Prepare SplitDB : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:4.95       fm:166404 m     vm:1641 m       vm:+0 m     um:1287 m       um:+0 m
+#   step Split execution : Starting
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_10602560206920791149' into 'zpad_srb_addr[0]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_SLR0.zmdsplt_10602560206920791149' into 'zpad_srb_addr[1]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_6469217502642229620' into 'zpad_srb_addr[2]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_4615526913004346364' into 'zpad_srb_addr[3]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_9860212104832492488' into 'zpad_srb_addr[4]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_10341767380596050330' into 'zpad_srb_addr[5]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_12805746525938780233' into 'zpad_srb_addr[6]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_7018067005895462093' into 'zpad_srb_addr[7]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_2215182615564624850' into 'zpad_srb_addr[8]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_1858360806005472631' into 'zpad_srb_addr[9]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_2093247995812674790' into 'zpad_srb_addr[10]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_6156966491843024826' into 'zpad_srb_addr[11]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_15136086151498330638' into 'zpad_srb_addr[12]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_15317598958285669005' into 'zpad_srb_addr[13]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_17582835632338582478' into 'zpad_srb_addr[14]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_9189505894669290729' into 'zpad_srb_addr[15]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_SLR0.zmdsplt_10732431092059811790' into 'zpad_wc_ip_clk' to ensure top port and partition ports have consistent names.
+#   step READER_REPLICATION : Lonely inter-partition readers replication was disabled.
+#   step Split execution : Done in    elapsed:0.12 s   user:0.12 s    system:0.3 s     %cpu:121.70       load:4.95       fm:166338 m     vm:1651 m      vm:+10 m     um:1297 m      um:+10 m
+#   step Post split SplitDB processing : Starting
+#   step ZDIESPLIT : Reconnect 0 ports for sockets and clean up 0 ports on SLR module
+#   step Post split SplitDB processing : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:4.95       fm:166339 m     vm:1651 m       vm:+0 m     um:1297 m       um:+0 m
+#   step DAP PROCESS : Inter-SLR long lines prior to multiplexing:
+------------|------------|------------|
+ SLR0-SLR1  | SLR1-SLR2  | SLR2-SLR3  |
+         0  |         0  |         0  |
+------------|------------|------------|
+
+#   step CLUSTER_SPLIT : Inter-SLR multiplexing not needed on this FPGA: max inter-SLR cut= 0
+#   step EVALUATE : Done in       elapsed:4 s      user:3 s    system:0.7 s      %cpu:83.77       load:5.20       fm:165950 m     vm:1651 m      vm:+28 m     um:1297 m      um:+37 m
+#   step PROCESS : Starting
+#   step CLUSTER_SPLIT : doSplitNetlist:on ; doPblockConstraints:on ; doTimingAnalysis:off ; doMDTMXinsertion:off ; doFilterOpt:off
+#   step Prepare SplitDB : Starting
+#   step Prepare SplitDB : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:5.20       fm:165950 m     vm:1651 m       vm:+0 m     um:1297 m       um:+0 m
+#   step Split execution : Starting
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_10602560206920791149' into 'zpad_srb_addr[0]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_SLR0.zmdsplt_10602560206920791149' into 'zpad_srb_addr[1]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_6469217502642229620' into 'zpad_srb_addr[2]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_4615526913004346364' into 'zpad_srb_addr[3]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_9860212104832492488' into 'zpad_srb_addr[4]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_10341767380596050330' into 'zpad_srb_addr[5]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_12805746525938780233' into 'zpad_srb_addr[6]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_7018067005895462093' into 'zpad_srb_addr[7]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_2215182615564624850' into 'zpad_srb_addr[8]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_1858360806005472631' into 'zpad_srb_addr[9]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_2093247995812674790' into 'zpad_srb_addr[10]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_6156966491843024826' into 'zpad_srb_addr[11]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_15136086151498330638' into 'zpad_srb_addr[12]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_15317598958285669005' into 'zpad_srb_addr[13]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_17582835632338582478' into 'zpad_srb_addr[14]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_NoSLR.zmdsplt_9189505894669290729' into 'zpad_srb_addr[15]' to ensure top port and partition ports have consistent names.
+#   step SPLIT : Renaming 'design.part_SLR0.zmdsplt_10732431092059811790' into 'zpad_wc_ip_clk' to ensure top port and partition ports have consistent names.
+#   step READER_REPLICATION : Lonely inter-partition readers replication was disabled.
+#   step Split execution : Done in    elapsed:0.11 s   user:0.11 s    system:0.4 s     %cpu:129.31       load:5.20       fm:165926 m     vm:1651 m       vm:+0 m     um:1297 m       um:+0 m
+#   step Post split SplitDB processing : Starting
+#   step ZDIESPLIT : Reconnect 0 ports for sockets and clean up 0 ports on SLR module
+#   step Post split SplitDB processing : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:5.20       fm:165926 m     vm:1651 m       vm:+0 m     um:1297 m       um:+0 m
+#   step PROCESS : Done in    elapsed:0.13 s   user:0.12 s    system:0.4 s     %cpu:123.55       load:5.20       fm:165925 m     vm:1651 m       vm:+0 m     um:1297 m       um:+0 m
+#   step CLUSTER_SPLIT : Done in       elapsed:4 s      user:4 s   system:0.11 s      %cpu:84.69       load:5.20       fm:165925 m     vm:1651 m      vm:+28 m     um:1297 m      um:+37 m
+end_quiet_timer {cluster_split}
+begin_quiet_timer {zstatistics_opt}
+fwc {zcg_compositeClock} -optimize {area} -version {gen2} -sampling_frequency {50000} -unit {0} -module {0} -fpga {F0} -clockport {design.U0_M0_F0.zcg_compositeClock} -fwfile {zse_hw_zPar.edf.gz} -forceTopName {top} -originalDesignPath {U0_M0_F0.U0_M0_F0_core} -sabrefwfile {undefined_fx_pas_lib.edf.gz} -isOrionpp {0} -is_dap -zstatistics -process {post}
+#   step UNIQUIFY : Netlist with Top 'design'
+#   step UNIQUIFY : 160 modules created
+#   step $DUMPVARS : Starting $dumpvar/dpi/ccall postprocessing.
+#   step $DUMPVARS : Configuring for Virtex V7, waveform capture gen2.
+#   step $DUMPVARS : 6 Logical $dumpvar/dpi/ccall were mapped on 6 physical High Speed packets.
+#   step $DUMPVARS : $dumpvar/dpi/ccall processing done: to dump 137 signals, 6 logical groups were mapped on 6 physical groups.
+#   step $DUMPVARS : 0 Logical $dumpvar/dpi/ccall were mapped on 0 physical Qiwc packets.
+#   step $DUMPVARS : $dumpvar/dpi/ccall processing done: to dump 0 signals, 0 logical groups were mapped on 0 physical groups.
+#   step $DUMPVARS : 0 Logical $dumpvar/dpi/ccall were mapped on 0 physical Toggle Activity packets.
+#   step $DUMPVARS : $dumpvar/dpi/ccall processing done: to dump 0 signals, 0 logical groups were mapped on 0 physical groups.
+#   step $DUMPVARS : $dumpvar/dpi/ccall processing done: to dump 0 signals, 0 logical groups were mapped on 0 physical groups.
+#   step $DUMPVARS : 0 attributes cleaned-up.
+end_quiet_timer {zstatistics_opt}
+report_fwc
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   8 |                   0 |                   0 |                   0 |                   0 || $DUMPVARS
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+begin_quiet_timer {post_process_opt}
+post_process_fpga -virtex_type {v7} -chip_index {0} -wc_version {gen2}
+#   step ISEWA_rename_mod : Module 'design' renamed to 'zsplit_lib_part_SLR0_design' for Vivado.
+#   step ISEWA_rename_mod : Module 'design' renamed to 'zsplit_lib_part_NoSLR_design' for Vivado.
+#   step ISEWA_rename_mod : Module 'design' renamed to 'zsplit_lib_part_SLR3_design' for Vivado.
+#   step ISEWA_rename_mod : Module 'U0_M0_F0_core' renamed to 'zsplit_lib_part_NoSLR_zsplit_lib_UNIT0.MOD0.F0_U0_M0_F0_core' for Vivado.
+#   step ISEWA_rename_mod : Module 'zpad_bus_0' renamed to 'zsplit_lib_part_NoSLR_zxlpar_lib_zpad_bus_0' for Vivado.
+end_quiet_timer {post_process_opt}
+begin_quiet_timer {lock_socket}
+section {3.11} {1} {LOCK_SOCKET}
+   ##############################################
+   # 3.11 LOCK_SOCKET
+   ##############################################
+lock_socket {7vlx2000tff1925} {false}
+#   step XDC GENERATOR : Writing XDC file 'design_zlcr.zdc.incr_tmp' with 4 constraints
+#   step XDC GENERATOR : constraints have changed - regenerate XDC file 'design_zlcr.zdc'
+end_quiet_timer {lock_socket}
+section {5} {0} {GENERATION}
+##############################################
+# 5 GENERATION
+##############################################
+begin_quiet_timer {generation}
+section {6} {0} {CHECK AND FIX NETLIST}
+##############################################
+# 6 CHECK AND FIX NETLIST
+##############################################
+check_and_fix_netlist
+#   step CHECK_AND_FIX_NETLIST : Performing check and fix for netlist 'zmerge'.
+#   step RESOLVE_NAME_CONFLICTS : 0 ports have been renamed.
+clean_netlist
+#   step clean_netlist : cleaning netlist 'zmerge'
+is_hydra_enabled
+multiquify
+end_quiet_timer {generation}
+begin_quiet_timer {instr_fw_zdc}
+instr_fw_zdc {vivado} {} {}
+#   step XDC GENERATOR : Writing XDC file 'design_fw.zdc' with 209 constraints
+end_quiet_timer {instr_fw_zdc}
+begin_quiet_timer {zpar_comp_real_hier}
+insert_top_core_to_DB {U0_M0_F0.U0_M0_F0_core}
+end_quiet_timer {zpar_comp_real_hier}
+populateZOptDB -znetgen_mode {zpar} -mode {off} -abcopt_env {} -parff_env {} -octane_env {}
+begin_quiet_timer {design_db}
+add_bufg_constraints
+#   step XDC GENERATOR : Writing XDC file 'design_bufg.zdc' with 14 constraints
+add_ice_constraints -isOrionpp {0}
+write_znf {./fpga_reports/zNetgen/design_db.znf} -keep_unconnected
+#   step SERIALIZE : writing netlist 'zmerge' into znl file './fpga_reports/zNetgen/design_db.znf'
+#   step SERIALIZE : #bytes in: 3784715, #bytes out: 757045, compression ratio: 4.999326
+end_quiet_timer {design_db}
+section {7} {0} {VIVADO WA}
+##############################################
+# 7 VIVADO WA
+##############################################
+begin_quiet_timer {vivado_wa}
+aggregate_topgnd -gnd_fanout {500}
+#   step aggregate_topgnd : # info : Found 536465 design IO ports on GND. 1073 new GND driver created
+replace_inv_with_lut1
+replace_buf_with_lut1
+end_quiet_timer {vivado_wa}
+section {7} {1} {CLEAN PROPERTIES}
+   ##############################################
+   # 7 CLEAN PROPERTIES
+   ##############################################
+begin_quiet_timer {clean_properties}
+clean_properties
+end_quiet_timer {clean_properties}
+section {8} {0} {STATS AND INFOS}
+##############################################
+# 8 STATS AND INFOS
+##############################################
+begin_quiet_timer {stats_and_infos}
+section {.0} {1} {BLACKBOXES}
+   ##############################################
+   # .0 BLACKBOXES
+   ##############################################
+begin_quiet_timer {show_black_box}
+show_black_box
+#   step show_black_box : Searching blackbox in module 'design' :
+#   step show_black_box : Number of blackbox found : 0.
+end_quiet_timer {show_black_box}
+section {8.1} {2} { STATS}
+      ##############################################
+      # 8.1  STATS
+      ##############################################
+fpga_stats -zstatistics
+#   step FPGA STATS : xilinx primitives
+#   step FPGA STATS :         1166 gnd
+#   step FPGA STATS :          488 fd
+#   step FPGA STATS :          400 lut2
+#   step FPGA STATS :          373 ld
+#   step FPGA STATS :          218 fdc
+#   step FPGA STATS :          203 muxcy
+#   step FPGA STATS :          199 fdre
+#   step FPGA STATS :          195 fde
+#   step FPGA STATS :          180 lut4
+#   step FPGA STATS :          178 lut3
+#   step FPGA STATS :          172 lut6
+#   step FPGA STATS :          151 lut1
+#   step FPGA STATS :          123 fdce
+#   step FPGA STATS :          103 xorcy
+#   step FPGA STATS :           84 lut5
+#   step FPGA STATS :           73 vcc
+#   step FPGA STATS :           68 fds
+#   step FPGA STATS :           65 fdp
+#   step FPGA STATS :           53 obuf
+#   step FPGA STATS :           46 fdse
+#   step FPGA STATS :           41 fd_1
+#   step FPGA STATS :           40 carry4
+#   step FPGA STATS :           32 or3
+#   step FPGA STATS :           31 and2
+#   step FPGA STATS :           25 fdr
+#   step FPGA STATS :           18 ram256x1s
+#   step FPGA STATS :           17 ibufds
+#   step FPGA STATS :           16 iobuf
+#   step FPGA STATS :           13 obufds
+#   step FPGA STATS :           13 fdpe
+#   step FPGA STATS :           11 bufgctrl
+#   step FPGA STATS :            7 oserdese2
+#   step FPGA STATS :            7 muxf7
+#   step FPGA STATS :            7 iserdese2
+#   step FPGA STATS :            7 idelaye2
+#   step FPGA STATS :            5 xor2
+#   step FPGA STATS :            5 iodelay
+#   step FPGA STATS :            4 mmcme2_base
+#   step FPGA STATS :            4 bufg
+#   step FPGA STATS :            3 oddr
+#   step FPGA STATS :            2 ramb36_exp
+#   step FPGA STATS :            2 muxcy_l
+#   step FPGA STATS :            2 fdrs
+#   step FPGA STATS :            1 sysmon
+#   step FPGA STATS :            1 startupe2
+#   step FPGA STATS :            1 muxf8
+#   step FPGA STATS :            1 ld_1
+#   step FPGA STATS :            1 idelayctrl
+#   step FPGA STATS :            1 capturee2
+#   step FPGA STATS :            1 bufr
+#   step FPGA STATS :            1 bufio
+#   step FPGA STATS : hierachic instances
+#   step FPGA STATS : 
+#   step FPGA STATS : This fpga has an interface of 1 wires (0 recv_out, recv_out_fast, recv_out_direct and 1 send_in, send_in_fast, send_in_direct)
+#   step FPGA STATS : 
+#   step FPGA STATS : +---------------------------+-----------+-----------+--------+--------+--------+--------+---------+-----+-----+-----+-----+-----+-----+-----+-----+------+------+
+#   step FPGA STATS : |                         1 |         2 |         3 |      4 |      5 |      6 |      7 |       8 |   9 |  10 |  11 |  12 |  13 |  14 |  15 |  16 |   17 |   18 |
+#   step FPGA STATS : +---------------------------+-----------+-----------+--------+--------+--------+--------+---------+-----+-----+-----+-----+-----+-----+-----+-----+------+------+
+#   step FPGA STATS : |  socket_00_00_00_08(LVDS) | U0/M0/F00 | U0/M0/F08 |      0 |      1 |      0 |      0 |    1/24 |   0 |   1 |   0 |   0 |   1 |   1 |   1 |   1 |    0 |    0 |
+#   step FPGA STATS : +---------------------------+-----------+-----------+--------+--------+--------+--------+---------+-----+-----+-----+-----+-----+-----+-----+-----+------+------+
+#   step FPGA STATS : 1  => socket name
+#   step FPGA STATS : 2  => fpga from
+#   step FPGA STATS : 3  => fpga to
+#   step FPGA STATS : 4  => design wire out with xdr
+#   step FPGA STATS : 5  => design wire out with sdr
+#   step FPGA STATS : 6  => design wire in with xdr
+#   step FPGA STATS : 7  => design wire in with sdr
+#   step FPGA STATS : 8  => physical wire used/physical wire total
+#   step FPGA STATS : 9  => physical wire used out with xdr
+#   step FPGA STATS : 10  => physical wire used out with sdr
+#   step FPGA STATS : 11  => physical wire used in with xdr
+#   step FPGA STATS : 12  => physical wire used in with sdr
+#   step FPGA STATS : 13  => min xdr out
+#   step FPGA STATS : 14 => max xdr out
+#   step FPGA STATS : 15 => min xdr in
+#   step FPGA STATS : 16 => max xdr in
+#   step FPGA STATS : 17 => Available slot out
+#   step FPGA STATS : 18 => Available slot in
+#   step FPGA STATS : 
+#   step FPGA STATS : Number of Flip Flop Or Latches controls set (ce, s, r, pre, clr, ge) : 101 
+#   step FPGA STATS : 
+#   step FPGA STATS : Number of Synchronous Elements controls set (ce, s, r, pre, ge, clr, we, clk) : 154 
+#   step FPGA STATS : 
+#   step FPGA STATS : Number of Synchronous Elements controls set with Ise approximation used (ce, s, r, pre, clr. clk) : 66 
+#   step FPGA STATS : 
+section {8.1} {2} {SUBSYSTEM STATS}
+      ##############################################
+      # 8.1 SUBSYSTEM STATS
+      ##############################################
+stat -subsystems
+end_quiet_timer {stats_and_infos}
+begin_quiet_timer {inter_die_tdm}
+inter_die_tdm
+#   step NtgTclTDMRegMarking : Warning: cannot find design/*/U0_M0_F0, exit.
+#   step NtgTclTDMRegMarking : Warning: cannot find design/*/U0_M0_F0/U0_M0_F0_core, exit.
+#   step NtgTclTDMRegMarking : Warning: cannot find design/*/U0_M0_F0/U0_M0_F0_core, exit.
+#   step NtgTclTDMRegMarking : Setting inter-die TDM properties ZDEL(365 new, 0 existed) and DUT(869 new, 0 existed) on registers.
+#   step NtgTclTDMRegMarking : inserted 1234 inter-die TDM properties in total.
+
+end_quiet_timer {inter_die_tdm}
+begin_quiet_timer {insert_falsepath_feedthroughs}
+insert_falsepath_feedthroughs
+#   step FalsePathFeedThroughInserter : inserted 0 false path feedthrough(s).
+end_quiet_timer {insert_falsepath_feedthroughs}
+begin_quiet_timer {filterReg}
+mark_filter_registers
+#   step NtgTclFilterRegMarking : Setting 0 filter register for replication among 3 total filter registers.
+#   step NtgTclFilterRegMarking : Setting 0 LUT1 for replication in Aux --> LUT1(INV) --> LD path.
+end_quiet_timer {filterReg}
+begin_quiet_timer {design.edf}
+begin_quiet_timer {smart_metrics_after_DAP}
+report_netlist_metrics -file {fpga_data.info} -prefix {zNetgen_after_DAP} -app
+#   step NtgTclReportNetlistMetric : The netlist resource usage has been written into fpga_data.info with mode:zNetgen_after_DAP.
+end_quiet_timer {smart_metrics_after_DAP}
+sanity_check -reportLimit {10}
+#   step NtgTclTDMRegMarking : Sanity check PASS, no duplicated attribute found on primitives.
+write_xl {design.edf.gz} {design}
+#   step INSTPORTATTR : EDIF driver: Duplicated 29 instance port attributes
+#   step EDIF GENERATOR : writing netlist 'clean_properties' into EDIF file 'design.edf.gz'
+end_quiet_timer {design.edf}
+begin_quiet_timer {zebu_filter}
+end_quiet_timer {zebu_filter}
+begin_quiet_timer {adaptive_znetgen}
+generate_design_info {V7}
+end_quiet_timer {adaptive_znetgen}
+begin_quiet_timer {extract_information}
+extract_fpga_timing_informations -stop_timing_attribute_file {vivadoStopTiming.tcl} -xdl_name_file {xdlRename.tcl} -isAssembled {0}
+#   step extract : Extract ZEBU_VIVADO_STOP_TIMING attributes
+### warning in Extract vivado stop timing informations [CCC0521W] : Port 'I' on Instance 'design.part_SLR0.U0_M0_F0.U0_M0_F0_core.u_stb.inv4' cannot be found, please check the netlist for more informations.
+### warning in Extract vivado stop timing informations [CCC0521W] : Port 'I' on Instance 'design.part_SLR0.U0_M0_F0.U0_M0_F0_core.u_stb.inv4' cannot be found, please check the netlist for more informations.
+#   step xdlExtract : Extract XDL Names
+#   step Update paths : Successfully renamed file 'zFpga_timing_paths.tcl' as 'zFpga_timing_paths.tcl_original'
+#   step Update paths : Write file 'zFpga_timing_paths.tcl'
+#   step SANITY CHECK : Starting
+#   step SANITY CHECK : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:7.02       fm:166257 m     vm:2143 m       vm:+0 m     um:1778 m       um:+0 m
+end_quiet_timer {extract_information}
+end_zmetrics
+end_quiet_timer {znetgen_fpga}
+mudb_editor -save
+--> 4762 advanced commands were hidden.
+
+#   exec summary :    9 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m51.25s, sys 0m1.305s
+#   exec summary : Total memory: 2194640 kB - RSS memory: 1820872 kB - Data memory: 1826092 kB
+#   exec summary : Successful execution
+
+# end time is Sat Apr 20 13:26:51 2024

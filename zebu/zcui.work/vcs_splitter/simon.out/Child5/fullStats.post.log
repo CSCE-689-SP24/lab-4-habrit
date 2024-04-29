@@ -1,0 +1,22 @@
+
+Processing dut
+before constantPropagate: 0u 0s 1099e 601572kB
+after constantPropagate: 0u 0s 1099e 601572kB
+before removeUnusedSignals circuit: 0u 0s 1099e 601572kB
+after removeUnusedSignals circuit: 0u 0s 1099e 601572kB
+before optimize latch enable: 0u 0s 1099e 601572kB
+after optimize latch enable: 0u 0s 1099e 601572kB
+before removeReadAfterMissingWrite: 0u 0s 1099e 601572kB
+after removeReadAfterMissingWrite: 0u 0s 1099e 601572kB
+before undoDimensionalSplitOfMemories: 0u 0s 1099e 601572kB
+after undoDimensionalSplitOfMemories: 0u 0s 1099e 601572kB
+before extractMemories: 0u 0s 1099e 601572kB
+after extractMemories: 0u 0s 1099e 601572kB
+before extractHolds: 0u 0s 1099e 601572kB
+after extractHolds: 0u 0s 1099e 601572kB
+before simplifyAdders: 0u 0s 1099e 601572kB
+after simplifyAdders: 0u 0s 1099e 601572kB
+before reportUnresolvedType: 0u 0s 1099e 601572kB
+after reportUnresolvedType: 0u 0s 1099e 601572kB
+before dumpingPerModuleScm : 0u 0s 1099e 601572kB
+after dumpingPerModuleScm : 0u 0s 1099e 601572kB

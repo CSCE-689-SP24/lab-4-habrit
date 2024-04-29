@@ -38,7 +38,11 @@ if {[file exists $dir] && [file isdirectory $dir]} {
 
 # TODO: Connect to the ZeBu emulator with zRci output directory name ​​runtime_output
 
+start_zebu runtime_output
+
 # TODO: Initialize the content of the ROM with the data in ../memories/rom.hex
+
+memory -load top.u_stb.u_rom.mem -file ../memories/rom.hex
 
 #----------------------------------------
 # Section for SVAs only - activation
@@ -57,11 +61,17 @@ sva -enable -report
 #----------------------------------------
 # Section for DPI only - activation
 #----------------------------------------
-# TODO: Load the DPI dynamic library libDPI.so 
+# TODO: Load the DPI dynamic library libDPI.so
+
+ccall -load ../libDPI/libDPI.so
 
 # TODO: Set the sampling clock to top.u_stb.clk0
 
+ccall -sampling_clock -expression "top.u_stb.clk0"
+
 # TODO: Enable DPI calls
+
+ccall -enable
 
 #------------END OF SECTION for DPI ---------------
 
@@ -104,6 +114,15 @@ puts "# Resetting design during 10 clock cycles"
 
 puts "# Running 1000 cycles"
 
+force top.u_stb.rstn 0 -freeze
+
+run 10
+
+force top.u_stb.rstn 1 -freeze
+
+run 1000
+
+
 # Displaying signals value in decimal format
 puts "# Number of errors detected:"
 puts "# on input : [get top.u_stb.cnt_error_in -radix dec]"
@@ -111,6 +130,8 @@ puts "# on output: [get top.u_stb.cnt_error_out -radix dec]"
 
 puts "# Storing ram memory content to memdump.hex file"
 # TODO: Dump the content of the RAM to a memdump.hex text file
+
+memory -store top.u_stb.u_ram.mem -file memdump.hex
 
 
 puts "#############################################"
@@ -133,3 +154,4 @@ dump -close -fid $fwc_fid
 # TODO: Closing Emulation - Last command of script, for all scenarios
 #----------------------------------------------------------------
 
+exit

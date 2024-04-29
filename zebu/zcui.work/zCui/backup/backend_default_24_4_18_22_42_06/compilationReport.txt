@@ -1,0 +1,179 @@
+Compile Profile Report
+BETA version: results may not be fully accurate
+
+____________________________________________________________________________________________________
+Table Of Contents
+
+1 Compilation Summary
+2 Compile time with delay (slot and grid)
+3 Compile time without delay
+4 Main Compilation Stages
+5 Hosts
+6 Memory usage
+7 Job Queue Memory Analysis
+8 Grid Delay
+9 Grid Delay Per Job Queue
+
+____________________________________________________________________________________________________
+Compilation Summary
+
+Last session wall clock times:
+    FE     : 0s
+    BE     : 475971h 42min 26s
+    Total  : 475971h 42min 26s
+
+All sessions cumulative compile times:
+    without delay  : 2s
+    with delay*    : 12s
+
+*including slot and grid delays, difference with total wall clock time could be NFS wait or internal flow handling delays
+
+
+   Phase       (%)     Slot delay   Grid delay   Elapsed time              Host               Total # of jobs fired   Max memory consumption
+------------ -------- ------------ ------------ -------------- ----------------------------- ----------------------- -----------------------
+VCS            50.00     00:00:00     00:00:02       00:00:02   csce-quinn-s1.engr.tamu.edu                       1                  86.36MB
+Other tasks    50.00     00:00:00     00:00:06       00:00:02                             -                       3                        -
+Total         100.00     00:00:00     00:00:08       00:00:04                             -                       4                        -
+
+Columns:
+ - Phase                  : compilation phase
+ - (%)                    : percentage of contribution to the overall compile time
+ - Slot delay             : time waiting for a slot on the grid
+ - Grid delay             : time between the task is spawed and the task is launched
+ - Elapsed time           : contribution to the overall compile time
+ - Host                   : host where the task was launched (only for tasks external to zCui)
+ - Total # of jobs fired  : number of jobs with same phase fired
+ - Max memory consumption : job in the phase with max memory taken
+
+____________________________________________________________________________________________________
+Compile time with delay (slot and grid)
+
+
+                Task                    (%)     Slot delay   Grid delay   Elapsed time   Spawn Time   Finish Time              Host            
+------------------------------------- -------- ------------ ------------ -------------- ------------ ------------- ----------------------------
+Check Front-End Binaries Version         0.00     00:00:00     00:00:03       00:00:00     00:00:00      00:00:03   csce-quinn-s1.engr.tamu.edu
+Target Configuration                     0.00     00:00:00     00:00:02       00:00:00     00:00:03      00:00:05   csce-quinn-s1.engr.tamu.edu
+Analyze Target Configuration Results    25.00     00:00:00     00:00:00       00:00:01     00:00:05      00:00:06                              
+Build Fs Macro Script                    0.00     00:00:00     00:00:00       00:00:00     00:00:08      00:00:08                              
+Build Fs Macro Library                  25.00     00:00:00     00:00:01       00:00:01     00:00:10      00:00:12   csce-quinn-s1.engr.tamu.edu
+VCS                                     50.00     00:00:00     00:00:02       00:00:02     00:00:12      00:00:16   csce-quinn-s1.engr.tamu.edu
+Total time                             100.00     00:00:00     00:00:08       00:00:04            -             -   -                          
+
+Columns:
+ - Task                   : task label
+ - (%)                    : percentage of contribution to the overall compile time
+ - Slot delay             : time waiting for a slot on the grid
+ - Grid delay             : time between the task is spawed and the task is launched
+ - Elapsed time           : contribution to the overall compile time
+ - Spawn time             : time spawning on the grid, taking the spawn time of the first task as reference
+ - Finish time            : time finishing, taking the spawn time of the first task as reference
+ - Host                   : host where the task was launched (only for tasks external to zCui)
+
+
+____________________________________________________________________________________________________
+Compile time without delay
+
+
+                Task                    (%)     Elapsed time              Host            
+------------------------------------- -------- -------------- ----------------------------
+Check Front-End Binaries Version         0.00       00:00:00   csce-quinn-s1.engr.tamu.edu
+Target Configuration                     0.00       00:00:00   csce-quinn-s1.engr.tamu.edu
+Analyze Target Configuration Results    50.00       00:00:01                              
+Build Fs Macro Script                    0.00       00:00:00                              
+Build Fs Macro Library                  50.00       00:00:01   csce-quinn-s1.engr.tamu.edu
+Total                                  100.00       00:00:02   -                          
+
+Columns:
+ - Task                   : task label
+ - (%)                    : percentage of contribution to the overall compile time
+ - Elapsed time           : contribution to the overall compile time
+ - Host                   : host where the task was launched (only for tasks external to zCui)
+
+
+
+____________________________________________________________________________________________________
+Main Compilation Stages
+
+
+Front End Stages Timing
+
+
+        Task           Elapsed time   Execution time
+--------------------- -------------- ---------------
+Launch VCS                 00:00:04         00:00:02
+Elaboration Analyzer       00:00:00         00:00:00
+Synthesis                  00:00:00         00:00:00
+Back end Entry             00:00:00         00:00:00
+
+Columns :
+ - elapsed time   : the time for the task being spawed and released
+ - execution time : the time for the task being executed
+
+Back-end Stages
+
+Back End Stages Timing for backend_default
+
+            Task               Elapsed time   Execution time
+----------------------------- -------------- ---------------
+Build System                       00:00:00         00:00:00
+Create Timing DB                   00:00:00         00:00:00
+Create Timing DB (post FPGA)       00:00:00         00:00:00
+Place and Route System             00:00:00         00:00:00
+
+Columns :
+ - elapsed time   : the time for the task being spawed and released
+ - execution time : the time for the task being executed
+
+
+____________________________________________________________________________________________________
+Hosts
+
+
+       Machine name                           Model name                   CPU (MHz)   Cache size   CPU cores   Bogomips             Address sizes              Percent of CPU
+---------------------------- -------------------------------------------- ----------- ------------ ----------- ---------- ------------------------------------ ---------------
+csce-quinn-s1.engr.tamu.edu    Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz    2783.190     25600 KB          10    4600.38    46 bits physical, 48 bits virtual              84%
+
+
+
+____________________________________________________________________________________________________
+Memory usage
+
+
+            Task                Maximum resident set size              Task Label              Job Queue
+------------------------------ --------------------------- ---------------------------------- ----------
+BE_Version_Checker                               245.86MB   Check Back-End Binaries Version    ZebuLocal
+vcs_splitter_VCS_Task_Builder                     86.36MB   Launch VCS                         Zebu     
+Vcs_Version_Checker                               53.58MB   Check Vcs Binaries Version         ZebuLocal
+design_Fs_Macro                                   49.33MB   Build Fs Macro Library             Zebu     
+Target_Config                                     38.15MB   Target Configuration               Zebu     
+FE_Version_Checker                                15.29MB   Check Front-End Binaries Version   ZebuLocal
+
+
+
+____________________________________________________________________________________________________
+Job Queue Memory Analysis
+
+
+Job queue   Maximum RSS : max value   Maximum RSS : average value
+---------- ------------------------- ----------------------------
+Zebu                        86.36MB                       57.95MB
+ZebuLocal                  245.86MB                      104.91MB
+
+
+
+____________________________________________________________________________________________________
+Grid Delay
+
+There are no tasks with grid delay > 30s
+
+
+____________________________________________________________________________________________________
+Grid Delay Per Job Queue
+
+
+Job queue   Wait(max)   Wait(average)
+---------- ----------- --------------
+Zebu         00:00:02        00:00:01
+ZebuLocal    00:00:03        00:00:02
+
+

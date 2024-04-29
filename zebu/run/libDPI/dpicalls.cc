@@ -12,9 +12,37 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-
-
-extern "C" void fifo_usage_spy_notify( )
+//readenable, write enable, q_o and d_i are the arguments passed to the function
+extern "C" void fifo_usage_spy_notify(int readenable, int writeenable, int q_o, int d_i)
 {
- // TODO
+    //If readenable is 1, then pass q_o into file called dataout.txt
+    if(readenable == 1)
+    {
+        FILE *fp;
+        fp = fopen("dataout.txt", "w");
+        fprintf(fp, "%d\n", q_o);
+        fclose(fp);
+    }
+    //If writeenable is 1, then pass d_i into file called datain.txt
+    if(writeenable == 1)
+    {
+        FILE *fp;
+        fp = fopen("datain.txt", "w");
+        fprintf(fp, "%d\n", d_i);
+        fclose(fp);
+    }
+
 }
+{
+//Function needs to read the value of read enable and write enable.
+
+
+
+}
+
+
+
+
+
+
+

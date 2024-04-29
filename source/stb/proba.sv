@@ -22,6 +22,8 @@ module proba #(
   assign mask = 10'b00_0000_1001;
 //  assign mask = 20'b0000_0000_0000_0000_1001;
 
+
+
   always @(posedge clk or negedge rstn)
     if (!rstn)
       sht <= INIT;

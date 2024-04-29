@@ -1,0 +1,337 @@
+Compile Profile Report
+BETA version: results may not be fully accurate
+
+____________________________________________________________________________________________________
+Table Of Contents
+
+1 Compilation Summary
+2 Compile time with delay (slot and grid)
+3 Compile time without delay
+4 Main Compilation Stages
+5 Hosts
+6 Memory usage
+7 Job Queue Memory Analysis
+8 Grid Delay
+9 Grid Delay Per Job Queue
+
+____________________________________________________________________________________________________
+Compilation Summary
+
+Last session wall clock times:
+    FE     : 30s
+    BE     : 18min 49s
+    Total  : 19min 19s
+
+All sessions cumulative compile times:
+    without delay  : 8min 12s
+    with delay*    : 8min 28s
+
+*including slot and grid delays, difference with total wall clock time could be NFS wait or internal flow handling delays
+
+
+   Phase       (%)     Slot delay   Grid delay   Elapsed time              Host               Total # of jobs fired   Max memory consumption
+------------ -------- ------------ ------------ -------------- ----------------------------- ----------------------- -----------------------
+VCS             1.22     00:00:00     00:00:02       00:00:06   csce-quinn-s1.engr.tamu.edu                       1                 149.97MB
+zTopBuild       1.02     00:00:00     00:00:01       00:00:05   csce-quinn-s1.engr.tamu.edu                       1                 302.96MB
+zCoreBuild      1.83     00:00:00     00:00:01       00:00:09   csce-quinn-s1.engr.tamu.edu                       1                 477.66MB
+zPar            2.24     00:00:00     00:00:00       00:00:11                                                     0                       0B
+Other tasks     1.63     00:00:00     00:00:11       00:00:08                             -                       8                        -
+Total         100.00     00:00:00     00:00:17       00:08:11                             -                      14                        -
+
+Columns:
+ - Phase                  : compilation phase
+ - (%)                    : percentage of contribution to the overall compile time
+ - Slot delay             : time waiting for a slot on the grid
+ - Grid delay             : time between the task is spawed and the task is launched
+ - Elapsed time           : contribution to the overall compile time
+ - Host                   : host where the task was launched (only for tasks external to zCui)
+ - Total # of jobs fired  : number of jobs with same phase fired
+ - Max memory consumption : job in the phase with max memory taken
+
+____________________________________________________________________________________________________
+Compile time with delay (slot and grid)
+
+
+                  Task                      (%)     Slot delay   Grid delay   Elapsed time   Spawn Time   Finish Time              Host            
+----------------------------------------- -------- ------------ ------------ -------------- ------------ ------------- ----------------------------
+Check Front-End Binaries Version             0.00     00:00:00     00:00:02       00:00:00     00:00:00      00:00:02   csce-quinn-s1.engr.tamu.edu
+Target Configuration                         0.00     00:00:00     00:00:02       00:00:00     00:00:02      00:00:04   csce-quinn-s1.engr.tamu.edu
+Analyze Target Configuration Results         0.00     00:00:00     00:00:00       00:00:00     00:00:04      00:00:04                              
+Build Fs Macro Script                        0.00     00:00:00     00:00:00       00:00:00     00:00:06      00:00:06                              
+Build Fs Macro Library                       0.00     00:00:00     00:00:00       00:00:00     00:00:00      00:00:00                              
+VCS                                          1.22     00:00:00     00:00:02       00:00:06     00:00:10      00:00:18   csce-quinn-s1.engr.tamu.edu
+Analyze VCS Results                          0.20     00:00:00     00:00:00       00:00:01     00:00:18      00:00:19                              
+Synthesize no need to be redone              0.00     00:00:00     00:00:00       00:00:00     00:00:00      00:00:00                              
+design_Default_RTL_Group_stable_Analyzer     0.00     00:00:00     00:00:00       00:00:00     00:00:24      00:00:24                              
+Memory ram_zMem                              0.00     00:00:00     00:00:00       00:00:00     00:00:00      00:00:00                              
+Prepare Backend Flow                         0.00     00:00:00     00:00:00       00:00:00     00:00:28      00:00:28                              
+Make RTL DB indexes                          0.00     00:00:00     00:00:02       00:00:00     00:00:30      00:00:32   csce-quinn-s1.engr.tamu.edu
+Make RTL DB link                             0.00     00:00:00     00:00:02       00:00:00     00:00:32      00:00:34   csce-quinn-s1.engr.tamu.edu
+zTopBuild                                    1.02     00:00:00     00:00:01       00:00:05     00:00:35      00:00:41   csce-quinn-s1.engr.tamu.edu
+Analyze System Building Results              0.00     00:00:00     00:00:00       00:00:00     00:00:41      00:00:41                              
+Build zCore Part_0                           1.83     00:00:00     00:00:01       00:00:09     00:00:43      00:00:53   csce-quinn-s1.engr.tamu.edu
+Analyze zCore Building Results Part_0        0.00     00:00:00     00:00:00       00:00:00     00:00:53      00:00:53                              
+Post ZCore Compilation Join                  0.20     00:00:00     00:00:00       00:00:01     00:00:55      00:00:56                              
+Pre PAR Script Builder                       0.00     00:00:00     00:00:00       00:00:00     00:00:58      00:00:58                              
+zPar                                         2.24     00:00:00     00:00:00       00:00:11     00:00:00      00:00:00                              
+Analyze zPar result                          0.00     00:00:00     00:00:00       00:00:00     00:00:58      00:00:58                              
+U0_M0_F00 Cleaning All PaRs                  1.22     00:00:00     00:00:01       00:00:06     00:01:03      00:01:10   csce-quinn-s1.engr.tamu.edu
+U0_M0_F00 Original                          92.06     00:00:00     00:00:02       00:07:32     00:01:12      00:08:46   csce-quinn-s1.engr.tamu.edu
+Create Global DB                             0.00     00:00:00     00:00:02       00:00:00     00:19:15      00:19:17   csce-quinn-s1.engr.tamu.edu
+Total time                                 100.00     00:00:00     00:00:17       00:08:11            -             -   -                          
+
+Columns:
+ - Task                   : task label
+ - (%)                    : percentage of contribution to the overall compile time
+ - Slot delay             : time waiting for a slot on the grid
+ - Grid delay             : time between the task is spawed and the task is launched
+ - Elapsed time           : contribution to the overall compile time
+ - Spawn time             : time spawning on the grid, taking the spawn time of the first task as reference
+ - Finish time            : time finishing, taking the spawn time of the first task as reference
+ - Host                   : host where the task was launched (only for tasks external to zCui)
+
+
+____________________________________________________________________________________________________
+Compile time without delay
+
+
+                  Task                      (%)     Elapsed time              Host            
+----------------------------------------- -------- -------------- ----------------------------
+Check Back-End Binaries Version              0.20       00:00:01   csce-quinn-s1.engr.tamu.edu
+Target Configuration                         0.00       00:00:00   csce-quinn-s1.engr.tamu.edu
+Analyze Target Configuration Results         0.00       00:00:00                              
+Build Fs Macro Script                        0.00       00:00:00                              
+Build Fs Macro Library                       0.00       00:00:00                              
+VCS                                          1.22       00:00:06   csce-quinn-s1.engr.tamu.edu
+Analyze VCS Results                          0.20       00:00:01                              
+Synthesize no need to be redone              0.00       00:00:00                              
+design_Default_RTL_Group_stable_Analyzer     0.00       00:00:00                              
+Memory ram_zMem                              0.00       00:00:00                              
+Prepare Backend Flow                         0.00       00:00:00                              
+Make RTL DB indexes                          0.00       00:00:00   csce-quinn-s1.engr.tamu.edu
+Make RTL DB link                             0.00       00:00:00   csce-quinn-s1.engr.tamu.edu
+zTopBuild                                    1.02       00:00:05   csce-quinn-s1.engr.tamu.edu
+Analyze System Building Results              0.00       00:00:00                              
+Build zCore Part_0                           1.83       00:00:09   csce-quinn-s1.engr.tamu.edu
+Analyze zCore Building Results Part_0        0.00       00:00:00                              
+Post ZCore Compilation Join                  0.20       00:00:01                              
+Pre PAR Script Builder                       0.00       00:00:00                              
+zPar                                         2.24       00:00:11                              
+Analyze zPar result                          0.00       00:00:00                              
+U0_M0_F00 Cleaning All PaRs                  1.22       00:00:06   csce-quinn-s1.engr.tamu.edu
+U0_M0_F00 Original                          91.87       00:07:32   csce-quinn-s1.engr.tamu.edu
+Create Global DB                             0.00       00:00:00   csce-quinn-s1.engr.tamu.edu
+Total                                      100.00       00:08:12   -                          
+
+Columns:
+ - Task                   : task label
+ - (%)                    : percentage of contribution to the overall compile time
+ - Elapsed time           : contribution to the overall compile time
+ - Host                   : host where the task was launched (only for tasks external to zCui)
+
+
+
+____________________________________________________________________________________________________
+Main Compilation Stages
+
+
+Front End Stages Timing
+
+
+        Task           Elapsed time   Execution time
+--------------------- -------------- ---------------
+Launch VCS                 00:00:08         00:00:06
+Elaboration Analyzer       00:00:01         00:00:01
+Launch Verdi               00:00:02         00:00:00
+Synthesis                  00:00:02         00:00:01
+Back end Entry             00:00:02         00:00:00
+
+Columns :
+ - elapsed time   : the time for the task being spawed and released
+ - execution time : the time for the task being executed
+
+Top 10 Synthesis Bundles
+
+
+  Duration      Waiting for Slot Duration   Total Duration
+-------------- --------------------------- ---------------
+Bundle 0 (1s)   Bundle 0 (1s)               Bundle 0 (2s) 
+
+
+Back-end Stages
+
+Back End Stages Timing for backend_default
+
+            Task               Elapsed time   Execution time
+----------------------------- -------------- ---------------
+Build Accessibility Graphs         00:00:02         00:00:00
+Build System                       00:00:06         00:00:05
+Build zCore Part_0                 00:00:10         00:00:09
+Convert Netlist                    00:00:02         00:00:01
+Create Global DB                   00:00:02         00:00:00
+Create Timing DB                   00:00:04         00:00:02
+Create Timing DB (SDF Mode)        00:00:00         00:00:00
+Create Timing DB (post FPGA)       00:00:00         00:00:00
+Place and Route System             00:00:00         00:00:00
+Simulate Graphs                    00:00:02         00:00:00
+
+Columns :
+ - elapsed time   : the time for the task being spawed and released
+ - execution time : the time for the task being executed
+
+Top 5 zCore
+
+
+       Duration           Waiting for Slot Duration        Total Duration     
+------------------------ --------------------------- -------------------------
+Build zCore Part_0 (9s)   Build zCore Part_0 (1s)     Build zCore Part_0 (10s)
+
+
+Top 10 FPGAs
+
+
+          Duration              Waiting for Slot Duration          Total Duration        
+------------------------------ --------------------------- ------------------------------
+U0_M0_F00 Original (7min 32s)   U0_M0_F00 L10 (2min 20s)    U0_M0_F00 Original (7min 34s)
+U0_M0_F00 L12 (6min 05s)        U0_M0_IF L1 (2min 18s)      U0_M0_F00 L12 (6min 07s)     
+U0_M0_F00 L6 (5min 52s)         U0_M0_IF L0 (2min 02s)      U0_M0_F00 L6 (5min 54s)      
+U0_M0_F00 L1 (5min 49s)         U0_M0_F00 L11 (1min 03s)    U0_M0_F00 L1 (5min 51s)      
+U0_M0_F00 L13 (5min 48s)        U0_M0_F00 L15 (1min 00s)    U0_M0_F00 L13 (5min 50s)     
+U0_M0_F00 L5 (5min 47s)         U0_M0_IF L11 (1min 00s)     U0_M0_F00 L5 (5min 48s)      
+U0_M0_F00 L7 (5min 47s)         U0_M0_F00 L9 (54s)          U0_M0_F00 L4 (5min 48s)      
+U0_M0_F00 L11 (5min 46s)        U0_M0_IF L10 (46s)          U0_M0_F00 L8 (5min 48s)      
+U0_M0_F00 L4 (5min 45s)         U0_M0_F00 L12 (10s)         U0_M0_F00 L11 (5min 48s)     
+U0_M0_F00 L8 (5min 45s)         U0_M0_IF L9 (10s)           U0_M0_F00 L7 (5min 48s)      
+
+
+
+____________________________________________________________________________________________________
+Hosts
+
+
+       Machine name                           Model name                   CPU (MHz)   Cache size   CPU cores   Bogomips             Address sizes              Percent of CPU
+---------------------------- -------------------------------------------- ----------- ------------ ----------- ---------- ------------------------------------ ---------------
+csce-quinn-s1.engr.tamu.edu    Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz    1200.115     25600 KB          10    4600.38    46 bits physical, 48 bits virtual               2%
+
+
+
+____________________________________________________________________________________________________
+Memory usage
+
+
+                                  Task                                      Maximum resident set size                     Task Label                       Job Queue  
+-------------------------------------------------------------------------- --------------------------- ------------------------------------------------ --------------
+backend_default_U0_M0_F00_Original                                                             3.28GB   Original                                         ZebuIse      
+backend_default_U0_M0_F00_L11                                                                  3.11GB   L11                                              ZebuIse      
+backend_default_U0_M0_F00_L15                                                                  3.11GB   L15                                              ZebuIse      
+backend_default_U0_M0_F00_L14                                                                  3.06GB   L14                                              ZebuIse      
+backend_default_U0_M0_F00_L10                                                                  3.06GB   L10                                              ZebuIse      
+backend_default_U0_M0_F00_L12                                                                  3.06GB   L12                                              ZebuIse      
+backend_default_U0_M0_F00_L6                                                                   3.06GB   L6                                               ZebuIse      
+backend_default_U0_M0_F00_L16                                                                  3.06GB   L16                                              ZebuIse      
+backend_default_U0_M0_F00_L2                                                                   3.06GB   L2                                               ZebuIse      
+backend_default_U0_M0_F00_L9                                                                   3.06GB   L9                                               ZebuIse      
+backend_default_U0_M0_F00_L0                                                                   3.06GB   L0                                               ZebuIse      
+backend_default_U0_M0_F00_L3                                                                   3.06GB   L3                                               ZebuIse      
+backend_default_U0_M0_F00_L5                                                                   3.05GB   L5                                               ZebuIse      
+backend_default_U0_M0_F00_L4                                                                   3.05GB   L4                                               ZebuIse      
+backend_default_U0_M0_F00_L8                                                                   3.05GB   L8                                               ZebuIse      
+backend_default_U0_M0_F00_L1                                                                   3.05GB   L1                                               ZebuIse      
+backend_default_U0_M0_F00_L7                                                                   3.05GB   L7                                               ZebuIse      
+backend_default_U0_M0_F00_L13                                                                  3.05GB   L13                                              ZebuIse      
+backend_default_U0_M0_IF_L8                                                                    2.00GB   L8                                               ZebuIse      
+backend_default_U0_M0_IF_L4                                                                    2.00GB   L4                                               ZebuIse      
+backend_default_U0_M0_IF_L0                                                                    1.99GB   L0                                               ZebuIse      
+backend_default_U0_M0_IF_L5                                                                    1.98GB   L5                                               ZebuIse      
+backend_default_U0_M0_IF_Original                                                              1.98GB   Original                                         ZebuIse      
+backend_default_U0_M0_IF_L9                                                                    1.98GB   L9                                               ZebuIse      
+backend_default_U0_M0_IF_L13                                                                   1.97GB   L13                                              ZebuIse      
+backend_default_U0_M0_IF_L12                                                                   1.96GB   L12                                              ZebuIse      
+backend_default_U0_M0_IF_L10                                                                   1.96GB   L10                                              ZebuIse      
+backend_default_U0_M0_IF_L2                                                                    1.96GB   L2                                               ZebuIse      
+backend_default_U0_M0_IF_L3                                                                    1.95GB   L3                                               ZebuIse      
+backend_default_U0_M0_IF_L1                                                                    1.95GB   L1                                               ZebuIse      
+backend_default_U0_M0_IF_L15                                                                   1.95GB   L15                                              ZebuIse      
+backend_default_U0_M0_IF_L14                                                                   1.95GB   L14                                              ZebuIse      
+backend_default_U0_M0_IF_L6                                                                    1.95GB   L6                                               ZebuIse      
+backend_default_U0_M0_IF_L11                                                                   1.95GB   L11                                              ZebuIse      
+backend_default_U0_M0_IF_L16                                                                   1.95GB   L16                                              ZebuIse      
+backend_default_U0_M0_IF_L7                                                                    1.95GB   L7                                               ZebuIse      
+backend_default_U0_M0_F08_Original                                                             1.93GB   Original                                         ZebuIse      
+backend_default_U0_M0_F08_L14                                                                  1.91GB   L14                                              ZebuIse      
+backend_default_U0_M0_F08_L13                                                                  1.91GB   L13                                              ZebuIse      
+backend_default_U0_M0_F08_L12                                                                  1.91GB   L12                                              ZebuIse      
+backend_default_U0_M0_F08_L3                                                                   1.90GB   L3                                               ZebuIse      
+backend_default_U0_M0_F08_L2                                                                   1.90GB   L2                                               ZebuIse      
+backend_default_U0_M0_F08_L16                                                                  1.90GB   L16                                              ZebuIse      
+backend_default_U0_M0_F08_L7                                                                   1.90GB   L7                                               ZebuIse      
+backend_default_U0_M0_F08_L10                                                                  1.90GB   L10                                              ZebuIse      
+backend_default_U0_M0_F08_L15                                                                  1.90GB   L15                                              ZebuIse      
+backend_default_U0_M0_F08_L4                                                                   1.90GB   L4                                               ZebuIse      
+backend_default_U0_M0_F08_L8                                                                   1.90GB   L8                                               ZebuIse      
+backend_default_U0_M0_F08_L6                                                                   1.90GB   L6                                               ZebuIse      
+backend_default_U0_M0_F08_L5                                                                   1.90GB   L5                                               ZebuIse      
+backend_default_U0_M0_F08_L11                                                                  1.90GB   L11                                              ZebuIse      
+backend_default_U0_M0_F08_L0                                                                   1.90GB   L0                                               ZebuIse      
+backend_default_U0_M0_F08_L1                                                                   1.90GB   L1                                               ZebuIse      
+backend_default_U0_M0_F08_L9                                                                   1.90GB   L9                                               ZebuIse      
+backend_default_zCoreBuild_Part_0                                                            477.66MB   Build zCore Part_0                               Zebu         
+backend_default_zSimzilla                                                                    368.11MB   Simulate Graphs                                  Zebu         
+backend_default_zDB_Global                                                                   306.52MB   Create Global DB                                 Zebu         
+backend_default_zTopBuild                                                                    302.96MB   Build System                                     Zebu         
+BE_Version_Checker                                                                           243.29MB   Check Back-End Binaries Version                  ZebuLocal    
+backend_default_zGraphGenerator                                                              166.06MB   Build Accessibility Graphs                       Zebu         
+vcs_splitter_VCS_Task_Builder                                                                149.97MB   Launch VCS                                       Zebu         
+backend_default_zRtlToEqui                                                                   147.64MB   Convert Netlist                                  Zebu         
+backend_default_zEquiGenerator                                                               125.11MB   Build Equipotentials                             Zebu         
+backend_default_zTime                                                                        108.62MB   Create Timing DB                                 Zebu         
+backend_default_zSimuFsdbHeader                                                              103.18MB   zSimuFsdbHeader                                  Zebu         
+RhinoFsdb_Builder                                                                             83.01MB   Build Rhino Fsdb                                 Zebu         
+design_Default_RTL_GroupBundle_0_Synthesis                                                    80.48MB   Bundle 0                                         ZebuSynthesis
+backend_default_RTL_DB_Indexer                                                                76.12MB   Make RTL DB indexes                              Zebu         
+Vcs_Version_Checker                                                                           53.58MB   Check Vcs Binaries Version                       ZebuLocal    
+backend_default_RTL_DB_Link                                                                   44.20MB   Make RTL DB link                                 Zebu         
+backend_default_RTL_DB_RunTime                                                                44.20MB   Make RTL DB for Run Time                         Zebu         
+Target_Config                                                                                 36.73MB   Target Configuration                             Zebu         
+Verdi_Compilation                                                                             33.64MB   Launch Verdi                                     Zebu         
+backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer                     18.04MB   Compilation Profiler (after ZTopBuildAnalyzer)   ZebuLocal    
+backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer                           18.04MB   Compilation Profiler (after VCSAnalyzer)         ZebuLocal    
+backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry                          18.04MB   Compilation Profiler (after BackendEntry)        ZebuLocal    
+FE_Version_Checker                                                                            10.89MB   Check Front-End Binaries Version                 ZebuLocal    
+backend_default_U0_M0_F00_Cleaning                                                             2.04MB   Cleaning All PaRs                                Zebu         
+backend_default_U0_M0_F08_Cleaning                                                             2.04MB   Cleaning All PaRs                                Zebu         
+backend_default_U0_M0_IF_Cleaning                                                              2.03MB   Cleaning All PaRs                                Zebu         
+
+
+
+____________________________________________________________________________________________________
+Job Queue Memory Analysis
+
+
+  Job queue     Maximum RSS : max value   Maximum RSS : average value
+-------------- ------------------------- ----------------------------
+Zebu                           477.66MB                      135.78MB
+ZebuIse                          3.28GB                        2.31GB
+ZebuLocal                      243.29MB                       60.31MB
+ZebuSynthesis                   80.48MB                       80.48MB
+
+
+
+____________________________________________________________________________________________________
+Grid Delay
+
+There are no tasks with grid delay > 30s
+
+
+____________________________________________________________________________________________________
+Grid Delay Per Job Queue
+
+
+  Job queue     Wait(max)   Wait(average)
+-------------- ----------- --------------
+Zebu             00:00:02        00:00:01
+ZebuIse          00:00:03        00:00:01
+ZebuLocal        00:00:02        00:00:01
+ZebuSynthesis    00:00:01        00:00:01
+
+

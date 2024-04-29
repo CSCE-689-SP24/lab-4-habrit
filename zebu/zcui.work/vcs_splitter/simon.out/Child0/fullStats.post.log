@@ -1,0 +1,132 @@
+
+Processing parity_check
+before constantPropagate: 0u 0s 1107e 601820kB
+after constantPropagate: 0u 0s 1107e 601820kB
+before removeUnusedSignals circuit: 0u 0s 1107e 601820kB
+after removeUnusedSignals circuit: 0u 0s 1107e 601820kB
+before optimize latch enable: 0u 0s 1107e 601820kB
+after optimize latch enable: 0u 0s 1107e 601820kB
+before removeReadAfterMissingWrite: 0u 0s 1107e 601820kB
+after removeReadAfterMissingWrite: 0u 0s 1107e 601820kB
+before undoDimensionalSplitOfMemories: 0u 0s 1107e 601820kB
+after undoDimensionalSplitOfMemories: 0u 0s 1107e 601820kB
+before extractMemories: 0u 0s 1107e 601820kB
+after extractMemories: 0u 0s 1107e 601820kB
+before extractHolds: 0u 0s 1107e 601820kB
+after extractHolds: 0u 0s 1107e 601820kB
+before simplifyAdders: 0u 0s 1107e 601820kB
+after simplifyAdders: 0u 0s 1107e 601820kB
+before reportUnresolvedType: 0u 0s 1107e 601820kB
+after reportUnresolvedType: 0u 0s 1107e 601820kB
+before dumpingPerModuleScm : 0u 0s 1107e 601820kB
+after dumpingPerModuleScm : 0u 0s 1107e 601820kB
+
+Processing fifo_0000
+before constantPropagate: 0u 0s 1107e 601820kB
+after constantPropagate: 0u 0s 1107e 601820kB
+before removeUnusedSignals circuit: 0u 0s 1107e 601820kB
+after removeUnusedSignals circuit: 0u 0s 1107e 601820kB
+before optimize latch enable: 0u 0s 1107e 601820kB
+after optimize latch enable: 0u 0s 1107e 601820kB
+before removeReadAfterMissingWrite: 0u 0s 1107e 601820kB
+after removeReadAfterMissingWrite: 0u 0s 1107e 601820kB
+before undoDimensionalSplitOfMemories: 0u 0s 1107e 601820kB
+after undoDimensionalSplitOfMemories: 0u 0s 1107e 601820kB
+before extractMemories: 0u 0s 1107e 601820kB
+after extractMemories: 0u 0s 1107e 601820kB
+before extractHolds: 0u 0s 1107e 601820kB
+after extractHolds: 0u 0s 1117e 601820kB
+before simplifyAdders: 0u 0s 1117e 601820kB
+after simplifyAdders: 0u 0s 1117e 601820kB
+before reportUnresolvedType: 0u 0s 1117e 601820kB
+after reportUnresolvedType: 0u 0s 1117e 601820kB
+before dumpingPerModuleScm : 0u 0s 1117e 601820kB
+after dumpingPerModuleScm : 0u 0s 1117e 601820kB
+
+Processing dut
+before constantPropagate: 0u 0s 1117e 601820kB
+after constantPropagate: 0u 0s 1117e 601820kB
+before removeUnusedSignals circuit: 0u 0s 1117e 601820kB
+after removeUnusedSignals circuit: 0u 0s 1117e 601820kB
+before optimize latch enable: 0u 0s 1117e 601820kB
+after optimize latch enable: 0u 0s 1117e 601820kB
+before removeReadAfterMissingWrite: 0u 0s 1117e 601820kB
+after removeReadAfterMissingWrite: 0u 0s 1117e 601820kB
+before undoDimensionalSplitOfMemories: 0u 0s 1117e 601820kB
+after undoDimensionalSplitOfMemories: 0u 0s 1117e 601820kB
+before extractMemories: 0u 0s 1117e 601820kB
+after extractMemories: 0u 0s 1117e 601820kB
+before extractHolds: 0u 0s 1117e 601820kB
+after extractHolds: 0u 0s 1117e 601820kB
+before simplifyAdders: 0u 0s 1117e 601820kB
+after simplifyAdders: 0u 0s 1117e 601820kB
+before reportUnresolvedType: 0u 0s 1117e 601820kB
+after reportUnresolvedType: 0u 0s 1117e 601820kB
+before dumpingPerModuleScm : 0u 0s 1117e 601820kB
+after dumpingPerModuleScm : 0u 0s 1117e 601820kB
+
+Processing rom
+before constantPropagate: 0u 0s 1117e 601820kB
+after constantPropagate: 0u 0s 1117e 601820kB
+before removeUnusedSignals circuit: 0u 0s 1117e 601820kB
+after removeUnusedSignals circuit: 0u 0s 1117e 601820kB
+before optimize latch enable: 0u 0s 1117e 601820kB
+after optimize latch enable: 0u 0s 1117e 601820kB
+before removeReadAfterMissingWrite: 0u 0s 1117e 601820kB
+after removeReadAfterMissingWrite: 0u 0s 1117e 601820kB
+before undoDimensionalSplitOfMemories: 0u 0s 1117e 601820kB
+after undoDimensionalSplitOfMemories: 0u 0s 1117e 601820kB
+before extractMemories: 0u 0s 1117e 601820kB
+after extractMemories: 0u 0s 1131e 601820kB
+before extractHolds: 0u 0s 1130e 601820kB
+after extractHolds: 0u 0s 1130e 601820kB
+before simplifyAdders: 0u 0s 1130e 601820kB
+after simplifyAdders: 0u 0s 1130e 601820kB
+before reportUnresolvedType: 0u 0s 1130e 601820kB
+after reportUnresolvedType: 0u 0s 1130e 601820kB
+before dumpingPerModuleScm : 0u 0s 1130e 601820kB
+after dumpingPerModuleScm : 0u 0s 1130e 601820kB
+
+Processing ram
+before constantPropagate: 0u 0s 1130e 601820kB
+after constantPropagate: 0u 0s 1130e 601820kB
+before removeUnusedSignals circuit: 0u 0s 1130e 601820kB
+after removeUnusedSignals circuit: 0u 0s 1130e 601820kB
+before optimize latch enable: 0u 0s 1130e 601820kB
+after optimize latch enable: 0u 0s 1130e 601820kB
+before removeReadAfterMissingWrite: 0u 0s 1130e 601820kB
+after removeReadAfterMissingWrite: 0u 0s 1130e 601820kB
+before undoDimensionalSplitOfMemories: 0.01u 0s 1130e 601820kB
+after undoDimensionalSplitOfMemories: 0.01u 0s 1130e 601820kB
+before extractMemories: 0.01u 0s 1130e 601820kB
+after extractMemories: 0.01u 0s 1129e 601820kB
+before extractHolds: 0.01u 0s 1124e 601820kB
+after extractHolds: 0.01u 0s 1124e 601820kB
+before simplifyAdders: 0.01u 0s 1124e 601820kB
+after simplifyAdders: 0.01u 0s 1124e 601820kB
+before reportUnresolvedType: 0.01u 0s 1124e 601820kB
+after reportUnresolvedType: 0.01u 0s 1124e 601820kB
+before dumpingPerModuleScm : 0.01u 0s 1124e 601820kB
+after dumpingPerModuleScm : 0.01u 0s 1124e 601820kB
+
+Processing top
+before constantPropagate: 0.01u 0s 1124e 601820kB
+after constantPropagate: 0.01u 0s 1124e 601820kB
+before removeUnusedSignals circuit: 0.01u 0s 1124e 601820kB
+after removeUnusedSignals circuit: 0.01u 0s 1124e 601820kB
+before optimize latch enable: 0.01u 0s 1124e 601820kB
+after optimize latch enable: 0.01u 0s 1124e 601820kB
+before removeReadAfterMissingWrite: 0.01u 0s 1124e 601820kB
+after removeReadAfterMissingWrite: 0.01u 0s 1124e 601820kB
+before undoDimensionalSplitOfMemories: 0.01u 0s 1124e 601820kB
+after undoDimensionalSplitOfMemories: 0.01u 0s 1124e 601820kB
+before extractMemories: 0.01u 0s 1124e 601820kB
+after extractMemories: 0.01u 0s 1124e 601820kB
+before extractHolds: 0.01u 0s 1124e 601820kB
+after extractHolds: 0.01u 0s 1124e 601820kB
+before simplifyAdders: 0.01u 0s 1124e 601820kB
+after simplifyAdders: 0.01u 0s 1124e 601820kB
+before reportUnresolvedType: 0.01u 0s 1124e 601820kB
+after reportUnresolvedType: 0.01u 0s 1124e 601820kB
+before dumpingPerModuleScm : 0.01u 0s 1124e 601820kB
+after dumpingPerModuleScm : 0.01u 0s 1124e 601820kB

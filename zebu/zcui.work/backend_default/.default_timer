@@ -1,0 +1,39 @@
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.50       fm:173173 m      vm:485 m       vm:+0 m      um:156 m       um:+0 m -- zPar/Merge Cores/Signature generation/Netlist signature generation
+    elapsed:0.2 s      user:0 s      system:0 s       %cpu:0.00       load:0.50       fm:173173 m      vm:485 m       vm:+0 m      um:156 m       um:+0 m -- zPar/Merge Cores/Signature generation
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.50       fm:173172 m      vm:486 m       vm:+0 m      um:157 m       um:+0 m -- zPar/Merge Cores/Signature generation/Netlist signature generation
+    elapsed:0.2 s      user:0 s      system:0 s       %cpu:0.00       load:0.50       fm:173172 m      vm:486 m       vm:+0 m      um:157 m       um:+0 m -- zPar/Merge Cores/Signature generation
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.50       fm:173169 m      vm:489 m       vm:+0 m      um:160 m       um:+0 m -- zPar/Merge Cores/Signature generation/Netlist signature generation
+    elapsed:0.2 s      user:0 s      system:0 s       %cpu:0.00       load:0.50       fm:173169 m      vm:489 m       vm:+0 m      um:160 m       um:+0 m -- zPar/Merge Cores/Signature generation
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.50       fm:173166 m      vm:493 m       vm:+0 m      um:164 m       um:+0 m -- zPar/Merge Cores/Signature generation/Netlist signature generation
+    elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.50       fm:173166 m      vm:493 m       vm:+0 m      um:164 m       um:+0 m -- zPar/Merge Cores/Signature generation
+   elapsed:0.28 s   user:0.14 s    system:0.2 s      %cpu:55.75       load:0.50       fm:173165 m      vm:493 m      vm:+28 m      um:164 m      um:+35 m -- zPar/Merge Cores
+      elapsed:0 s      user:0 s    system:0.1 s     %cpu:200.00       load:0.50       fm:173127 m      vm:524 m       vm:+0 m      um:204 m       um:+0 m -- zPar/Place/IMPORT
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.50       fm:173127 m      vm:524 m       vm:+0 m      um:204 m       um:+0 m -- zPar/Place/IMPORT
+   elapsed:0.20 s    user:0.9 s    system:0.2 s      %cpu:55.91       load:0.50       fm:173123 m      vm:528 m      vm:+23 m      um:209 m      um:+27 m -- zPar/Place
+   elapsed:0.43 s   user:0.20 s    system:0.3 s      %cpu:53.43       load:0.50       fm:173088 m      vm:563 m      vm:+35 m      um:243 m      um:+34 m -- zPar/Route
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Generate/write Fpga Wrapper/Signature generation/Netlist signature generation
+    elapsed:0.1 s    user:0.1 s      system:0 s      %cpu:65.57       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Generate/write Fpga Wrapper/Signature generation
+   elapsed:0.35 s   user:0.11 s    system:0.1 s      %cpu:34.48       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Generate/write Fpga Wrapper
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Generate/write Fpga Wrapper/Signature generation/Netlist signature generation
+    elapsed:0.2 s    user:0.1 s      system:0 s      %cpu:58.82       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Generate/write Fpga Wrapper/Signature generation
+   elapsed:0.32 s   user:0.11 s    system:0.1 s      %cpu:37.50       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Generate/write Fpga Wrapper
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Generate/write Fpga Wrapper/Signature generation/Netlist signature generation
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Generate/write Fpga Wrapper/Signature generation
+    elapsed:0.5 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Generate/write Fpga Wrapper
+      elapsed:7 s      user:5 s   system:0.70 s      %cpu:88.33       load:0.54       fm:171839 m     vm:1923 m    vm:+1360 m     um:1493 m    um:+1250 m -- zPar/Generate
+    elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Timing/timingGraphBuilder::dumpTclTimingFile
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Timing/dumpZfpgaTimingRequest/build_topPortToNodeId
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Timing/dumpZfpgaTimingRequest/getIntraFpgaTimingPathforZFpgaTiming
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Timing/dumpZfpgaTimingRequest/buildSdfRequestsFromTimingGraph
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Timing/dumpZfpgaTimingRequest/buildRoutingHopSdfRequests
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1493 m       um:+0 m -- zPar/Timing/dumpZfpgaTimingRequest/buildSdfRequestsFromTimingGraph
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1494 m       um:+0 m -- zPar/Timing/dumpZfpgaTimingRequest/buildFilterSdfRequests
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1494 m       um:+0 m -- zPar/Timing/dumpZfpgaTimingRequest/addGlobalSdfCommands
+    elapsed:0.2 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1494 m       um:+0 m -- zPar/Timing/dumpZfpgaTimingRequest/dumpSdfRequestBuilder
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1494 m       um:+0 m -- zPar/Timing/dumpZfpgaTimingRequest/handleAttributes
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1494 m       um:+0 m -- zPar/Timing/dumpZfpgaTimingRequest/dumpSoftTimingConstraint
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1494 m       um:+0 m -- zPar/Timing/dumpZfpgaTimingRequest/dumpNodeIdAndNameOfIF
+    elapsed:0.5 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1494 m       um:+1 m -- zPar/Timing/dumpZfpgaTimingRequest
+    elapsed:0.9 s      user:0 s      system:0 s       %cpu:0.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1494 m       um:+1 m -- zPar/Timing
+    elapsed:0.1 s      user:0 s    system:0.1 s     %cpu:125.00       load:0.54       fm:171839 m     vm:1923 m       vm:+0 m     um:1494 m       um:+0 m -- zPar/FinishBody.
+      elapsed:8 s      user:6 s   system:0.79 s      %cpu:83.91       load:0.54       fm:171839 m     vm:1923 m    vm:+1458 m     um:1494 m    um:+1365 m -- zPar

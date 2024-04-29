@@ -1,0 +1,644 @@
+#-----------------------------------------------------------
+# Vivado v2019.1_EP06_159265 (64-bit)
+# SW Build (by stepheny) on Fri Oct 11 16:37:07 PDT 2019
+# IP Build 2548770 on Wed May 29 13:01:34 MDT 2019
+# Start of session at: Sat Apr 20 13:15:45 2024
+# Process ID: 24713
+# Current directory: /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original
+# Command line: vivado -mode batch -notrace -source /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vivado_v7/compil_vivado_v7.tcl -tempDir tmp_dcp
+# Log file: /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/vivado.log
+# Journal file: /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/vivado.jou
+#-----------------------------------------------------------
+INFO: [Common 17-1239] XILINX_LOCAL_USER_DATA is set to 'no'.
+Sourcing tcl script '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/scripts/Vivado_init.tcl'
+source /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vivado_v7/compil_vivado_v7.tcl -notrace
+[SW_FPGA] - INFO : Loading zebu_fpga_compile_env.tcl
+[SW_FPGA] - INFO : Loading vivado_common_pkg.tcl
+[SW_FPGA] - INFO : Loading vivado_proc_pkg.tcl
+[SW_FPGA] - INFO : Loading vivado_reports_pkg.tcl
+[SW_FPGA] - INFO : Loading vivado_v7_pkg.tcl
+[SW_FPGA] - INFO : Loading triton_common_pkg.tcl
+
+[SW_FPGA] - INFO : Generating XDC WA for Vivado V7 Link_design
+
+[SW_FPGA] - INFO : Vivado Parameters used 
+VIVADO_ENABLE_SINGLE_MACHINE_MPF=0
+VIVADO_ENABLE_MULTI_MACHINE_MPF=0
+
+[SW_FPGA] - INFO : top fpga name is: fx_top
+[SW_FPGA] - INFO : bitgen options sets [-w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable] 
+0 Beta devices matching pattern found, 0 enabled.
+[SW_FPGA] - INFO : Default Vivado params loaded
+[SW_FPGA] - INFO : Disable place.autoLaguna
+[SW_FPGA] - INFO : place.opportunisticLagunaRegUse  false
+[SW_FPGA] - INFO : physynth.enableLagunaSites  false
+[SW_FPGA] - INFO : physynth.slrCrossingOptTnsInExplore false
+[SW_FPGA] - INFO : VIVADO_FORCE_REPLICATION=ON
+[SW_FPGA] - INFO : Default Vivado message config loaded
+[SW_FPGA] - INFO : FPGA (FX)=F00 is being compiled
+[SW_FPGA] - INFO : Advanced Vivado Debug parameters [Enabled]
+[SW_FPGA] - INFO : Vivado params selectable: Delete Empty Hierarchy with Dont touch => [enabled]
+[SW_FPGA] - hw_type is v7
+[SW_FPGA] - INFO : Vivado params selectable: Multithreading value = 4
+[SW_FPGA] - INFO : Vivado params selectable: Global Hold Iter => [enabled]
+[SW_FPGA] - INFO : Vivado params selectable: route SLL Assignment  => [enabled]
+[SW_FPGA] - INFO : Vivado params selectable: place_design BUFG insertion in 2017.3  => [enabled]
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_set_options_variable 1 mins
+[SW_FPGA] - INFO : Extra BUFG Insertion by Vivado [disabled]
+
+[SW_FPGA] - INFO : Sources files loading ...
+
+
+[SW_FPGA]: Link design
+Command: link_design -top fx_top -part xc7v2000tflg1925-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7v2000tflg1925-1
+Parsing EDIF File [./design.edf]
+Finished Parsing EDIF File [./design.edf]
+INFO: [Project 1-454] Reading design checkpoint '/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/vd_top.dcp' for cell 'vd_top'
+INFO: [Project 1-454] Reading design checkpoint '/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/vde_mon_top.dcp' for cell 'vde_mon_top'
+INFO: [Project 1-454] Reading design checkpoint '/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/fwc_ip_hs_cluster_32.dcp' for cell 'wc_ip_top/wrapper/fwc_ip_hs_cluster_32[0]'
+INFO: [Project 1-454] Reading design checkpoint '/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/qiwc_ip_cluster.dcp' for cell 'wc_ip_top/wrapper/qiwc_ip_cluster'
+INFO: [Netlist 29-17] Analyzing 4838 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.1_AR69152
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/no_dont_touch.xdc]
+Finished Parsing XDC File [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/no_dont_touch.xdc]
+INFO: [Opt 31-138] Pushed 8 inverter(s) to 8 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3457.793 ; gain = 0.000 ; free physical = 171257 ; free virtual = 189480
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2686 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 68 instances
+  AND2 => LUT2: 31 instances
+  FD => FDRE: 488 instances
+  FDC => FDCE: 218 instances
+  FDE => FDRE: 195 instances
+  FDP => FDPE: 65 instances
+  FDR => FDRE: 25 instances
+  FDRS => FDRS (FDRE, LUT2, VCC): 2 instances
+  FDS => FDSE: 68 instances
+  FD_1 => FDRE (inverted pins: C): 41 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+  IODELAY => IDELAYE2: 5 instances
+  LD => LDCE: 373 instances
+  LD_1 => LDCE (inverted pins: G): 1 instances
+  MMCME2_BASE => MMCME2_ADV: 4 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 4 instances
+  OR3 => LUT3: 32 instances
+  RAM256X1S => RAM256X1S (MUXF7, MUXF7, MUXF8, RAMS64E, RAMS64E, RAMS64E, RAMS64E): 18 instances
+  RAM32X1S => RAM32X1S (RAMS32): 1024 instances
+  RAMB36_EXP => RAMB36E1: 2 instances
+  SYSMON => XADC: 1 instances
+  XOR2 => LUT2: 5 instances
+
+11 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:11 . Memory (MB): peak = 3457.793 ; gain = 1934.609 ; free physical = 171257 ; free virtual = 189480
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads, tcl.collectionResultDisplayLimit, tcl.statsThreshold
+[SW_FPGA] - INFO : Link design ended successfully
+Parsing XDC File [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/dont_touch.xdc]
+Finished Parsing XDC File [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/dont_touch.xdc]
+[SW_FPGA] - INFO : Sources files loaded and linked
+[SW_FPGA] - INFO : Vivado message settings set
+[SW_FPGA] - INFO : Settings based on environment variables beginning with VIVADO_KNOB_ :
+
+
+
+
+  
+
+#################################################################################
+##                 VIVADO : STEP NETLIST_ANALYSIS_PREPROCESSING                ##
+#################################################################################
+##  phase:linked_analysis  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 167 GB  -  LoadAverage (5s|5min|15min / NBcpu): 1.89|1.73|1.35 / 40  MemAvail: 180 GB
+
+[SW_FPGA] - INFO : start netlist_analys_preproc phase
+netlist_analys_preproc start time: 1713637025
+netlist_analys_preproc start date: Sat Apr 20 13:17:05 CDT 2024
+
+
+
+[SW_FPGA] - REPORTS : running zVreports_fpgaIO
+  |- Total interface : 1 IO + 0 MGT IO
+      |- 0  	 Socket input
+      |- 1  	 Socket output
+      |- 0  	 MGT_Socket input
+      |- 0 	 MGT_Socket output
+           |- MGT version: GT_GP
+
+[SW_FPGA] - REPORTS : running zVreports_fpgaIO_distribution target=V7
++----------------------------------++-----------------------------+
+| bank 22 | R=0     | S=0          || bank 42 | R=0     | S=0     |
+| bank 21 | R=0     | S=0          || bank 41 | R=0     | S=0     |
+| bank 20 | R=0     | S=0          || bank 40 | R=0     | S=1     |
++----------------------------------++-----------------------------+
+| bank 19 | R=0     | S=0          || bank 39 | R=0     | S=0     |
+| bank 18 | R=0     | S=0          || bank 38 | R=0     | S=0     |
+| bank 17 | R=0     | S=0          || bank 37 | R=0     | S=0     |
++----------------------------------++-----------------------------+
+| bank 16 | R=0     | S=0          || bank 36 | R=0     | S=0     |
+| bank 15 | R=0     | S=0          || bank 35 | R=0     | S=0     |
+| bank 14 | R=0     | S=0          || bank 34 | R=0     | S=0     |
++----------------------------------++-----------------------------+
+| bank 13 | R=0     | S=0          || bank 33 | R=0     | S=0     |
+| bank 12 | R=0     | S=0          || bank 32 | R=0     | S=0     |
+| bank 11 | R=0     | S=0          || bank 31 | R=0     | S=0     |
++----------------------------------++-----------------------------+
+
+[SW_FPGA] - REPORTS : running zVreports_zview
+  |- 52 zview cells
+  |- 145 FF cells as zview
+       |- 0 FF cells as zview in sockets
+  |- Total = 197 cells used
+
+[SW_FPGA] - REPORTS : running pVivado_check_zpv_data
+  |- 135 fwc
+  |- 0 qiwc
+
+[SW_FPGA] - REPORTS : running zVreports_BUFG_pins @ phase: linked
+
+design/U0_M0_F0/zbufg_zcgen_w_zcg_compositeClock
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 12487   | 12487   | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+design/U0_M0_F0/zbufg_zcgen_w_zcg_filterClock
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 45      | 44      | 1       | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+design/U0_M0_F0/zbufg_zebu_zdly_z_dclk_delay_12524327392187371745
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 371     | 0       | 371     | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 826     | 799     | 0       | 20      | 0       | 7       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk_hs/u_xst_wrapper_0/virtex7_bufgctrl_0
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 9       | 2       | 0       | 0       | 7       | 0       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clko/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 2474    | 2471    | 0       | 1       | 1       | 0       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/bufg_0
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 98      | 95      | 0       | 0       | 0       | 0       | 0       | 0       | 1       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/x_bufgctrl_1/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/x_bufgctrl_2/u_xst_wrapper_0/virtex7_bufgctrl_0
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 9760    | 3493    | 0       | 18      | 6249    | 0       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/x_bufgctrl_3/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/x_bufgctrl_ce_sys_xclk/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/x_bufgctrl_ce_sys_xclk_dv4/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk_0/x_bufgctrl_ce_sys_xclk/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk_0/x_bufgctrl_ce_sys_xclk_dv4/u_xst_wrapper_0/virtex7_bufgctrl_0
+[SW_FPGA] - REPORTS : running zVreports_get_CST_fanout > 1000
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects [get_pins -of_objects [get_cells * -hier -filter { REF_NAME == GND }] -filter { DIRECTION == OUT }] -filter { FLAT_PIN_COUNT == 1 }'.
+   |- GND cells impacted: 4
+      |- 10615 	: design/zaddsafe22_GND
+      |- 1267 	: wc_ip_top/wrapper/N1
+      |- 1409 	: wc_ip_top/wrapper/wc_ctrl_l2/u_xst_wrapper_0/u0_qiwc_fifo_l2_to_pc_0_0/fifo16383x36_fwft_0/N0
+      |- 1216 	: wc_ip_top/wrapper/wc_ctrl_l2/u_xst_wrapper_0/wc_ctrl_l2_registers_0/GND_1
+   |- VCC cells impacted: 1
+      |- 1027 	: wc_ip_top/wrapper/wc_ctrl_l2/u_xst_wrapper_0/wc_ctrl_l2_registers_0/VCC_1
+
+
+[SW_FPGA] - REPORTS : running zVreports_Primitive_hierarchy
+wc_ip_top  : count=56491   ioPort=536765
+wc_ip_top/wrapper  : count=56489   ioPort=536861
+wc_ip_top/wrapper/fwc_ip_hs_cluster_32[0]  : count=50818   ioPort=12461
+
+
+[SW_FPGA] - REPORTS : running zVreports_Primitive_hierarchy_zNetgen
+    |- file_name = csv/subsystems_ordered_by_norm_design_ZN.csv
+    |- module_name=fx_macro_xclk2_DEVICE_7_0  |  REG%=47  |  REG=865  |  LUT%=69  |  LUT%=804  |  IO=0  |  instance=0
+
+[SW_FPGA] - INFO : Check Multidriver Nets
+    |- No multi driven nets found
+
+[SW_FPGA] - INFO : Check unconneced LUT inputs pins
+    |- No Unconnected lut pins found
+
+
+
+
+
+
+  
+
+#################################################################################
+##                             VIVADO : STEP READ_CONSTRAINTS                  ##
+#################################################################################
+##  phase:constraints  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 164 GB  -  LoadAverage (5s|5min|15min / NBcpu): 2.21|1.80|1.38 / 40  MemAvail: 177 GB
+
+[SW_FPGA] - INFO : start read_constraints phase
+read_constraints start time: 1713637034
+read_constraints start date: Sat Apr 20 13:17:14 CDT 2024
+
+[SW_FPGA] - PROC : zVivado_MDTMX_DisableSocketPblock done
+Parsing XDC File [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc]
+WARNING: [Vivado 12-2489] -period contains time 3.333333 which will be rounded to 3.333 to ensure it is an integer multiple of 1 picosecond [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:13]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_pins design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/sys_xclk2]'. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:17]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_pins design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/sys_xclk2_dv4]'. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:18]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+INFO: [Timing 38-2] Deriving generated clocks [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:57]
+WARNING: [Vivado 12-627] No clocks matched 'CLK_sys_xclk2'. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:62]
+WARNING: [Vivado 12-627] No clocks matched 'CLK_sys_xclk2_dv4'. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:62]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:62]
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks -include_generated_clocks {CLK_sys_xclk2 CLK_sys_xclk2_dv4}]'. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:62]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Constraints 18-4644] set_clock_groups: All clock groups specified are empty. Please specify atleast one clock group which is not empty. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:62]
+WARNING: [Vivado 12-507] No nets matched 'wc_ip_top/wrapper/qiwc_ip_cluster/cluster_qiwc_ctrl_dut_event_0[*]/zwc_dut_clk_r'. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:83]
+CRITICAL WARNING: [Vivado 12-4739] set_max_delay:No valid object(s) found for '-through [get_nets {wc_ip_top/wrapper/qiwc_ip_cluster/cluster_qiwc_ctrl_dut_event_0[*]/zwc_dut_clk_r}]'. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:83]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-1433] Expecting a non-empty list of cells to be added to the pblock.  Please verify the correctness of the <cells> argument. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:251]
+CRITICAL WARNING: [Vivado 12-1433] Expecting a non-empty list of cells to be added to the pblock.  Please verify the correctness of the <cells> argument. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:252]
+INFO: [Vivado 12-3520] Assignment of 'ser0' to a pblock 'pblock_bk40' means that all children of 'ClockRegion000SD_40B' are in the pblock. Changing the pblock assignment to 'ClockRegion000SD_40B'. [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc:260]
+Finished Parsing XDC File [/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/design.xdc]
+read_xdc: Time (s): cpu = 00:00:33 ; elapsed = 00:00:32 . Memory (MB): peak = 4299.562 ; gain = 841.770 ; free physical = 166548 ; free virtual = 184780
+
+[SW_FPGA] - INFO : Generating zpar false path constraints
+[SW-FPGA] - PROC : called zVreports_zrm
+
+
+
+  
+
+#################################################################################
+##                             VIVADO : STEP OPT_DESIGN                        ##
+#################################################################################
+##  phase:opt  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 159 GB  -  LoadAverage (5s|5min|15min / NBcpu): 8.47|3.42|1.94 / 40  MemAvail: 172 GB
+
+[SW_FPGA] - INFO : start opt_design phase
+opt_design start time: 1713637075
+opt_design start date: Sat Apr 20 13:17:55 CDT 2024
+
+[SW_FPGA] - INFO : Vivado opt_design_options [-verbose -retarget -propconst -sweep ]
+Command: opt_design -verbose -retarget -propconst -sweep
+Attempting to get a license for feature 'Implementation' and/or device 'xc7v2000t'
+WARNING: [Common 17-348] Failed to get the license for feature 'Implementation' and/or device 'xc7v2000t'. Explanation: A license feature for Implementation was found but is expired.
+Resolution: Check the status of your licenses in the Vivado License Manager. For debug help search Xilinx Support for "Licensing FAQ". 
+15 Infos, 7 Warnings, 8 Critical Warnings and 1 Errors encountered.
+opt_design failed
+ERROR: [Common 17-345] A valid license was not found for feature 'Implementation' and/or device 'xc7v2000t'. Please run the Vivado License Manager for assistance in determining
+which features and devices are licensed for your system.
+Resolution: Check the status of your licenses in the Vivado License Manager. For debug help search Xilinx Support for "Licensing FAQ". If you are using a license server, verify that the license server is up and running a version of the xilinx daemon that is compatible with the version of Xilinx software that you are using. Please note that Vivado 2017.3 and later requires upgrading your license server tools to the Flex 11.14.1 tools. Please confirm with your license admin that the correct version of the license server tools are installed.
+
+
+
+[SW_FPGA] - ERROR : *************************************************
+[SW_FPGA] - ERROR : ********* ERROR in opt_design phase  ************
+[SW_FPGA] - ERROR : *************************************************
+[SW_FPGA] - ERROR : Vivado compilation flow stopped at opt_design phase
+[SW_FPGA] - ERROR : *************************************************
+[SW_FPGA] - INFO : Generating post timing
+[SW_FPGA] - INFO : Generating post checkpoints
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 4326.578 ; gain = 0.000 ; free physical = 159899 ; free virtual = 178133
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.36 ; elapsed = 00:00:00.11 . Memory (MB): peak = 4371.473 ; gain = 12.883 ; free physical = 159678 ; free virtual = 177917
+INFO: [Common 17-1381] The checkpoint '/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original/fpga_reports/vivado/dcp_KO_in_opt_design.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:02:04 ; elapsed = 00:01:54 . Memory (MB): peak = 4632.375 ; gain = 305.797 ; free physical = 169562 ; free virtual = 187862
+
+[SW_FPGA] - ERROR : ***************************************************
+[SW_FPGA] - ERROR : ********* ERROR in opt_design phase  ************
+[SW_FPGA] - ERROR : ***************************************************
+[SW_FPGA] - ERROR : Vivado compilation flow stopped at opt_design phase
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1_EP06_159265 (lin64) Build 0 Fri Oct 11 16:37:07 PDT 2019
+| Date         : Sat Apr 20 13:19:57 2024
+| Host         : csce-quinn-s1.engr.tamu.edu running 64-bit Red Hat Enterprise Linux Server release 7.9 (Maipo)
+| Command      : report_utilization
+| Design       : fx_top
+| Device       : 7v2000tflg1925-1
+| Design State : Synthesized
+----------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Slice Logic
+1.1 Summary of Registers by Type
+2. Memory
+3. DSP
+4. IO and GT Specific
+5. Clocking
+6. Specific Feature
+7. Primitives
+8. Black Boxes
+9. Instantiated Netlists
+10. SLR Connectivity and Clocking Utilization
+11. SLR Connectivity Matrix
+12. SLR Slice Logic and Dedicated Block Utilization
+13. SLR IO Utilization
+
+1. Slice Logic
+--------------
+
++----------------------------+-------+-------+-----------+-------+
+|          Site Type         |  Used | Fixed | Available | Util% |
++----------------------------+-------+-------+-----------+-------+
+| Slice LUTs*                | 36738 |     0 |   1221600 |  3.01 |
+|   LUT as Logic             | 30489 |     0 |   1221600 |  2.50 |
+|   LUT as Memory            |  6249 |     0 |    344800 |  1.81 |
+|     LUT as Distributed RAM |  1096 |     0 |           |       |
+|     LUT as Shift Register  |  5153 |     0 |           |       |
+| Slice Registers            | 20342 |     0 |   2443200 |  0.83 |
+|   Register as Flip Flop    | 19968 |     0 |   2443200 |  0.82 |
+|   Register as Latch        |   374 |     0 |   2443200 |  0.02 |
+| F7 Muxes                   |  1370 |     0 |    610800 |  0.22 |
+| F8 Muxes                   |    83 |     0 |    305400 |  0.03 |
++----------------------------+-------+-------+-----------+-------+
+* Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
+
+
+1.1 Summary of Registers by Type
+--------------------------------
+
++-------+--------------+-------------+--------------+
+| Total | Clock Enable | Synchronous | Asynchronous |
++-------+--------------+-------------+--------------+
+| 2     |            _ |           - |            - |
+| 0     |            _ |           - |          Set |
+| 0     |            _ |           - |        Reset |
+| 0     |            _ |         Set |            - |
+| 0     |            _ |       Reset |            - |
+| 0     |          Yes |           - |            - |
+| 152   |          Yes |           - |          Set |
+| 1153  |          Yes |           - |        Reset |
+| 115   |          Yes |         Set |            - |
+| 18920 |          Yes |       Reset |            - |
++-------+--------------+-------------+--------------+
+
+
+2. Memory
+---------
+
++-------------------+------+-------+-----------+-------+
+|     Site Type     | Used | Fixed | Available | Util% |
++-------------------+------+-------+-----------+-------+
+| Block RAM Tile    |   20 |     0 |      1292 |  1.55 |
+|   RAMB36/FIFO*    |   20 |     0 |      1292 |  1.55 |
+|     RAMB36E1 only |   20 |       |           |       |
+|   RAMB18          |    0 |     0 |      2584 |  0.00 |
++-------------------+------+-------+-----------+-------+
+* Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
+
+
+3. DSP
+------
+
++-----------+------+-------+-----------+-------+
+| Site Type | Used | Fixed | Available | Util% |
++-----------+------+-------+-----------+-------+
+| DSPs      |    0 |     0 |      2160 |  0.00 |
++-----------+------+-------+-----------+-------+
+
+
+4. IO and GT Specific
+---------------------
+
++-----------------------------+------+-------+-----------+-------+
+|          Site Type          | Used | Fixed | Available | Util% |
++-----------------------------+------+-------+-----------+-------+
+| Bonded IOB                  |  129 |   129 |      1200 | 10.75 |
+|   IOB Master Pads           |   67 |       |           |       |
+|   IOB Slave Pads            |   62 |       |           |       |
+| Bonded IPADs                |    0 |     0 |        50 |  0.00 |
+| Bonded OPADs                |    0 |     0 |        32 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |        24 |  0.00 |
+| PHASER_REF                  |    0 |     0 |        24 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |        96 |  0.00 |
+| IN_FIFO                     |    0 |     0 |        96 |  0.00 |
+| IDELAYCTRL                  |    1 |     0 |        24 |  4.17 |
+| IBUFDS                      |   17 |    17 |      1152 |  1.48 |
+| GTXE2_COMMON                |    0 |     0 |         4 |  0.00 |
+| GTXE2_CHANNEL               |    0 |     0 |        16 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        96 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |        96 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |   12 |    12 |      1200 |  1.00 |
+|   IDELAYE2 only             |   12 |    12 |           |       |
+| ODELAYE2/ODELAYE2_FINEDELAY |    0 |     0 |      1200 |  0.00 |
+| IBUFDS_GTE2                 |    0 |     0 |         8 |  0.00 |
+| ILOGIC                      |    7 |     7 |      1200 |  0.58 |
+|   ISERDES                   |    7 |     7 |           |       |
+| OLOGIC                      |   10 |    10 |      1200 |  0.83 |
+|   OUTFF_ODDR_Register       |    3 |     3 |           |       |
+|   OSERDES                   |    7 |     7 |           |       |
++-----------------------------+------+-------+-----------+-------+
+
+
+5. Clocking
+-----------
+
++--------------+------+-------+-----------+-------+
+|   Site Type  | Used | Fixed | Available | Util% |
++--------------+------+-------+-----------+-------+
+| BUFGCTRL     |   15 |     3 |       128 | 11.72 |
+| BUFIO        |    1 |     1 |        96 |  1.04 |
+|   BUFIO only |    1 |     1 |           |       |
+| MMCME2_ADV   |    4 |     2 |        24 | 16.67 |
+| PLLE2_ADV    |    0 |     0 |        24 |  0.00 |
+| BUFMRCE      |    0 |     0 |        48 |  0.00 |
+| BUFHCE       |    0 |     0 |       288 |  0.00 |
+| BUFR         |    1 |     0 |        96 |  1.04 |
++--------------+------+-------+-----------+-------+
+
+
+6. Specific Feature
+-------------------
+
++-------------+------+-------+-----------+--------+
+|  Site Type  | Used | Fixed | Available |  Util% |
++-------------+------+-------+-----------+--------+
+| BSCANE2     |    0 |     0 |        16 |   0.00 |
+| CAPTUREE2   |    1 |     0 |         4 |  25.00 |
+| DNA_PORT    |    0 |     0 |         1 |   0.00 |
+| EFUSE_USR   |    0 |     0 |         1 |   0.00 |
+| FRAME_ECCE2 |    0 |     0 |         4 |   0.00 |
+| ICAPE2      |    0 |     0 |         8 |   0.00 |
+| PCIE_2_1    |    0 |     0 |         4 |   0.00 |
+| STARTUPE2   |    1 |     0 |         4 |  25.00 |
+| XADC        |    1 |     0 |         1 | 100.00 |
++-------------+------+-------+-----------+--------+
+
+
+7. Primitives
+-------------
+
++------------+-------+---------------------+
+|  Ref Name  |  Used | Functional Category |
++------------+-------+---------------------+
+| FDRE       | 18922 |        Flop & Latch |
+| LUT6       | 14700 |                 LUT |
+| LUT5       |  6363 |                 LUT |
+| LUT4       |  4251 |                 LUT |
+| SRLC32E    |  3105 |  Distributed Memory |
+| LUT2       |  2457 |                 LUT |
+| SRLC16E    |  2048 |  Distributed Memory |
+| LUT3       |  1992 |                 LUT |
+| MUXF7      |  1370 |               MuxFx |
+| RAMS32     |  1024 |  Distributed Memory |
+| FDCE       |   779 |        Flop & Latch |
+| LUT1       |   726 |                 LUT |
+| CARRY4     |   518 |          CarryLogic |
+| LDCE       |   374 |        Flop & Latch |
+| FDPE       |   152 |        Flop & Latch |
+| FDSE       |   115 |        Flop & Latch |
+| MUXF8      |    83 |               MuxFx |
+| RAMS64E    |    72 |  Distributed Memory |
+| OBUF       |    53 |                  IO |
+| RAMB36E1   |    20 |        Block Memory |
+| OBUFDS     |    17 |                  IO |
+| IBUFDS     |    17 |                  IO |
+| OBUFT      |    16 |                  IO |
+| IBUF       |    16 |                  IO |
+| IDELAYE2   |    12 |                  IO |
+| BUFGCTRL   |    11 |               Clock |
+| OSERDESE2  |     7 |                  IO |
+| ISERDESE2  |     7 |                  IO |
+| MMCME2_ADV |     4 |               Clock |
+| INV        |     4 |                 LUT |
+| BUFG       |     4 |               Clock |
+| ODDR       |     3 |                  IO |
+| XADC       |     1 |              Others |
+| STARTUPE2  |     1 |              Others |
+| IDELAYCTRL |     1 |                  IO |
+| CAPTUREE2  |     1 |              Others |
+| BUFR       |     1 |               Clock |
+| BUFIO      |     1 |               Clock |
++------------+-------+---------------------+
+
+
+8. Black Boxes
+--------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+9. Instantiated Netlists
+------------------------
+
++----------------------+------+
+|       Ref Name       | Used |
++----------------------+------+
+| vde_mon_top          |    1 |
+| vd_top               |    1 |
+| qiwc_ip_cluster      |    1 |
+| fwc_ip_hs_cluster_32 |    1 |
+| design               |    1 |
++----------------------+------+
+
+
+10. SLR Connectivity and Clocking Utilization
+---------------------------------------------
+
++----------+-----------------+---------+-----------------+--------------+-------+-------+
+|          | Total SLLs Used | (%)SLLs | BUFGs/BUFGCTRLs | BUFH/BUFHCEs | BUFRs | MMCMs |
++----------+-----------------+---------+-----------------+--------------+-------+-------+
+| SLR3     |                 |         |               0 |            0 |     0 |     0 |
+| ||||||-> |               0 |    0.00 |                 |              |       |       |
+| SLR2     |                 |         |               0 |            0 |     0 |     0 |
+| ||||||-> |               0 |    0.00 |                 |              |       |       |
+| SLR1     |                 |         |               3 |            0 |     0 |     2 |
+| ||||||-> |               0 |    0.00 |                 |              |       |       |
+| SLR0     |                 |         |               0 |            0 |     0 |     0 |
++----------+-----------------+---------+-----------------+--------------+-------+-------+
+
+
+11. SLR Connectivity Matrix
+---------------------------
+
++-----------+------+------+------+------+
+| FROM \ TO | SLR3 | SLR2 | SLR1 | SLR0 |
++-----------+------+------+------+------+
+| SLR3      |    0 |    0 |    0 |    0 |
+| SLR2      |    0 |    0 |    0 |    0 |
+| SLR1      |    0 |    0 |    0 |    0 |
+| SLR0      |    0 |    0 |    0 |    0 |
++-----------+------+------+------+------+
+
+
+12. SLR Slice Logic and Dedicated Block Utilization
+---------------------------------------------------
+
++-----------+--------+-----------+------------+-------------+---------------+-----------+-------+------+
+| SLR Index | Slices | (%)Slices | Total LUTs | Memory LUTs | (%)Total LUTs | Registers | BRAMs | DSPs |
++-----------+--------+-----------+------------+-------------+---------------+-----------+-------+------+
+| SLR3      |      0 |      0.00 |          0 |           0 |          0.00 |         0 |     0 |    0 |
+| SLR2      |      0 |      0.00 |          0 |           0 |          0.00 |         0 |     0 |    0 |
+| SLR1      |      0 |      0.00 |          0 |           0 |          0.00 |         0 |     0 |    0 |
+| SLR0      |      0 |      0.00 |          0 |           0 |          0.00 |         0 |     0 |    0 |
++-----------+--------+-----------+------------+-------------+---------------+-----------+-------+------+
+| Total     |      0 |           |          0 |           0 |               |         0 |     0 |    0 |
++-----------+--------+-----------+------------+-------------+---------------+-----------+-------+------+
+
+
+13. SLR IO Utilization
+----------------------
+
++-----------+-----------+---------+------------+----------+------------+----------+-----+
+| SLR Index | Used IOBs | (%)IOBs | Used IPADs | (%)IPADs | Used OPADs | (%)OPADs | GTs |
++-----------+-----------+---------+------------+----------+------------+----------+-----+
+| SLR3      |         4 |    1.33 |          0 |     0.00 |          0 |     0.00 |   0 |
+| SLR2      |        33 |   11.00 |          0 |     0.00 |          0 |     0.00 |   0 |
+| SLR1      |        16 |    5.33 |          0 |     0.00 |          0 |     0.00 |   0 |
+| SLR0      |        76 |   25.33 |          0 |     0.00 |          0 |     0.00 |   0 |
++-----------+-----------+---------+------------+----------+------------+----------+-----+
+| Total     |       129 |         |          0 |          |          0 |          |   0 |
++-----------+-----------+---------+------------+----------+------------+----------+-----+
+
+
+
+/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F00.Original
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 20 13:19:57 2024...

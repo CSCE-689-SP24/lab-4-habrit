@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ZeBuUiDoc>
+	<Graph_tasks>
+		<task name="BE_Version_Checker">
+			<profiling>
+				<Duration>1</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="FE_Version_Checker">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="Post_Vcs_Task_Builder">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="RhinoFsdb_Builder">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="Target_Config">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="Target_Config_Analyzer">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="VCS_Task_Analyzer">
+			<profiling>
+				<Duration>1</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>1</DurationTotal>
+			</profiling>
+		</task>
+		<task name="Vcs_Version_Checker">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="Verdi_Compilation">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_BackendEntry">
+			<profiling>
+				<Duration>1</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>1</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_Design_FPGA_Dispatch">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer">
+			<profiling>
+				<Duration>1</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_OptionsDbProc">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_PostZCoreCompilationJoin">
+			<profiling>
+				<Duration>1</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>1</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_PreParScriptBuilder">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_Project_Analyzer">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_RTB_FPGA_Dispatch_U0_M0_IF">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_RTB_Front_End">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>3</DurationSlot>
+				<DurationTotal>3</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_RTB_Front_End_Result_Analyzer">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_RTL_DB_Indexer">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_RTL_DB_Link">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_RTL_DB_RunTime">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_Cleaning">
+			<profiling>
+				<Duration>5</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>7</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L0">
+			<profiling>
+				<Duration>329</Duration>
+				<DurationSlot>10</DurationSlot>
+				<DurationTotal>331</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L1">
+			<profiling>
+				<Duration>344</Duration>
+				<DurationSlot>5</DurationSlot>
+				<DurationTotal>347</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L10">
+			<profiling>
+				<Duration>337</Duration>
+				<DurationSlot>145</DurationSlot>
+				<DurationTotal>338</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L11">
+			<profiling>
+				<Duration>338</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>340</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L12">
+			<profiling>
+				<Duration>360</Duration>
+				<DurationSlot>5</DurationSlot>
+				<DurationTotal>361</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L13">
+			<profiling>
+				<Duration>340</Duration>
+				<DurationSlot>7</DurationSlot>
+				<DurationTotal>341</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L14">
+			<profiling>
+				<Duration>337</Duration>
+				<DurationSlot>8</DurationSlot>
+				<DurationTotal>338</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L15">
+			<profiling>
+				<Duration>339</Duration>
+				<DurationSlot>28</DurationSlot>
+				<DurationTotal>342</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L16">
+			<profiling>
+				<Duration>336</Duration>
+				<DurationSlot>4</DurationSlot>
+				<DurationTotal>338</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L2">
+			<profiling>
+				<Duration>345</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>347</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L3">
+			<profiling>
+				<Duration>345</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>347</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L4">
+			<profiling>
+				<Duration>344</Duration>
+				<DurationSlot>4</DurationSlot>
+				<DurationTotal>346</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L5">
+			<profiling>
+				<Duration>350</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>350</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L6">
+			<profiling>
+				<Duration>350</Duration>
+				<DurationSlot>4</DurationSlot>
+				<DurationTotal>352</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L7">
+			<profiling>
+				<Duration>346</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>348</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L8">
+			<profiling>
+				<Duration>351</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>352</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_L9">
+			<profiling>
+				<Duration>344</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>346</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_Original">
+			<profiling>
+				<Duration>447</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>448</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F00_PaR_Controller">
+			<profiling>
+				<Duration>1092</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>1092</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_Cleaning">
+			<profiling>
+				<Duration>5</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>7</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L0">
+			<profiling>
+				<Duration>267</Duration>
+				<DurationSlot>3</DurationSlot>
+				<DurationTotal>270</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L1">
+			<profiling>
+				<Duration>276</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>278</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L10">
+			<profiling>
+				<Duration>276</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>278</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L11">
+			<profiling>
+				<Duration>262</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>263</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L12">
+			<profiling>
+				<Duration>279</Duration>
+				<DurationSlot>3</DurationSlot>
+				<DurationTotal>282</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L13">
+			<profiling>
+				<Duration>270</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>272</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L14">
+			<profiling>
+				<Duration>260</Duration>
+				<DurationSlot>3</DurationSlot>
+				<DurationTotal>263</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L15">
+			<profiling>
+				<Duration>262</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>263</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L16">
+			<profiling>
+				<Duration>263</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>265</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L2">
+			<profiling>
+				<Duration>273</Duration>
+				<DurationSlot>3</DurationSlot>
+				<DurationTotal>276</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L3">
+			<profiling>
+				<Duration>270</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>272</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L4">
+			<profiling>
+				<Duration>263</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>265</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L5">
+			<profiling>
+				<Duration>269</Duration>
+				<DurationSlot>3</DurationSlot>
+				<DurationTotal>272</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L6">
+			<profiling>
+				<Duration>260</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>261</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L7">
+			<profiling>
+				<Duration>279</Duration>
+				<DurationSlot>3</DurationSlot>
+				<DurationTotal>282</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L8">
+			<profiling>
+				<Duration>281</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>282</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_L9">
+			<profiling>
+				<Duration>276</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>278</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_Original">
+			<profiling>
+				<Duration>250</Duration>
+				<DurationSlot>3</DurationSlot>
+				<DurationTotal>253</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_F08_PaR_Controller">
+			<profiling>
+				<Duration>423</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>423</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_Cleaning">
+			<profiling>
+				<Duration>5</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>6</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L0">
+			<profiling>
+				<Duration>249</Duration>
+				<DurationSlot>126</DurationSlot>
+				<DurationTotal>251</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L1">
+			<profiling>
+				<Duration>263</Duration>
+				<DurationSlot>130</DurationSlot>
+				<DurationTotal>266</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L10">
+			<profiling>
+				<Duration>257</Duration>
+				<DurationSlot>54</DurationSlot>
+				<DurationTotal>257</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L11">
+			<profiling>
+				<Duration>257</Duration>
+				<DurationSlot>63</DurationSlot>
+				<DurationTotal>258</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L12">
+			<profiling>
+				<Duration>260</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>262</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L13">
+			<profiling>
+				<Duration>258</Duration>
+				<DurationSlot>6</DurationSlot>
+				<DurationTotal>260</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L14">
+			<profiling>
+				<Duration>259</Duration>
+				<DurationSlot>5</DurationSlot>
+				<DurationTotal>260</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L15">
+			<profiling>
+				<Duration>259</Duration>
+				<DurationSlot>39</DurationSlot>
+				<DurationTotal>261</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L16">
+			<profiling>
+				<Duration>261</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>263</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L2">
+			<profiling>
+				<Duration>263</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>264</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L3">
+			<profiling>
+				<Duration>265</Duration>
+				<DurationSlot>3</DurationSlot>
+				<DurationTotal>266</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L4">
+			<profiling>
+				<Duration>261</Duration>
+				<DurationSlot>5</DurationSlot>
+				<DurationTotal>261</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L5">
+			<profiling>
+				<Duration>263</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>265</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L6">
+			<profiling>
+				<Duration>259</Duration>
+				<DurationSlot>6</DurationSlot>
+				<DurationTotal>261</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L7">
+			<profiling>
+				<Duration>262</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>263</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L8">
+			<profiling>
+				<Duration>263</Duration>
+				<DurationSlot>7</DurationSlot>
+				<DurationTotal>266</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_L9">
+			<profiling>
+				<Duration>261</Duration>
+				<DurationSlot>42</DurationSlot>
+				<DurationTotal>264</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_Original">
+			<profiling>
+				<Duration>257</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>259</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_U0_M0_IF_PaR_Controller">
+			<profiling>
+				<Duration>1009</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>1009</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_Vcs_Link">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zBuildClusteringSaver">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zCoreBuildAnalyzer_Part_0">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zCoreBuild_Part_0">
+			<profiling>
+				<Duration>8</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>10</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zDB_Global">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zDB_Global_Controller">
+			<profiling>
+				<Duration>1096</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>1096</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zDveTool">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zEquiGenerator">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zFW_U0_M0_IF">
+			<profiling>
+				<Duration>11</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>12</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zGraphGenerator">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zPar">
+			<profiling>
+				<Duration>10</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>12</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zRtlToEqui">
+			<profiling>
+				<Duration>1</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zSimuFsdbHeader">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zSimzilla">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zTime">
+			<profiling>
+				<Duration>2</Duration>
+				<DurationSlot>2</DurationSlot>
+				<DurationTotal>4</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zTopBuild">
+			<profiling>
+				<Duration>5</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>6</DurationTotal>
+			</profiling>
+		</task>
+		<task name="backend_default_zTopBuildResultAnalyzer">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="design_Default_RTL_GroupBundle_0_Synthesis">
+			<profiling>
+				<Duration>1</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>2</DurationTotal>
+			</profiling>
+		</task>
+		<task name="design_Default_RTL_GroupBundle_0_Synthesis_Bundle_0_analyzer">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="design_Fs_Macro_Script_Builder">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="stable_design_Default_RTL_Group_Synthesis_design_Default_RTL_Group_stable_analyzer">
+			<profiling>
+				<Duration>0</Duration>
+				<DurationSlot>0</DurationSlot>
+				<DurationTotal>0</DurationTotal>
+			</profiling>
+		</task>
+		<task name="vcs_splitter_VCS_Task_Builder">
+			<profiling>
+				<Duration>5</Duration>
+				<DurationSlot>1</DurationSlot>
+				<DurationTotal>6</DurationTotal>
+			</profiling>
+		</task>
+	</Graph_tasks>
+</ZeBuUiDoc>

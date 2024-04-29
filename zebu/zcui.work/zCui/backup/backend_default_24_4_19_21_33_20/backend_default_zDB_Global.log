@@ -1,0 +1,228 @@
+
+                                    ZeBu (R)
+                                      zRDB
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zRDB -merge -script zDB_final_zcui.tcl 
+
+# start time is Fri Apr 19 21:52:55 2024
+
+
+
+
+# Build Date : Oct 18 2022 - 01:00:11
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.90 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.41 4.06 4.71 2/485 4055
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.108.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 173014 MB
+#            Total Free including cache: 187262 MB
+#            Swap cache: 0 MB Cached space: 14248 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 353 MB VmPeak: 353 MB
+# Disk Space Total: 50 GB Available: 48 GB Used: 2 GB
+#            Free inodes: 104830350
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ZRDB : libZebuRDB version 2021.2.0 RW
+#   step ZRDB : Will generate selection of all support registers
+#   step ZRDB : Anticipated mode activated, using file 'zDB_Controller.cui' for communication with zCui
+#   step ZRDB : add annotation file tools/zDB/zTopBuild_equi.inf for merging
+#   step ZRDB : add annotation file work.Part_0/zCoreBuild_equi.inf for merging
+#   step ZRDB : Using '.' as zebu.work directory for database merge
+#   step ZRDB : add Fpga U0/M0/F00 for merging
+#   step ZRDB : add Fpga U0/M0/F08 for merging
+#   step ZRDB : add Fpga U0/M0/IF for merging
+#   step ZRDB : add zdb file 'zParDB.zdb' for merging
+#   step ZRDB : add zdb file 'work.Part_0/zCoreBuildDB.zdb' for merging
+#   step ZRDB : add property db file 'tools/zTopBuild/zTopBuild_propertyDB.gz' for merging
+#   step ZRDB : DB merging: 
+#   step CSA : CSA was not detected
+#   step HUB : Loading 'nofpga' database in full load mode
+#   step DB LOAD : Loading database from path './nofpga/zrdb'
+#   step DB LOAD : Opening full tree file './nofpga/zrdb/tree.zrdb' to speed up load process
+#   step FILE : Opening file './nofpga/zrdb/tree.zrdb' in read mode
+#   step FILE : Opening file './nofpga/zrdb/coords.zrdb' in read mode
+#   step DB LOAD : Loading DB stamp from file './nofpga/zrdb/stamp.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/stamp.zrdb' in read mode
+#   step DB LOAD : Version stamp is 2021.2.0
+#   step DB LOAD : The database was generated on : Fri Apr 19 21:34:08 2024
+#   step DB LOAD : Stored database CRC is : ffffffff
+#   step DB LOAD : Deserializing database : start
+#   step DB LOAD : Database version is 2021.2.0
+#   step DB LOAD : Auxillary databases splitted in 1 wrappers
+#   step DICTIONARY : Opening dictionary
+#   step FILE : Opening file './nofpga/zrdb/dictionary/names.zrdb' in read mode
+#   step DICTIONARY : Opened. 1239 unique names, in 1 chunks of 32768 entries, stored in 1 directories
+#   step COORDS : Loading coordinates database (full)
+#   step COORDS : Reading coordinates database header
+#   step COORDS : Coordinates database contains 0 entries
+#   step COORDS : Reading coordinates database header (cont'd)
+#   step COORDS : Read coordinates database header complete (0 seconds)
+#   step COORDS : Reading register coordinates
+#   step COORDS : Finished reading 0 register coordinates in 0 seconds
+#   step COORDS : Loaded coordinates database in 0 seconds (full)
+#   step MEMS : Opening memories database file './nofpga/zrdb/mems.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/mems.zrdb' in read mode
+#   step MEMS : Memories database opened
+#   step MEMS : Loading size
+#   step MEMS : Loading size
+#   step MEMS : Loading size
+#   step MEMS : Loading size
+#   step MEMS : Loading size
+#   step MEMS : Loading size
+#   step MEMS : Loading Index
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step MEMS : Loading Index
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step MEMS : Loading Index
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step MEMS : Loading Index
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step MEMS : Loading Index
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step MEMS : Loading Index
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step MEMS : Loading Table
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step MEMS : Loading Table
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step MEMS : Loading Table
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step MEMS : Loading Table
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step MEMS : Loading Table
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step MEMS : Loading Table
+#   step MEMS : deserialize table
+#   step MEMS : Finished reading 0 entries in 0 seconds
+#   step DB LOAD : Deserializing tree : start
+#   step DICTIONARY : Loading chunk #0
+#   step FILE : Opening file './nofpga/zrdb/dictionary/0/0.zrdb' in read mode
+#   step DICTIONARY : Reading 1239 entries
+#   step DICTIONARY : Read 1239 entries
+#   step DICTIONARY : Chunk #0 loaded. Added 1239 names.
+#   step DB LOAD : Deserializing tree : finished in 0 seconds
+#   step DB LOAD : Deserializing database : finished in 0 seconds
+#   step DICTIONARY : Loading all 1 chunks
+#   step DICTIONARY : All chunks loaded
+#   step EQUI DB : Loading EquiDB from path './nofpga/zrdb'
+#   step EQUI DB : Opening equi db files
+#   step EQUI TABLE : Opening './nofpga/zrdb/0_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/0_equis.zrdb' in read mode
+#   step DATABASE : Reading DB './nofpga/zrdb/0_equis.zrdb' index (#8 entries)
+#   step DATABASE : Read index OK : 0 seconds.
+#   step EQUI TABLE : Opened in 0 seconds
+#   step EQUI TABLE : Opening './nofpga/zrdb/1_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/1_equis.zrdb' in read mode
+#   step DATABASE : Reading DB './nofpga/zrdb/1_equis.zrdb' index (#15 entries)
+#   step DATABASE : Read index OK : 0 seconds.
+#   step EQUI TABLE : Opened in 0 seconds
+#   step EQUI TABLE : Opening './nofpga/zrdb/2_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/2_equis.zrdb' in read mode
+#   step DATABASE : Reading DB './nofpga/zrdb/2_equis.zrdb' index (#9 entries)
+#   step DATABASE : Read index OK : 0 seconds.
+#   step EQUI TABLE : Opened in 0 seconds
+#   step EQUI TABLE : Opening './nofpga/zrdb/3_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/3_equis.zrdb' in read mode
+#   step DATABASE : Reading DB './nofpga/zrdb/3_equis.zrdb' index (#4 entries)
+#   step DATABASE : Read index OK : 0 seconds.
+#   step EQUI TABLE : Opened in 0 seconds
+#   step EQUI TABLE : Opening './nofpga/zrdb/4_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/4_equis.zrdb' in read mode
+#   step DATABASE : Reading DB './nofpga/zrdb/4_equis.zrdb' index (#11 entries)
+#   step DATABASE : Read index OK : 0 seconds.
+#   step EQUI TABLE : Opened in 0 seconds
+#   step EQUI TABLE : Opening './nofpga/zrdb/5_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/5_equis.zrdb' in read mode
+#   step DATABASE : Reading DB './nofpga/zrdb/5_equis.zrdb' index (#6 entries)
+#   step DATABASE : Read index OK : 0 seconds.
+#   step EQUI TABLE : Opened in 0 seconds
+#   step EQUI TABLE : Opening './nofpga/zrdb/6_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/6_equis.zrdb' in read mode
+#   step DATABASE : Reading DB './nofpga/zrdb/6_equis.zrdb' index (#12 entries)
+#   step DATABASE : Read index OK : 0 seconds.
+#   step EQUI TABLE : Opened in 0 seconds
+#   step EQUI TABLE : Opening './nofpga/zrdb/7_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/7_equis.zrdb' in read mode
+#   step DATABASE : Reading DB './nofpga/zrdb/7_equis.zrdb' index (#11 entries)
+#   step DATABASE : Read index OK : 0 seconds.
+#   step EQUI TABLE : Opened in 0 seconds
+#   step EQUI DB : Equi db files opened
+#   step EQUI DB : Finishing load
+#   step DATABASE : Referencing nodes (top instances)
+#   step DATABASE : 2 nodes referenced in 0 seconds. Total of 2 referenced nodes.
+#   step DATABASE : Referencing nodes (full)
+#   step DATABASE : 77 nodes referenced in 0 seconds. Total of 77 referenced nodes.
+#   step DB : Database './nofpga/zrdb/3_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/7_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/5_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/2_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/6_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/4_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/0_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/1_equis.zrdb' closed
+#   step EQUI DB : Load completed in 0 seconds
+#   step DB FILE : Deleting file './zrdb/initial_stamp.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/stamp.zrdb' in read mode
+#   step FILE : Opening file './zrdb/initial_stamp.zrdb' in write mode
+#   step Merge : Reading file 'zParDB.zdb'
+#   step BANK : Merging memory banks
+#   step BANK : Merged memory banks
+#   step Merge : Reading file 'work.Part_0/zCoreBuildDB.zdb'
+#   step BANK : Merging memory banks
+#   step BANK : Merged memory banks
+#   step MERGE : Starting task 'ImportConstants'
+#   step AnoDB : Anotation file 'tools/zDB/zTopBuild_equi.inf' successfully opened
+#   step ALIASES : Merging new hierarchy pathes
+#   step ALIASES : Merging equipotentials using backend aliases in same hierarchy
+#   step ALIASES : Merging equipotentials using backend aliases in different hierarchy
+#   step AnoDB : 204 signals anotated, 0 memories added, 0 removed ZceiMessagePorts added.
+#   step Annotation DB : Closing file 'tools/zDB/zTopBuild_equi.inf'
+#   step AnoDB : Anotation file 'work.Part_0/zCoreBuild_equi.inf' successfully opened
+#   step ALIASES : Merging new hierarchy pathes
+#   step ALIASES : Merging equipotentials using backend aliases in same hierarchy
+#   step ALIASES : Merging equipotentials using backend aliases in different hierarchy
+#   step AnoDB : 0 signals anotated, 0 memories added, 0 removed ZceiMessagePorts added.
+#   step Annotation DB : Closing file 'work.Part_0/zCoreBuild_equi.inf'
+#   step MERGE : Completed task 'ImportConstants' in 0 seconds
+#   exec summary : Total memory: 1125112 kB - RSS memory: 322152 kB - Data memory: 842988 kB
+#   step POWER : No power domain needs to be copied
+#   exec summary : Total memory: 1125112 kB - RSS memory: 322152 kB - Data memory: 842988 kB
+#   step MERGE : Starting task 'EquiConsolidation'
+#   step MERGE : Completed task 'EquiConsolidation' in 0 seconds
+#   exec summary : Total memory: 1125112 kB - RSS memory: 322152 kB - Data memory: 842988 kB
+#   step FILE : Opening file 'zDB_Controller.cui' in read mode
+### fatal error in FPGA FAILURE [RDB0497F] : Stopping merge due to to FPGA compilation failure for 'U0/M0/F08'
+command exit code is '1'

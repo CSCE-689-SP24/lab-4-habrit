@@ -1,0 +1,6 @@
+dut
+sva_clock_inst -> sva_clock_inst -> zebu_reqsig_clock_zcompositeclock
+u_parity -> u_parity -> parity
+u_fifo -> u_fifo -> fifo_0000
+u_check -> u_check -> parity_check
+unnamed$$_0 -> unnamed$$_0 -> ZSVA_MOD_PLI_7

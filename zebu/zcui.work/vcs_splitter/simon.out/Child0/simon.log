@@ -1,0 +1,77 @@
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: top Parameterized Name: top
+
+
+Note-[SM_IIF] Instance Info
+  Instance Count : module 'top' has 2 instances
+  
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '0' with process id '17336'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.01 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Sat Apr 20 13:13:45 2024
+  .
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: parity_check
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: fifo_0000
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: dut
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: rom
+
+
+Note-[SM_MEM_INFO] Module has inferred memories
+../source/stb/rom.sv, 8
+  Inferred memory statistics for module 'rom' (Instances: 1)
+  ------------------------------------------------------------------------------
+  |Name |Size |TotalPorts |ReadPorts |WritePorts |Reset |Initial |
+  ------------------------------------------------------------------------------
+  | mem | 2304(256x9) |TP:1 |RP:1(A:1,S:0) |WP:0(A:0,S:0) |R:None |I:No |
+  ------------------------------------------------------------------------------
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: ram
+
+
+Note-[SM_MEM_INFO] Module has inferred memories
+../source/stb/ram.sv, 8
+  Inferred memory statistics for module 'ram' (Instances: 1)
+  ------------------------------------------------------------------------------
+  |Name |Size |TotalPorts |ReadPorts |WritePorts |Reset |Initial |
+  ------------------------------------------------------------------------------
+  | mem | 2304(256x9) |TP:1 |RP:0(A:0,S:0) |WP:1(A:0,S:1) |R:None |I:No |
+  ------------------------------------------------------------------------------
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: top
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '0' with process id '17338'
+  is done with post-processing optimizations of total '6' modules
+  SIMON Child CPU Time        : 0.01 sec
+  SIMON Child Wall-Clock Time : 0.09 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Sat Apr 20 13:13:46 2024
+  .
+

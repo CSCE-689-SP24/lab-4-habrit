@@ -1,0 +1,10 @@
+zFAST results analysis:
+  Source unit: Design
+  RTL group: Default_RTL_Group
+Module: stb
+  Xcui file design/synth_Default_RTL_Group/xcui/stb.xcui is read
+  Checksum value 36cb3a64813338c862c4cc73aa8a6b47d5fba995e4845d4198ac24bd3513f367573334166b99145f7c2a7c6e842f1345453c5fb7a1dbf5de5d30040e6b3aecb6
+Module: top
+  Xcui file design/synth_Default_RTL_Group/xcui/top.xcui is read
+  Checksum value 8ef2714cec5fcc1b1f054a56a7f02f3fe3c363b03870652a6bf3db92aa7d49cde6036ee007b27fa2e1ff380deb64f2f2b7f2f949164e71573709b8c81e3882ea
+zFAST output analyzed

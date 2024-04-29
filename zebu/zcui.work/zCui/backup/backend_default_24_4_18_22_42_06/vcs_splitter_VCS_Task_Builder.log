@@ -1,0 +1,63 @@
+/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/bin/vcs: line 6316: tclsh: command not found
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_pp' will be deprecated in a future release.  Please use 
+  '-debug_acc+pp+dmptf -debug_region+cell+encrypt' instead.
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_pp' will be deprecated in a future release.  Please use 
+  '-debug_acc+pp+dmptf -debug_region+cell+encrypt' instead.
+
+                         Chronologic VCS (TM)
+     Version Q-2020.03-SP2-12_Full64 -- Thu Apr 18 22:42:24 2024
+               Copyright (c) 1991-2020 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Note-[BC_USE] Backward Compatibility features in use.
+  Using BC configuration 
+  /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vcs/synopsys_bc.setup     
+
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS Release Notes
+
+UNIZFE: Turning ON UNIZFE mode
+Parsing design file '../source/design/parity_check.sv'
+Parsing design file '../source/design/fifo.sv'
+Parsing design file '../source/design/clkg.sv'
+Parsing design file '../source/design/dut.sv'
+Parsing design file '../source/design/parity.sv'
+Parsing design file '../source/stb/ram.sv'
+Parsing design file '../source/stb/rom.sv'
+Parsing design file '../source/stb/stb.sv'
+Parsing design file '../source/stb/top.sv'
+Parsing design file '../source/stb/proba.sv'
+Parsing design file '../source/stb/bind_spy.sv'
+Parsing design file '../source/stb/fifo_usage_spy.sv'
+
+Error-[IND] Identifier not declared
+../source/stb/fifo_usage_spy.sv, 26
+  Identifier 'read_en' has not been declared yet. If this error is not 
+  expected, please check if you have set `default_nettype to none.
+  
+
+
+Error-[SE] Syntax error
+  Following verilog source has syntax error :
+  	Only elaboration system tasks allowed here
+  "../source/stb/fifo_usage_spy.sv", 30: token is ';'
+  		$display("FIFO empty assertion passed");
+                                                          ^
+
+1 warning
+2 errors
+CPU time: .335 seconds to compile
+command exit code is '255'

@@ -1,0 +1,38 @@
+1713636900 01:15:00 PM Start_target=Original
+1713636900 01:15:00 PM   |- start zNetgen
+1713636911 01:15:11 PM     |=> zNetgen: 0 mins
+1713636911 01:15:11 PM   |- end zNetgen
+1713636915 01:15:15 PM   |- start XDC sorter
+1713636921 01:15:21 PM Start Vivado
+1713636971 01:16:11 PM     |- add_files/link_design: 1 mins
+1713636971 01:16:11 PM     |=> initialisation_linked: 1 mins
+1713636972 01:16:12 PM   |- start phase: netlist_analys_preproc
+1713636973 01:16:13 PM     |=> netlist_analys_preproc: 1 mins
+1713636974 01:16:14 PM   |- start phase: read_constraints
+1713637001 01:16:41 PM     |=> read_constraints: 1 mins
+1713637002 01:16:42 PM   |- start phase: opt_design
+1713637002 01:16:42 PM       |=>  opt_design: 1 mins
+1713637002 01:16:42 PM   << ERROR DETECTED IN OPT_DESIGN >> 
+1713637008 01:16:48 PM        |- generate: timing and dcp_opt_design.dcp
+1713637002 01:16:42 PM   << ERROR DETECTED IN opt_design DESIGN >> 
+1713637011 01:16:51 PM     => vivado_ko: 1 mins
+1713637011 01:16:51 PM vivado: 1 mins
+1713637019 01:16:59 PM TRIGGER : GREP
+1713637556 01:25:56 PM Start_target=L12
+1713637556 01:25:56 PM   |- start zNetgen
+1713637569 01:26:09 PM     |=> zNetgen: 0 mins
+1713637569 01:26:09 PM   |- end zNetgen
+1713637573 01:26:13 PM   |- start XDC sorter
+1713637578 01:26:18 PM Start Vivado
+1713637633 01:27:13 PM     |- add_files/link_design: 1 mins
+1713637633 01:27:13 PM     |=> initialisation_linked: 1 mins
+1713637634 01:27:14 PM   |- start phase: netlist_analys_preproc
+1713637636 01:27:16 PM     |=> netlist_analys_preproc: 1 mins
+1713637637 01:27:17 PM   |- start phase: read_constraints
+1713637667 01:27:47 PM     |=> read_constraints: 1 mins
+1713637667 01:27:47 PM   |- start phase: opt_design
+1713637667 01:27:47 PM       |=>  opt_design: 1 mins
+1713637667 01:27:47 PM   << ERROR DETECTED IN OPT_DESIGN >> 
+1713637667 01:27:47 PM   << ERROR DETECTED IN opt_design DESIGN >> 
+1713637670 01:27:50 PM     => vivado_ko: 1 mins
+1713637670 01:27:50 PM vivado: 1 mins

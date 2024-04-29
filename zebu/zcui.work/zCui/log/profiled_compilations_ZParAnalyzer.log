@@ -1,0 +1,971 @@
+.. Command: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin/tracean3.py --top-delay=5 --syn-details=5 --pr-summary-by-time=5 --hhmm --local-time=detect --show-memory --fix-graph --cpu-time /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work
+** Can't find tracerun.cui in /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/backup/backend_default_24_4_18_22_42_06/prof. This directory will be ignored.
+.. Reading /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/backup/backend_default_24_4_19_21_03_49/prof/tracerun.cui ...
+.. Detected --work=/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/.
+.. Detected --submit-host=csce-quinn-s1.engr.tamu.edu
+.. Detected local time offset of -5.0 hours
+.. The first backend_default_24_4_19_21_03_49 task started at Sat, 20 Apr 2024 02:03:52 UTC
+.. Reading /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/backup/backend_default_24_4_19_21_33_20/prof/tracerun.cui ...
+.. The first backend_default_24_4_19_21_33_20 task started at Sat, 20 Apr 2024 02:33:22 UTC
+.. Reading /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/backup/backend_default_24_4_19_21_58_21/prof/tracerun.cui ...
+.. The first backend_default_24_4_19_21_58_21 task started at Sat, 20 Apr 2024 02:58:24 UTC
+.. Reading /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/backup/backend_default_24_4_20_11_40_07/prof/tracerun.cui ...
+.. The first backend_default_24_4_20_11_40_07 task started at Sat, 20 Apr 2024 16:40:10 UTC
+.. Reading /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/backup/backend_default_24_4_20_13_13_30/prof/tracerun.cui ...
+.. The first backend_default_24_4_20_13_13_30 task started at Sat, 20 Apr 2024 18:13:33 UTC
+.. No timing info for backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer (execution)
+** UNKNOWN COMMAND: backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer (duration: 0)
+** UNKNOWN COMMAND: backend_default_zFW_U0_M0_IF (duration: 11)
+** UNKNOWN COMMAND: backend_default_zTime (duration: 2)
+** UNKNOWN COMMAND: backend_default_zDB_Global (duration: 0)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_Cleaning (duration: 0)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_Original (duration: 463)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L0 (duration: 339)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L1 (duration: 350)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L2 (duration: 349)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L3 (duration: 348)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L4 (duration: 346)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L5 (duration: 349)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L6 (duration: 347)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L7 (duration: 352)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L8 (duration: 354)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L9 (duration: 344)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L10 (duration: 346)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L11 (duration: 344)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L12 (duration: 369)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L13 (duration: 344)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L14 (duration: 350)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L15 (duration: 344)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L16 (duration: 344)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_Cleaning (duration: 0)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_Original (duration: 250)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L0 (duration: 285)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L1 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L10 (duration: 271)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L12 (duration: 281)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L2 (duration: 284)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L3 (duration: 274)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L4 (duration: 280)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L5 (duration: 266)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L6 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L7 (duration: 282)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L8 (duration: 272)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L9 (duration: 281)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L11 (duration: 275)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L13 (duration: 261)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L14 (duration: 269)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L15 (duration: 257)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L16 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_Cleaning (duration: 0)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_Original (duration: 256)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L0 (duration: 257)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L1 (duration: 269)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L2 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L3 (duration: 266)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L4 (duration: 264)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L5 (duration: 266)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L6 (duration: 269)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L7 (duration: 267)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L8 (duration: 266)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L9 (duration: 267)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L10 (duration: 259)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L11 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L12 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L13 (duration: 260)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L14 (duration: 264)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L15 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L16 (duration: 262)
+** UNKNOWN COMMAND: backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer (duration: 0)
+** UNKNOWN COMMAND: backend_default_zTime (duration: 2)
+** UNKNOWN COMMAND: backend_default_zDB_Global (duration: 0)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_Cleaning (duration: 7)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_Original (duration: 252)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L0 (duration: 278)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L1 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L10 (duration: 270)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L11 (duration: 273)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L12 (duration: 279)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L13 (duration: 267)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L14 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L15 (duration: 266)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L16 (duration: 278)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L2 (duration: 273)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L3 (duration: 259)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L4 (duration: 271)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L5 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L6 (duration: 264)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L7 (duration: 264)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L8 (duration: 276)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L9 (duration: 266)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_Cleaning (duration: 7)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_Original (duration: 449)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L0 (duration: 327)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L1 (duration: 343)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L2 (duration: 346)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L3 (duration: 344)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L4 (duration: 344)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L5 (duration: 345)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L6 (duration: 344)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L7 (duration: 344)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L8 (duration: 345)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L9 (duration: 339)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L10 (duration: 337)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L11 (duration: 337)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L12 (duration: 363)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L13 (duration: 343)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L14 (duration: 336)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L15 (duration: 335)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L16 (duration: 335)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_Cleaning (duration: 5)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_Original (duration: 255)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L0 (duration: 250)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L1 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L2 (duration: 264)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L3 (duration: 267)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L4 (duration: 261)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L5 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L6 (duration: 261)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L7 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L8 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L9 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L10 (duration: 259)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L11 (duration: 256)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L12 (duration: 259)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L13 (duration: 258)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L14 (duration: 256)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L15 (duration: 257)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L16 (duration: 259)
+** UNKNOWN COMMAND: backend_default_zDB_Global (duration: 0)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_Cleaning (duration: 3)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_Original (duration: 454)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L0 (duration: 334)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L1 (duration: 343)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L2 (duration: 345)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L3 (duration: 347)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L4 (duration: 345)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L5 (duration: 345)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L6 (duration: 343)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L7 (duration: 348)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L8 (duration: 346)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L9 (duration: 339)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L10 (duration: 339)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L11 (duration: 340)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L12 (duration: 361)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L13 (duration: 341)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L14 (duration: 340)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L15 (duration: 338)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L16 (duration: 334)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_Cleaning (duration: 3)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_Original (duration: 247)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L0 (duration: 261)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L1 (duration: 267)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L10 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L11 (duration: 265)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L12 (duration: 280)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L13 (duration: 274)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L14 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L15 (duration: 276)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L16 (duration: 280)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L2 (duration: 281)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L3 (duration: 264)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L4 (duration: 270)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L5 (duration: 261)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L6 (duration: 279)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L7 (duration: 283)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L8 (duration: 271)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L9 (duration: 282)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_Cleaning (duration: 2)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_Original (duration: 255)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L0 (duration: 250)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L1 (duration: 265)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L2 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L3 (duration: 260)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L4 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L5 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L6 (duration: 264)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L7 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L8 (duration: 260)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L9 (duration: 265)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L10 (duration: 261)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L11 (duration: 257)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L12 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L13 (duration: 258)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L14 (duration: 261)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L15 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L16 (duration: 256)
+** UNKNOWN COMMAND: backend_default_zTime (duration: 2)
+** UNKNOWN COMMAND: backend_default_zDB_Global (duration: 0)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_Cleaning (duration: 6)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_Original (duration: 452)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L0 (duration: 331)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L1 (duration: 349)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L2 (duration: 343)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L3 (duration: 344)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L4 (duration: 345)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L5 (duration: 347)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L6 (duration: 352)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L7 (duration: 347)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L8 (duration: 345)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L9 (duration: 344)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L10 (duration: 335)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L11 (duration: 346)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L12 (duration: 365)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L13 (duration: 348)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L14 (duration: 342)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L15 (duration: 332)
+** UNKNOWN COMMAND: backend_default_U0_M0_F00_L16 (duration: 336)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_Cleaning (duration: 6)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_Original (duration: 249)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L0 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L1 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L10 (duration: 274)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L11 (duration: 270)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L12 (duration: 283)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L13 (duration: 269)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L14 (duration: 268)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L15 (duration: 271)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L16 (duration: 268)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L2 (duration: 264)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L3 (duration: 269)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L4 (duration: 258)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L5 (duration: 269)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L6 (duration: 274)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L7 (duration: 258)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L8 (duration: 259)
+** UNKNOWN COMMAND: backend_default_U0_M0_F08_L9 (duration: 272)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_Cleaning (duration: 4)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_Original (duration: 254)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L0 (duration: 250)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L1 (duration: 265)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L2 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L3 (duration: 261)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L4 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L5 (duration: 270)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L6 (duration: 266)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L7 (duration: 264)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L8 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L9 (duration: 263)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L10 (duration: 261)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L11 (duration: 264)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L12 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L13 (duration: 258)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L14 (duration: 261)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L15 (duration: 262)
+** UNKNOWN COMMAND: backend_default_U0_M0_IF_L16 (duration: 259)
+** UNKNOWN COMMAND: backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer (duration: 0)
+
+*** Incremental = Yes ***
+
+Run               Start/end (local)          Duration
+================  ========================== ========
+R00               04-19 21:03 to 04-19 21:05     0:01
+Gap between runs                                 0:28
+R01               04-19 21:33 to 04-19 21:34     0:01
+Gap between runs                                 0:23
+R02               04-19 21:58 to 04-19 21:58     0:00
+Gap between runs                                13:41
+R03               04-20 11:40 to 04-20 11:41     0:00
+Gap between runs                                 1:32
+R04               04-20 13:13 to 04-20 13:14     0:01
+============================================ ========
+Total time                                      16:10 (0:04 without gaps)
+
+*** Back-end name: default backend ***
+
+                                                                     ---- R00 ------  ---- R01 ------  ---- R02 ------  ---- R03 ------  ---- R04 ------
+Stage name                                                             Time %total F    Time %total F    Time %total F    Time %total F    Time %total F  Max time
+===================================================================  ====== ====== =  ====== ====== =  ====== ====== =  ====== ====== =  ====== ====== =  ========
+Checks + config                                                        0:00   4.33      0:00   4.35      0:00  20.05      0:00   6.73      0:00   5.53        0:00
+vcs_splitter_VCS_Task_Builder                                          0:00  14.54      0:00  15.87      0:00  58.85      0:00  23.97      0:00  16.72        0:00
+FE + synthesis                                                         0:00  12.56      0:00   4.32                       0:00   6.49      0:00   4.51        0:00
+RTL DB index + link                                                    0:00   2.25      0:00   2.46      0:00  10.43      0:00   4.22      0:00   2.89        0:00
+backend_default_zTopBuild                                              0:00  13.55      0:00  16.31                       0:00  20.26      0:00  15.65        0:00
+Build zCore                                                            0:00  28.67      0:00  25.76                       0:00  38.33      0:00  24.60        0:00
+backend_default_zPar                                                   0:00  24.09      0:00  30.92                                        0:00  30.10        0:00
+backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer                                      0:00   6.57                                          0:00
+backend_default_RTL_DB_RunTime                                                                           0:00   4.10                                          0:00
+===================================================================  ====== ====== =  ====== ====== =  ====== ====== =  ====== ====== =  ====== ====== =  ========
+Total time w/o delays                                                  0:00 100.00      0:00 100.00      0:00 100.00      0:00 100.00      0:00 100.00        0:00
+
+
+***
+*** Detailed report for R00 (backend_default_24_4_19_21_03_49)
+***
+
+Grade  Bogomips  Cache   Count  CPU model (sample machine)
+-----  --------  ------  -----  --------------------------
+ 1.00      4600   25600      1  Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz (csce-quinn-s1.engr.tamu.edu)
+
+
+======================================================================
+*** Back-end name: default backend ***
+
+Critical path, based on actual execution timing
+===============================================
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   3.23%       0:00    1.0    0:00  Checks + config
+   0:00   8.43%       0:00    1.0    0:00  Launch VCS
+   0:00   7.28%       0:00    1.0    0:00  FE + synthesis
+   0:00   3.17%       0:00    0.4    0:00  RTL DB index + link
+   0:00   7.86%       0:00    1.0    0:00  Build System
+   0:00  16.62%       0:00    1.0    0:00  Build zCore
+   0:00  13.97%       0:00    1.0    0:00  Place and Route System
+-------  ------  ----------------  -------  -----
+   0:00  60.55%       0:00    1.0  * Total *
+
+Columns:
+- Elapsed: the difference between Finish and Submit times [hh:mm].
+- %total: the percentage of Elapsed time in overall compilation. Note that
+  it may add up to less than 100% if there were any gaps between Finish and
+  Submit times of successive stages.
+- SElapsed: sum of Elapsed times for all tasks constituting the stage. It
+  may be greater than Elapsed if some or all of these tasks were executed
+  in parallel [hh:mm].
+- SE/E: equal to SElapsed/Elapsed. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- CPUtime: the CPUtime of each task in the stage
+Critical path, assuming timing without scheduling or grid delays
+================================================================
+
+Note: this section lists the same stages as the previous one.
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   4.33%       0:00    1.3    0:00  Checks + config
+   0:00  14.54%       0:00    1.0    0:00  Launch VCS
+   0:00  12.56%       0:00    1.0    0:00  FE + synthesis
+   0:00   2.25%       0:00    1.0    0:00  RTL DB index + link
+   0:00  13.55%       0:00    1.0    0:00  Build System
+   0:00  28.67%       0:00    1.0    0:00  Build zCore
+   0:00  24.09%       0:00    1.0    0:00  Place and Route System
+-------  ------  ----------------  -------  -----
+   0:00 100.00%       0:00    1.0  * Total *
+
+
+Critical path, assuming timing without delays, no PARFF and >= 100% CPU usage
+=============================================================================
+
+Note: this section lists the same stages as the previous one.
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   6.60%       0:00    1.3    0:00  Checks + config
+   0:00  10.72%       0:00    1.0    0:00  Launch VCS
+   0:00   8.03%       0:00    1.0    0:00  FE + synthesis
+   0:00   1.75%       0:00    1.0    0:00  RTL DB index + link
+   0:00  10.56%       0:00    1.0    0:00  Build System
+   0:00  30.82%       0:00    1.0    0:00  Build zCore
+   0:00  31.51%       0:00    1.0    0:00  Place and Route System
+-------  ------  ----------------  -------  -----
+   0:00 100.00%       0:00    1.0  * Total *
+
+
+Major compilation stages, ordered by submit time
+================================================
+
+Submit Elapsd %total   SExec  SE/E Tasks    %CPU Grade  Stage
+------ ------------- ------------- -------------------  -----
+ 21:03   0:00   3.23    0:00   1.0     4   93.21  1.00  Checks + config
+ 21:04   0:00   8.43    0:00   1.0     1   44.73  1.00  Launch VCS
+ 21:04   0:00   0.24    0:00   1.0     1   58.82  1.00  Compilation Profiler (after VCSAnalyzer)
+ 21:04   0:00   0.59    0:00   1.0     1   21.95  1.00  Build Rhino Fsdb
+ 21:04   0:00   0.82    0:00   1.0     1   22.81  1.00  Launch Verdi
+ 21:04   0:00   7.28    0:00   1.0     1   38.78  1.00  FE + synthesis
+ 21:04   0:00   0.24    0:00   1.0     1   64.71  1.00  Compilation Profiler (after BackendEntry)
+ 21:04   0:00   0.27    0:00   1.0     1   68.42  1.00  Make optionsdb dump
+ 21:04   0:00   0.30    0:00   1.0     1   71.43  1.00  Make VCS file links
+ 21:04   0:00   0.40    0:00   1.0     1   53.57  1.00  Analyze DVE
+ 21:04   0:00   3.17    0:00   0.4     2   47.25  1.00  RTL DB index + link
+ 21:04   0:00   0.56    0:00   1.0     1   43.59  1.00  Make RTL DB for Run Time
+ 21:04   0:00   7.86    0:00   1.0     1   47.26  1.00  Build System
+ 21:04   0:00   0.26    0:00   1.0     1   55.56  1.00  Compilation Profiler (after ZTopBuildAnalyzer)
+ 21:04   0:00   0.65    0:00   1.0     1   77.78  1.00  Build Equipotentials
+ 21:04   0:00   0.70    0:00   1.0     1   26.53  1.00  zSimuFsdbHeader
+ 21:04   0:00   1.06    0:00   1.0     1   47.30  1.00  Convert Netlist
+ 21:04   0:00   0.63    0:00   1.0     1   70.45  1.00  Build Accessibility Graphs
+ 21:04   0:00   0.85    0:00   1.0     1   47.46  1.00  RTB Front-End
+ 21:04   0:00   1.20    0:00   1.0     1   64.29  1.00  Simulate Graphs
+ 21:04   0:00  16.62    0:00   1.0     1   65.23  1.00  Build zCore
+ 21:04   0:00  13.97    0:00   1.0     1   79.36  1.00  Place and Route System
+
+Columns:
+- Submit: the submit time of the first task in the stage [hh:mm].
+- Elapsd: the duration of the stage, based on actual timing [hh:mm].
+- %total: the percentage of Elapsd time in overall compilation.
+- SExec: sum of execution times (excluding scheduling and grid delays) for
+  all tasks constituting the stage. It may be greater than Elapsd if some
+  or all of these tasks were executed in parallel [hh:mm].
+- SE/E: equal to SExec/Elapsd. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- %CPU: average CPU utilization: total CPU time divided by SExec.
+- Grade: average host grade.
+
+
+Memory usage:  Max Resident Set Size [MB]
+Known Unknown  Min      Avg      Max      Stage
+----- -------  -------- -------- -------- -----
+    4       0      10.9     86.3    247.3 Checks + config
+    1       0     147.7    147.7    147.7 Launch VCS
+    1       0      18.0     18.0     18.0 Compilation Profiler (after VCSAnalyzer)
+    1       0      83.0     83.0     83.0 Build Rhino Fsdb
+    1       0      33.6     33.6     33.6 Launch Verdi
+    1       0     107.4    107.4    107.4 FE + synthesis
+    1       0      18.0     18.0     18.0 Compilation Profiler (after BackendEntry)
+    1       0      44.0     44.0     44.0 Make optionsdb dump
+    1       0      44.1     44.1     44.1 Make VCS file links
+    1       0      90.4     90.4     90.4 Analyze DVE
+    2       0      44.1     60.1     76.1 RTL DB index + link
+    1       0      44.0     44.0     44.0 Make RTL DB for Run Time
+    1       0     312.1    312.1    312.1 Build System
+    1       0      18.0     18.0     18.0 Compilation Profiler (after ZTopBuildAnalyzer)
+    1       0     123.7    123.7    123.7 Build Equipotentials
+    1       0     106.9    106.9    106.9 zSimuFsdbHeader
+    1       0     148.3    148.3    148.3 Convert Netlist
+    1       0     150.2    150.2    150.2 Build Accessibility Graphs
+    1       0     122.1    122.1    122.1 RTB Front-End
+    1       0     395.2    395.2    395.2 Simulate Graphs
+    1       0     465.9    465.9    465.9 Build zCore
+    1       0    1496.3   1496.3   1496.3 Place and Route System
+
+
+** There were no tasks with grid delays >= 30 s
+
+=== Details on task group 'Synthesis'
+
+Sched. Startd Ended   S.dlay Duratn %CPU   Grade RSS [MB]  Task
+------ ------ ------  ------ ------ ------ ----- --------  ----
+ 21:04  21:04  21:04    0:00   0:00  38.78  1.00    107.4  design_Default_RTL_GroupBundle_0_Synthesis
+
+
+***
+*** Detailed report for R01 (backend_default_24_4_19_21_33_20)
+***
+
+Grade  Bogomips  Cache   Count  CPU model (sample machine)
+-----  --------  ------  -----  --------------------------
+ 1.00      4600   25600      1  Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz (csce-quinn-s1.engr.tamu.edu)
+
+
+======================================================================
+*** Back-end name: default backend ***
+
+Critical path, based on actual execution timing
+===============================================
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   2.95%       0:00    0.9    0:00  Checks + config
+   0:00   8.07%       0:00    1.0    0:00  Launch VCS
+   0:00   2.20%       0:00    1.0    0:00  FE + synthesis
+   0:00   4.27%       0:00    0.3    0:00  RTL DB index + link
+   0:00   8.30%       0:00    1.0    0:00  Build System
+   0:00  13.10%       0:00    1.0    0:00  Build zCore
+   0:00  15.72%       0:00    1.0    0:00  Place and Route System
+-------  ------  ----------------  -------  -----
+   0:00  54.61%       0:00    0.9  * Total *
+
+Columns:
+- Elapsed: the difference between Finish and Submit times [hh:mm].
+- %total: the percentage of Elapsed time in overall compilation. Note that
+  it may add up to less than 100% if there were any gaps between Finish and
+  Submit times of successive stages.
+- SElapsed: sum of Elapsed times for all tasks constituting the stage. It
+  may be greater than Elapsed if some or all of these tasks were executed
+  in parallel [hh:mm].
+- SE/E: equal to SElapsed/Elapsed. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- CPUtime: the CPUtime of each task in the stage
+Critical path, assuming timing without scheduling or grid delays
+================================================================
+
+Note: this section lists the same stages as the previous one.
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   4.35%       0:00    1.2    0:00  Checks + config
+   0:00  15.87%       0:00    1.0    0:00  Launch VCS
+   0:00   4.32%       0:00    1.0    0:00  FE + synthesis
+   0:00   2.46%       0:00    1.0    0:00  RTL DB index + link
+   0:00  16.31%       0:00    1.0    0:00  Build System
+   0:00  25.76%       0:00    1.0    0:00  Build zCore
+   0:00  30.92%       0:00    1.0    0:00  Place and Route System
+-------  ------  ----------------  -------  -----
+   0:00 100.00%       0:00    1.0  * Total *
+
+
+Critical path, assuming timing without delays, no PARFF and >= 100% CPU usage
+=============================================================================
+
+Note: this section lists the same stages as the previous one.
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   6.62%       0:00    1.3    0:00  Checks + config
+   0:00   9.72%       0:00    1.0    0:00  Launch VCS
+   0:00   3.48%       0:00    1.0    0:00  FE + synthesis
+   0:00   1.91%       0:00    1.0    0:00  RTL DB index + link
+   0:00  11.16%       0:00    1.0    0:00  Build System
+   0:00  32.58%       0:00    1.0    0:00  Build zCore
+   0:00  34.54%       0:00    1.0    0:00  Place and Route System
+-------  ------  ----------------  -------  -----
+   0:00 100.00%       0:00    1.0  * Total *
+
+
+Major compilation stages, ordered by submit time
+================================================
+
+Submit Elapsd %total   SExec  SE/E Tasks    %CPU Grade  Stage
+------ ------------- ------------- -------------------  -----
+ 21:33   0:00   2.95    0:00   0.9     4   94.76  1.00  Checks + config
+ 21:33   0:00   8.07    0:00   1.0     1   37.36  1.00  Launch VCS
+ 21:33   0:00   0.68    0:00   1.0     1   25.00  1.00  Compilation Profiler (after VCSAnalyzer)
+ 21:33   0:00   0.79    0:00   1.0     1   21.67  1.00  Build Rhino Fsdb
+ 21:33   0:00   1.32    0:00   1.0     1   13.00  1.00  Launch Verdi
+ 21:33   0:00   2.20    0:00   1.0     1   49.10  1.00  FE + synthesis
+ 21:33   0:00   0.38    0:00   1.0     1   48.28  1.00  Compilation Profiler (after BackendEntry)
+ 21:33   0:00   4.27    0:00   0.3     2   47.37  1.00  RTL DB index + link
+ 21:34   0:00   1.45    0:00   1.0     1   17.27  1.00  Make RTL DB for Run Time
+ 21:34   0:00   8.30    0:00   1.0     1   41.75  1.00  Build System
+ 21:34   0:00   1.00    0:00   1.0     1   18.42  1.00  Compilation Profiler (after ZTopBuildAnalyzer)
+ 21:34   0:00   1.04    0:00   1.0     1   17.72  1.00  zSimuFsdbHeader
+ 21:34   0:00   1.08    0:00   1.0     1   47.56  1.00  Build Equipotentials
+ 21:34   0:00   2.44    0:00   1.0     1   18.38  1.00  Convert Netlist
+ 21:34   0:00   0.97    0:00   1.0     1   77.03  1.00  Simulate Graphs
+ 21:34   0:00   1.20    0:00   1.0     1   29.67  1.00  Build Accessibility Graphs
+ 21:34   0:00  13.10    0:00   1.0     1   77.19  1.00  Build zCore
+ 21:34   0:00  15.72    0:00   1.0     1   68.17  1.00  Place and Route System
+
+Columns:
+- Submit: the submit time of the first task in the stage [hh:mm].
+- Elapsd: the duration of the stage, based on actual timing [hh:mm].
+- %total: the percentage of Elapsd time in overall compilation.
+- SExec: sum of execution times (excluding scheduling and grid delays) for
+  all tasks constituting the stage. It may be greater than Elapsd if some
+  or all of these tasks were executed in parallel [hh:mm].
+- SE/E: equal to SExec/Elapsd. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- %CPU: average CPU utilization: total CPU time divided by SExec.
+- Grade: average host grade.
+
+
+Memory usage:  Max Resident Set Size [MB]
+Known Unknown  Min      Avg      Max      Stage
+----- -------  -------- -------- -------- -----
+    4       0      10.9     86.9    247.4 Checks + config
+    1       0     148.1    148.1    148.1 Launch VCS
+    1       0      18.0     18.0     18.0 Compilation Profiler (after VCSAnalyzer)
+    1       0      83.0     83.0     83.0 Build Rhino Fsdb
+    1       0      33.6     33.6     33.6 Launch Verdi
+    1       0      80.3     80.3     80.3 FE + synthesis
+    1       0      18.0     18.0     18.0 Compilation Profiler (after BackendEntry)
+    2       0      44.2     60.2     76.1 RTL DB index + link
+    1       0      44.2     44.2     44.2 Make RTL DB for Run Time
+    1       0     306.7    306.7    306.7 Build System
+    1       0      18.0     18.0     18.0 Compilation Profiler (after ZTopBuildAnalyzer)
+    1       0     103.2    103.2    103.2 zSimuFsdbHeader
+    1       0     120.6    120.6    120.6 Build Equipotentials
+    1       0     151.0    151.0    151.0 Convert Netlist
+    1       0     359.4    359.4    359.4 Simulate Graphs
+    1       0     150.2    150.2    150.2 Build Accessibility Graphs
+    1       0     462.3    462.3    462.3 Build zCore
+    1       0    1494.5   1494.5   1494.5 Place and Route System
+
+
+** There were no tasks with grid delays >= 30 s
+
+=== Details on task group 'Synthesis'
+
+Sched. Startd Ended   S.dlay Duratn %CPU   Grade RSS [MB]  Task
+------ ------ ------  ------ ------ ------ ----- --------  ----
+ 21:33  21:33  21:33    0:00   0:00  49.10  1.00     80.3  design_Default_RTL_GroupBundle_0_Synthesis
+
+
+***
+*** Detailed report for R02 (backend_default_24_4_19_21_58_21)
+***
+
+Grade  Bogomips  Cache   Count  CPU model (sample machine)
+-----  --------  ------  -----  --------------------------
+ 1.00      4600   25600      1  Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz (csce-quinn-s1.engr.tamu.edu)
+
+
+======================================================================
+*** Back-end name: default backend ***
+
+Critical path, based on actual execution timing
+===============================================
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   6.89%       0:00    1.0    0:00  Checks + config
+   0:00  15.52%       0:00    1.0    0:00  Launch VCS
+   0:00   0.99%       0:00    1.0    0:00  Build Rhino Fsdb
+   0:00   6.83%       0:00    0.4    0:00  RTL DB index + link
+   0:00   1.08%       0:00    1.0    0:00  Make RTL DB for Run Time
+-------  ------  ----------------  -------  -----
+   0:00  31.31%       0:00    0.9  * Total *
+
+Columns:
+- Elapsed: the difference between Finish and Submit times [hh:mm].
+- %total: the percentage of Elapsed time in overall compilation. Note that
+  it may add up to less than 100% if there were any gaps between Finish and
+  Submit times of successive stages.
+- SElapsed: sum of Elapsed times for all tasks constituting the stage. It
+  may be greater than Elapsed if some or all of these tasks were executed
+  in parallel [hh:mm].
+- SE/E: equal to SElapsed/Elapsed. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- CPUtime: the CPUtime of each task in the stage
+Critical path, assuming timing without scheduling or grid delays
+================================================================
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00  20.05%       0:00    1.3    0:00  Checks + config
+   0:00  58.85%       0:00    1.0    0:00  Launch VCS
+   0:00   6.57%       0:00    1.0    0:00  Compilation Profiler (after VCSAnalyzer)
+   0:00  10.43%       0:00    1.0    0:00  RTL DB index + link
+   0:00   4.10%       0:00    1.0    0:00  Make RTL DB for Run Time
+-------  ------  ----------------  -------  -----
+   0:00 100.00%       0:00    1.1  * Total *
+
+
+Critical path, assuming timing without delays, no PARFF and >= 100% CPU usage
+=============================================================================
+
+Note: this section lists the same stages as the previous one.
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00  34.71%       0:00    1.2    0:00  Checks + config
+   0:00  47.94%       0:00    1.0    0:00  Launch VCS
+   0:00   3.90%       0:00    1.0    0:00  Compilation Profiler (after VCSAnalyzer)
+   0:00   9.76%       0:00    1.0    0:00  RTL DB index + link
+   0:00   3.69%       0:00    1.0    0:00  Make RTL DB for Run Time
+-------  ------  ----------------  -------  -----
+   0:00 100.00%       0:00    1.1  * Total *
+
+
+Major compilation stages, ordered by submit time
+================================================
+
+Submit Elapsd %total   SExec  SE/E Tasks    %CPU Grade  Stage
+------ ------------- ------------- -------------------  -----
+ 21:58   0:00   6.89    0:00   1.0     4   94.39  1.00  Checks + config
+ 21:58   0:00  15.52    0:00   1.0     1   44.02  1.00  Launch VCS
+ 21:58   0:00   1.73    0:00   1.0     1   32.14  1.00  Compilation Profiler (after VCSAnalyzer)
+ 21:58   0:00   0.99    0:00   1.0     1   40.62  1.00  Build Rhino Fsdb
+ 21:58   0:00   1.73    0:00   1.0     1   23.21  1.00  Launch Verdi
+ 21:58   0:00   6.83    0:00   0.4     2   50.56  1.00  RTL DB index + link
+ 21:58   0:00   1.08    0:00   1.0     1   48.57  1.00  Make RTL DB for Run Time
+
+Columns:
+- Submit: the submit time of the first task in the stage [hh:mm].
+- Elapsd: the duration of the stage, based on actual timing [hh:mm].
+- %total: the percentage of Elapsd time in overall compilation.
+- SExec: sum of execution times (excluding scheduling and grid delays) for
+  all tasks constituting the stage. It may be greater than Elapsd if some
+  or all of these tasks were executed in parallel [hh:mm].
+- SE/E: equal to SExec/Elapsd. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- %CPU: average CPU utilization: total CPU time divided by SExec.
+- Grade: average host grade.
+
+
+Memory usage:  Max Resident Set Size [MB]
+Known Unknown  Min      Avg      Max      Stage
+----- -------  -------- -------- -------- -----
+    4       0      10.9     85.6    246.0 Checks + config
+    1       0     153.5    153.5    153.5 Launch VCS
+    1       0      18.0     18.0     18.0 Compilation Profiler (after VCSAnalyzer)
+    1       0      83.0     83.0     83.0 Build Rhino Fsdb
+    1       0      33.6     33.6     33.6 Launch Verdi
+    2       0      44.2     60.2     76.1 RTL DB index + link
+    1       0      44.2     44.2     44.2 Make RTL DB for Run Time
+
+
+** There were no tasks with grid delays >= 30 s
+
+
+***
+*** Detailed report for R03 (backend_default_24_4_20_11_40_07)
+***
+
+Grade  Bogomips  Cache   Count  CPU model (sample machine)
+-----  --------  ------  -----  --------------------------
+ 1.00      4600   25600      1  Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz (csce-quinn-s1.engr.tamu.edu)
+
+
+======================================================================
+*** Back-end name: default backend ***
+
+Critical path, based on actual execution timing
+===============================================
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   4.26%       0:00    1.0    0:00  Checks + config
+   0:00  11.61%       0:00    1.0    0:00  Launch VCS
+   0:00   3.14%       0:00    1.0    0:00  FE + synthesis
+   0:00   4.34%       0:00    0.5    0:00  RTL DB index + link
+   0:00   9.81%       0:00    1.0    0:00  Build System
+   0:00  18.56%       0:00    1.0    0:00  Build zCore
+-------  ------  ----------------  -------  -----
+   0:00  51.72%       0:00    1.0  * Total *
+
+Columns:
+- Elapsed: the difference between Finish and Submit times [hh:mm].
+- %total: the percentage of Elapsed time in overall compilation. Note that
+  it may add up to less than 100% if there were any gaps between Finish and
+  Submit times of successive stages.
+- SElapsed: sum of Elapsed times for all tasks constituting the stage. It
+  may be greater than Elapsed if some or all of these tasks were executed
+  in parallel [hh:mm].
+- SE/E: equal to SElapsed/Elapsed. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- CPUtime: the CPUtime of each task in the stage
+Critical path, assuming timing without scheduling or grid delays
+================================================================
+
+Note: this section lists the same stages as the previous one.
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   6.73%       0:00    1.2    0:00  Checks + config
+   0:00  23.97%       0:00    1.0    0:00  Launch VCS
+   0:00   6.49%       0:00    1.0    0:00  FE + synthesis
+   0:00   4.22%       0:00    1.0    0:00  RTL DB index + link
+   0:00  20.26%       0:00    1.0    0:00  Build System
+   0:00  38.33%       0:00    1.0    0:00  Build zCore
+-------  ------  ----------------  -------  -----
+   0:00 100.00%       0:00    1.0  * Total *
+
+
+Critical path, assuming timing without delays, no PARFF and >= 100% CPU usage
+=============================================================================
+
+Note: this section lists the same stages as the previous one.
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00  10.31%       0:00    1.3    0:00  Checks + config
+   0:00  14.98%       0:00    1.0    0:00  Launch VCS
+   0:00   5.58%       0:00    1.0    0:00  FE + synthesis
+   0:00   2.79%       0:00    1.0    0:00  RTL DB index + link
+   0:00  16.93%       0:00    1.0    0:00  Build System
+   0:00  49.42%       0:00    1.0    0:00  Build zCore
+-------  ------  ----------------  -------  -----
+   0:00 100.00%       0:00    1.0  * Total *
+
+
+Major compilation stages, ordered by submit time
+================================================
+
+Submit Elapsd %total   SExec  SE/E Tasks    %CPU Grade  Stage
+------ ------------- ------------- -------------------  -----
+ 11:40   0:00   4.26    0:00   1.0     4   93.49  1.00  Checks + config
+ 11:40   0:00  11.61    0:00   1.0     1   37.68  1.00  Launch VCS
+ 11:40   0:00   1.63    0:00   1.0     1   25.58  1.00  Compilation Profiler (after VCSAnalyzer)
+ 11:40   0:00   0.80    0:00   1.0     1   30.95  1.00  Build Rhino Fsdb
+ 11:40   0:00   1.52    0:00   1.0     1   17.50  1.00  Launch Verdi
+ 11:40   0:00   3.14    0:00   1.0     1   51.81  1.00  FE + synthesis
+ 11:40   0:00   1.04    0:00   1.0     1   34.55  1.00  Compilation Profiler (after BackendEntry)
+ 11:40   0:00   4.34    0:00   0.5     2   39.81  1.00  RTL DB index + link
+ 11:40   0:00   0.89    0:00   1.0     1   38.30  1.00  Make RTL DB for Run Time
+ 11:40   0:00   9.81    0:00   1.0     1   50.39  1.00  Build System
+ 11:40   0:00   0.87    0:00   1.0     1   30.43  1.00  zSimuFsdbHeader
+ 11:40   0:00   0.98    0:00   1.0     1   75.00  1.00  Build Equipotentials
+ 11:40   0:00   1.38    0:00   1.0     1   28.77  1.00  Compilation Profiler (after ZTopBuildAnalyzer)
+ 11:40   0:00   1.97    0:00   1.0     1   34.62  1.00  Convert Netlist
+ 11:40   0:00   1.16    0:00   1.0     1   50.82  1.00  Build Accessibility Graphs
+ 11:40   0:00   1.31    0:00   1.0     1   85.51  1.00  Simulate Graphs
+ 11:40   0:00  18.56    0:00   1.0     1   77.76  1.00  Build zCore
+
+Columns:
+- Submit: the submit time of the first task in the stage [hh:mm].
+- Elapsd: the duration of the stage, based on actual timing [hh:mm].
+- %total: the percentage of Elapsd time in overall compilation.
+- SExec: sum of execution times (excluding scheduling and grid delays) for
+  all tasks constituting the stage. It may be greater than Elapsd if some
+  or all of these tasks were executed in parallel [hh:mm].
+- SE/E: equal to SExec/Elapsd. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- %CPU: average CPU utilization: total CPU time divided by SExec.
+- Grade: average host grade.
+
+
+Memory usage:  Max Resident Set Size [MB]
+Known Unknown  Min      Avg      Max      Stage
+----- -------  -------- -------- -------- -----
+    4       0      10.9     86.1    243.3 Checks + config
+    1       0     150.0    150.0    150.0 Launch VCS
+    1       0      18.0     18.0     18.0 Compilation Profiler (after VCSAnalyzer)
+    1       0      83.0     83.0     83.0 Build Rhino Fsdb
+    1       0      33.6     33.6     33.6 Launch Verdi
+    1       0      80.5     80.5     80.5 FE + synthesis
+    1       0      18.0     18.0     18.0 Compilation Profiler (after BackendEntry)
+    2       0      44.2     60.2     76.1 RTL DB index + link
+    1       0      44.2     44.2     44.2 Make RTL DB for Run Time
+    1       0     303.0    303.0    303.0 Build System
+    1       0     103.2    103.2    103.2 zSimuFsdbHeader
+    1       0     125.1    125.1    125.1 Build Equipotentials
+    1       0      18.0     18.0     18.0 Compilation Profiler (after ZTopBuildAnalyzer)
+    1       0     147.6    147.6    147.6 Convert Netlist
+    1       0     166.1    166.1    166.1 Build Accessibility Graphs
+    1       0     368.1    368.1    368.1 Simulate Graphs
+    1       0     477.7    477.7    477.7 Build zCore
+
+
+** There were no tasks with grid delays >= 30 s
+
+=== Details on task group 'Synthesis'
+
+Sched. Startd Ended   S.dlay Duratn %CPU   Grade RSS [MB]  Task
+------ ------ ------  ------ ------ ------ ----- --------  ----
+ 11:40  11:40  11:40    0:00   0:00  51.81  1.00     80.5  design_Default_RTL_GroupBundle_0_Synthesis
+
+
+***
+*** Detailed report for R04 (backend_default_24_4_20_13_13_30)
+***
+
+Grade  Bogomips  Cache   Count  CPU model (sample machine)
+-----  --------  ------  -----  --------------------------
+ 1.00      4600   25600      1  Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz (csce-quinn-s1.engr.tamu.edu)
+
+
+======================================================================
+*** Back-end name: default backend ***
+
+Critical path, based on actual execution timing
+===============================================
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   3.44%       0:00    1.1    0:00  Checks + config
+   0:00   8.99%       0:00    1.0    0:00  Launch VCS
+   0:00   2.42%       0:00    1.0    0:00  FE + synthesis
+   0:00   3.38%       0:00    0.5    0:00  RTL DB index + link
+   0:00   8.41%       0:00    1.0    0:00  Build System
+   0:00  13.23%       0:00    1.0    0:00  Build zCore
+   0:00  16.18%       0:00    1.0    0:00  Place and Route System
+-------  ------  ----------------  -------  -----
+   0:00  56.07%       0:00    1.0  * Total *
+
+Columns:
+- Elapsed: the difference between Finish and Submit times [hh:mm].
+- %total: the percentage of Elapsed time in overall compilation. Note that
+  it may add up to less than 100% if there were any gaps between Finish and
+  Submit times of successive stages.
+- SElapsed: sum of Elapsed times for all tasks constituting the stage. It
+  may be greater than Elapsed if some or all of these tasks were executed
+  in parallel [hh:mm].
+- SE/E: equal to SElapsed/Elapsed. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- CPUtime: the CPUtime of each task in the stage
+Critical path, assuming timing without scheduling or grid delays
+================================================================
+
+Note: this section lists the same stages as the previous one.
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   5.53%       0:00    1.2    0:00  Checks + config
+   0:00  16.72%       0:00    1.0    0:00  Launch VCS
+   0:00   4.51%       0:00    1.0    0:00  FE + synthesis
+   0:00   2.89%       0:00    1.0    0:00  RTL DB index + link
+   0:00  15.65%       0:00    1.0    0:00  Build System
+   0:00  24.60%       0:00    1.0    0:00  Build zCore
+   0:00  30.10%       0:00    1.0    0:00  Place and Route System
+-------  ------  ----------------  -------  -----
+   0:00 100.00%       0:00    1.0  * Total *
+
+
+Critical path, assuming timing without delays, no PARFF and >= 100% CPU usage
+=============================================================================
+
+Note: this section lists the same stages as the previous one.
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   7.61%       0:00    1.2    0:00  Checks + config
+   0:00   9.77%       0:00    1.0    0:00  Launch VCS
+   0:00   3.65%       0:00    1.0    0:00  FE + synthesis
+   0:00   1.83%       0:00    1.0    0:00  RTL DB index + link
+   0:00  11.05%       0:00    1.0    0:00  Build System
+   0:00  31.83%       0:00    1.0    0:00  Build zCore
+   0:00  34.25%       0:00    1.0    0:00  Place and Route System
+-------  ------  ----------------  -------  -----
+   0:00 100.00%       0:00    1.0  * Total *
+
+
+Major compilation stages, ordered by submit time
+================================================
+
+Submit Elapsd %total   SExec  SE/E Tasks    %CPU Grade  Stage
+------ ------------- ------------- -------------------  -----
+ 13:13   0:00   3.44    0:00   1.1     4   92.95  1.00  Checks + config
+ 13:13   0:00   8.99    0:00   1.0     1   38.98  1.00  Launch VCS
+ 13:13   0:00   1.63    0:00   1.0     1   24.30  1.00  Compilation Profiler (after VCSAnalyzer)
+ 13:13   0:00   0.69    0:00   1.0     1   31.11  1.00  Build Rhino Fsdb
+ 13:13   0:00   1.07    0:00   1.0     1   18.57  1.00  Launch Verdi
+ 13:13   0:00   2.42    0:00   1.0     1   54.09  1.00  FE + synthesis
+ 13:13   0:00   0.96    0:00   1.0     1   38.10  1.00  Compilation Profiler (after BackendEntry)
+ 13:13   0:00   3.38    0:00   0.5     2   42.16  1.00  RTL DB index + link
+ 13:14   0:00   0.96    0:00   1.0     1   28.57  1.00  Make RTL DB for Run Time
+ 13:14   0:00   8.41    0:00   1.0     1   47.10  1.00  Build System
+ 13:14   0:00   0.55    0:00   1.0     1   36.11  1.00  zSimuFsdbHeader
+ 13:14   0:00   0.61    0:00   1.0     1   85.00  1.00  Build Equipotentials
+ 13:14   0:00   1.83    0:00   1.0     1   30.00  1.00  Convert Netlist
+ 13:14   0:00   0.72    0:00   1.0     1   65.96  1.00  Build Accessibility Graphs
+ 13:14   0:00   0.85    0:00   1.0     1   91.07  1.00  Simulate Graphs
+ 13:14   0:00   0.87    0:00   1.0     1   40.35  1.00  Compilation Profiler (after ZTopBuildAnalyzer)
+ 13:14   0:00  13.23    0:00   1.0     1   86.29  1.00  Build zCore
+ 13:14   0:00  16.18    0:00   1.0     1   75.89  1.00  Place and Route System
+
+Columns:
+- Submit: the submit time of the first task in the stage [hh:mm].
+- Elapsd: the duration of the stage, based on actual timing [hh:mm].
+- %total: the percentage of Elapsd time in overall compilation.
+- SExec: sum of execution times (excluding scheduling and grid delays) for
+  all tasks constituting the stage. It may be greater than Elapsd if some
+  or all of these tasks were executed in parallel [hh:mm].
+- SE/E: equal to SExec/Elapsd. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- %CPU: average CPU utilization: total CPU time divided by SExec.
+- Grade: average host grade.
+
+
+Memory usage:  Max Resident Set Size [MB]
+Known Unknown  Min      Avg      Max      Stage
+----- -------  -------- -------- -------- -----
+    4       0      15.3     87.1    242.0 Checks + config
+    1       0     148.2    148.2    148.2 Launch VCS
+    1       0      18.0     18.0     18.0 Compilation Profiler (after VCSAnalyzer)
+    1       0      83.0     83.0     83.0 Build Rhino Fsdb
+    1       0      33.6     33.6     33.6 Launch Verdi
+    1       0      80.5     80.5     80.5 FE + synthesis
+    1       0      18.0     18.0     18.0 Compilation Profiler (after BackendEntry)
+    2       0      44.2     60.2     76.1 RTL DB index + link
+    1       0      44.2     44.2     44.2 Make RTL DB for Run Time
+    1       0     305.9    305.9    305.9 Build System
+    1       0     107.1    107.1    107.1 zSimuFsdbHeader
+    1       0     113.7    113.7    113.7 Build Equipotentials
+    1       0     151.5    151.5    151.5 Convert Netlist
+    1       0     154.1    154.1    154.1 Build Accessibility Graphs
+    1       0     361.7    361.7    361.7 Simulate Graphs
+    1       0      18.0     18.0     18.0 Compilation Profiler (after ZTopBuildAnalyzer)
+    1       0     469.9    469.9    469.9 Build zCore
+    1       0    1497.7   1497.7   1497.7 Place and Route System
+
+
+** There were no tasks with grid delays >= 30 s
+
+=== Details on task group 'Synthesis'
+
+Sched. Startd Ended   S.dlay Duratn %CPU   Grade RSS [MB]  Task
+------ ------ ------  ------ ------ ------ ----- --------  ----
+ 13:13  13:13  13:13    0:00   0:00  54.09  1.00     80.5  design_Default_RTL_GroupBundle_0_Synthesis
+

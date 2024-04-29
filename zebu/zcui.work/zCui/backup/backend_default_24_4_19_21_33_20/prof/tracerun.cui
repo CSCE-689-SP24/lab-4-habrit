@@ -1,0 +1,44 @@
+id=1 task=backend_default_Project_Analyzer label="Analyze Project" group="Initial Check" slot=24:4:19:21:33:20 start=24:4:19:21:33:20 end=24:4:19:21:33:20
+id=2 task=BE_Version_Checker label="Check Back-End Binaries Version" group="Initial Check" after=1 slot=24:4:19:21:33:22 start=24:4:19:21:33:22 end=24:4:19:21:33:24
+id=3 task=FE_Version_Checker label="Check Front-End Binaries Version" group="Initial Check" after=1 slot=24:4:19:21:33:22 start=24:4:19:21:33:22 end=24:4:19:21:33:24
+id=4 task=Vcs_Version_Checker label="Check Vcs Binaries Version" group="Initial Check" after=1 slot=24:4:19:21:33:22 start=24:4:19:21:33:22 end=24:4:19:21:33:24
+id=5 task=Target_Config label="Target Configuration" group="Initial Check"|"Target Configuration" after=4,3,2 slot=24:4:19:21:33:24 start=24:4:19:21:33:24 end=24:4:19:21:33:26
+id=6 task=Target_Config_Analyzer label="Analyze Target Configuration Results" group="Initial Check"|"Target Configuration" after=5 slot=24:4:19:21:33:26 start=24:4:19:21:33:26 end=24:4:19:21:33:27
+id=7 task=design_Fs_Macro_Script_Builder label="Build Fs Macro Script" group="Design"|"Build Fs Macro" after=6 slot=24:4:19:21:33:29 start=24:4:19:21:33:29 end=24:4:19:21:33:29
+id=8 task=design_Fs_Macro label="Build Fs Macro Library" group="Design"|"Build Fs Macro" after=7
+id=9 task=vcs_splitter_VCS_Task_Builder label="Launch VCS" group="VCS" after=6,8,1 slot=24:4:19:21:33:33 start=24:4:19:21:33:33 end=24:4:19:21:33:41
+id=10 task=Post_Vcs_Task_Builder label="Prepare Post Vcs Tasks" group="VCS" after=9 slot=24:4:19:21:33:41 start=24:4:19:21:33:41 end=24:4:19:21:33:41
+id=11 task=VCS_Task_Analyzer label="Analyze VCS Results" group="VCS" after=9 slot=24:4:19:21:33:41 start=24:4:19:21:33:41 end=24:4:19:21:33:43
+id=12 task=RhinoFsdb_Builder label="Build Rhino Fsdb" group="VCS" after=11 slot=24:4:19:21:33:45 start=24:4:19:21:33:45 end=24:4:19:21:33:47
+id=13 task=Verdi_Compilation label="Launch Verdi" group="VCS" after=10 slot=24:4:19:21:33:45 start=24:4:19:21:33:45 end=24:4:19:21:33:47
+id=14 task=backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer label="Compilation Profiler (after VCSAnalyzer)" group="Final Check" after=9,11 slot=24:4:19:21:33:43 start=24:4:19:21:33:43 end=24:4:19:21:33:45
+id=15 task=design_Default_RTL_GroupBundle_0_Synthesis label="Bundle 0" group="Design"|"RTL Synthesis : Default_RTL_Group"|"Synthesis To Be Redone" after=11 slot=24:4:19:21:33:45 start=24:4:19:21:33:45 end=24:4:19:21:33:47
+id=16 task=stable_design_Default_RTL_Group_Synthesis label="Synthesize no need to be redone" group="Design"|"RTL Synthesis : Default_RTL_Group" after=11
+id=17 task=design_Default_RTL_GroupBundle_0_Synthesis_Bundle_0_analyzer label="Bundle_0" group="Design"|"RTL Synthesis : Default_RTL_Group"|"Analyze Synthesis Results" after=15 slot=24:4:19:21:33:47 start=24:4:19:21:33:47 end=24:4:19:21:33:47
+id=18 task=stable_design_Default_RTL_Group_Synthesis_design_Default_RTL_Group_stable_analyzer label="design_Default_RTL_Group_stable" group="Design"|"RTL Synthesis : Default_RTL_Group"|"Analyze Synthesis Results" after=16 slot=24:4:19:21:33:47 start=24:4:19:21:33:47 end=24:4:19:21:33:47
+id=19 task=design_Default_RTL_Group_Memory_ram_zMem label="Memory ram_zMem" group="Design"|"RTL Synthesis : Default_RTL_Group"|"Build Memories and Divmods" after=18
+id=20 task=design_Default_RTL_Group_Memory_rom_zMem label="Memory rom_zMem" group="Design"|"RTL Synthesis : Default_RTL_Group"|"Build Memories and Divmods" after=18
+id=21 task=backend_default_BackendEntry label="Prepare Backend Flow" group="Backend: default backend"|"System Compilation" after=20,12,11,14,1,17,16,18,19 slot=24:4:19:21:33:51 start=24:4:19:21:33:51 end=24:4:19:21:33:52
+id=22 task=backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry label="Compilation Profiler (after BackendEntry)" group="Final Check" after=21 slot=24:4:19:21:33:54 start=24:4:19:21:33:54 end=24:4:19:21:33:56
+id=23 task=backend_default_OptionsDbProc label="Make optionsdb dump" group="Backend: default backend"|"System Compilation" after=21
+id=24 task=backend_default_RTL_DB_Indexer label="Make RTL DB indexes" group="Backend: default backend"|"System Compilation" after=9,21 slot=24:4:19:21:33:54 start=24:4:19:21:33:54 end=24:4:19:21:33:56
+id=25 task=backend_default_Vcs_Link label="Make VCS file links" group="Backend: default backend"|"System Compilation" after=21
+id=26 task=backend_default_zDveTool label="Analyze DVE" group="Backend: default backend"|"System Compilation" after=21
+id=27 task=backend_default_RTL_DB_Link label="Make RTL DB link" group="Backend: default backend"|"System Compilation" after=21,24 slot=24:4:19:21:33:56 start=24:4:19:21:33:56 end=24:4:19:21:33:59
+id=28 task=backend_default_RTL_DB_RunTime label="Make RTL DB for Run Time" group="Backend: default backend"|"System Compilation" after=27,21 slot=24:4:19:21:33:59 start=24:4:19:21:33:59 end=24:4:19:21:34:1
+id=29 task=backend_default_zTopBuild label="Build System" group="Backend: default backend"|"System Compilation" after=23,27,25,11,22,21 slot=24:4:19:21:33:59 start=24:4:19:21:33:59 end=24:4:19:21:34:7
+id=30 task=backend_default_zEquiGenerator label="Build Equipotentials" group="Backend: default backend"|"System Data Base" after=29 slot=24:4:19:21:34:8 start=24:4:19:21:34:8 end=24:4:19:21:34:10
+id=31 task=backend_default_zRtlToEqui label="Convert Netlist" group="Backend: default backend"|"System Data Base" after=29 slot=24:4:19:21:34:8 start=24:4:19:21:34:8 end=24:4:19:21:34:10
+id=32 task=backend_default_zSimuFsdbHeader label="zSimuFsdbHeader" group="Backend: default backend"|"System Data Base" after=29 slot=24:4:19:21:34:8 start=24:4:19:21:34:8 end=24:4:19:21:34:10
+id=33 task=backend_default_zTopBuildResultAnalyzer label="Analyze System Building Results" group="Backend: default backend"|"System Compilation" after=29 slot=24:4:19:21:34:7 start=24:4:19:21:34:7 end=24:4:19:21:34:8
+id=34 task=backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer label="Compilation Profiler (after ZTopBuildAnalyzer)" group="Final Check" after=33,29 slot=24:4:19:21:34:8 start=24:4:19:21:34:8 end=24:4:19:21:34:10
+id=35 task=backend_default_RTB_Front_End label="RTB Front-End" group="Backend: default backend"|"System Compilation" after=33
+id=36 task=backend_default_zCoreBuild_Part_0 label="Build zCore Part_0" group="Backend: default backend"|"System Compilation"|"zCore Compilation" after=33 slot=24:4:19:21:34:10 start=24:4:19:21:34:10 end=24:4:19:21:34:22
+id=37 task=backend_default_zGraphGenerator label="Build Accessibility Graphs" group="Backend: default backend"|"System Data Base" after=29,31 slot=24:4:19:21:34:10 start=24:4:19:21:34:10 end=24:4:19:21:34:12
+id=38 task=backend_default_zSimzilla label="Simulate Graphs" group="Backend: default backend"|"System Data Base" after=31 slot=24:4:19:21:34:10 start=24:4:19:21:34:10 end=24:4:19:21:34:12
+id=39 task=backend_default_RTB_Front_End_Result_Analyzer label="Analyze RTB Front-End Results" group="Backend: default backend"|"System Compilation" after=35 slot=24:4:19:21:34:12 start=24:4:19:21:34:12 end=24:4:19:21:34:12
+id=40 task=backend_default_zBuildClusteringSaver label="Save Clustering Results" group="Backend: default backend"|"System Compilation" after=33,36 slot=24:4:19:21:34:22 start=24:4:19:21:34:22 end=24:4:19:21:34:23
+id=41 task=backend_default_zCoreBuildAnalyzer_Part_0 label="Analyze zCore Building Results Part_0" group="Backend: default backend"|"System Compilation"|"zCore Compilation" after=36 slot=24:4:19:21:34:22 start=24:4:19:21:34:22 end=24:4:19:21:34:22
+id=42 task=backend_default_PostZCoreCompilationJoin label="Post ZCore Compilation Join" group="Backend: default backend"|"System Compilation" after=33,41 slot=24:4:19:21:34:23 start=24:4:19:21:34:23 end=24:4:19:21:34:24
+id=43 task=backend_default_PreParScriptBuilder label="Pre PAR Script Builder" group="Backend: default backend"|"System Compilation" after=33,42 slot=24:4:19:21:34:26 start=24:4:19:21:34:26 end=24:4:19:21:34:26
+id=44 task=backend_default_zPar label="Place and Route System" group="Backend: default backend"|"System Compilation" after=33,41,43,34,26,35,39 slot=24:4:19:21:34:26 start=24:4:19:21:34:26 end=24:4:19:21:34:40

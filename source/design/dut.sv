@@ -62,4 +62,12 @@ module dut (
 
   assign dataout = { parout, dataout_noparity };
 
+//ASSERTION ONE: If Fifo not empty read enable should be asserted
+  always @ (posedge clk1 or negedge rstn)
+    if (!rstn)
+      assert (re == 0) else
+      assert (re == 1) else
+      assert (readyout == 1);
+
+
 endmodule

@@ -101,4 +101,31 @@ module fifo #(
   assign qa_o  = q_a;
   assign q_o   = q;
 
+
+//Assertions here
+`ifdef ASSERTIONS
+//If fifo is not empty, then the read enable should be high. If passed display FIFO empty assertion passed, if not display assertion failed
+  always @(posedge rclk_i or negedge rstn_i)
+    if (!rstn_i) begin
+      if (ef) begin
+        $display("FIFO empty assertion passed");
+      end
+      else begin
+        $display("FIFO empty assertion failed");
+      end
+    end
+
+//If FIFO is full, write enable should be deasserted. If passed display FIFO full assertion passed, if not display assertion failed
+  always @(posedge wclk_i or negedge rstn_i)
+    if (!rstn_i) begin
+      if (hff) begin
+        $display("FIFO full assertion passed");
+      end
+      else begin
+        $display("FIFO full assertion failed");
+      end
+    end
+
+
+
 endmodule

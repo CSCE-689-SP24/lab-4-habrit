@@ -1,0 +1,19 @@
+UTFTRAN: Usage: 
+ utftran -u <utf file path> [options]
+
+ Options: 
+ -u       <UTF file path>
+ -sum     <Summary log file name>
+ -l       <Full log file name>
+ -mapping <Mappings.tcl file path>
+ -libzucf <libzucf.so path>
+ -empty   <Empty.tcl  file path>
+ -target  <Target dir path>
+ -v       Turn on verbosity
+ -nocci   Use Tcl interpreter instead of CCI
+ -flow    <zebu|zebu_two_step_flow_step_1|zebu_two_step_flow_step_2|uchaps> Sets current UC flow type. Default: 'zebu'
+ -xml_db      <xml file> Use xml db.
+ -help    Show this massage
+
+Error: Cannot find UTF file
+

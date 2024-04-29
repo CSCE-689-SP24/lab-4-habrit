@@ -1,0 +1,9 @@
+   elapsed:0.11 s      user:0 s      system:0 s       %cpu:0.00       load:0.71       fm:173363 m      vm:392 m       vm:+5 m      um:112 m       um:+2 m -- Loading RTL DB
+    elapsed:0.1 s    user:0.1 s    system:0.2 s     %cpu:705.88       load:0.73       fm:172426 m     vm:1547 m     vm:+152 m     um:1033 m       um:+8 m -- Fix undriven buffers./Undriven buffers: populate
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.73       fm:172426 m     vm:1547 m       vm:+0 m     um:1033 m       um:+0 m -- Fix undriven buffers./Undriven buffers: mark/Trace forward
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.73       fm:172426 m     vm:1547 m       vm:+0 m     um:1033 m       um:+0 m -- Fix undriven buffers./Undriven buffers: mark
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.73       fm:172426 m     vm:1547 m       vm:+0 m     um:1033 m       um:+0 m -- Fix undriven buffers./Undriven buffers: apply/Uniquify
+      elapsed:0 s    user:0.1 s      system:0 s    %cpu:1000.00       load:0.73       fm:172426 m     vm:1547 m       vm:+0 m     um:1033 m       um:+0 m -- Fix undriven buffers./Undriven buffers: apply
+    elapsed:0.2 s    user:0.3 s    system:0.2 s     %cpu:444.44       load:0.73       fm:172426 m     vm:1547 m     vm:+152 m     um:1033 m       um:+8 m -- Fix undriven buffers.
+    elapsed:0.4 s    user:0.4 s      system:0 s      %cpu:96.97       load:0.75       fm:171604 m     vm:1957 m       vm:+0 m     um:1654 m       um:+0 m -- Signature generation/Netlist signature generation
+   elapsed:0.15 s    user:0.7 s      system:0 s      %cpu:44.94       load:0.75       fm:171602 m     vm:1957 m       vm:+0 m     um:1654 m       um:+0 m -- Signature generation

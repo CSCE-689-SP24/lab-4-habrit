@@ -1,0 +1,420 @@
+<compilation>
+ <events med="0" cid="ZMON" min="1" maj="0">
+  <Event timeStamp="1713498127" className="ClearAllEvent"/>
+  <Event toolTipText="" timeStamp="1713498127" total="100" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="0"/>
+   </values>
+  </Event>
+  <Event timeStamp="1713498128" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event hierarchy="HEADER_1[Initial Check]" taskName="backend_default_Project_Analyzer" row="0" taskType="0" taskDir="" timeStamp="1713498128" label="Analyze Project" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_5[Final Check]" taskName="backend_default_SingleBackend_Compilation_Checker" row="1" taskType="0" taskDir="" timeStamp="1713498128" label="Backend Checker : default" className="AddTaskEvent"/>
+  <Event timeStamp="1713498128" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event version="0" projectFilename="src/project.utf" timeStamp="1713498128" windowTitle="" workingDirectory="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work" className="CompilationDataEvent">
+   <backendNames>
+    <item v="backend_default"/>
+   </backendNames>
+  </Event>
+  <Event taskName="backend_default_Project_Analyzer" success="1" comment="" timeStamp="1713498128" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_Project_Analyzer" taskStatus="1" eventType="0" comment="" timeStamp="1713498128" className="TaskFinishEvent"/>
+  <Event timeStamp="1713498128" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_SingleBackend_Compilation_Checker" v_1="8"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_BackendEntry" row="9" taskType="0" taskDir="" timeStamp="1713498128" label="Prepare Backend Flow" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[VCS]" taskName="vcs_splitter_VCS_Task_Builder" row="6" taskType="1" taskDir="" timeStamp="1713498128" label="Launch VCS" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[VCS]" taskName="Post_Vcs_Task_Builder" row="7" taskType="0" taskDir="" timeStamp="1713498128" label="Prepare Post Vcs Tasks" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[VCS]" taskName="VCS_Task_Analyzer" row="7" taskType="0" taskDir="" timeStamp="1713498128" label="Analyze VCS Results" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_5[Final Check]" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer" row="8" taskType="1" taskDir="" timeStamp="1713498128" label="Compilation Profiler (after VCSAnalyzer)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[Initial Check]|G[Target Configuration]" taskName="Target_Config" row="2" taskType="1" taskDir="" timeStamp="1713498128" label="Target Configuration" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[Initial Check]|G[Target Configuration]" taskName="Target_Config_Analyzer" row="3" taskType="0" taskDir="" timeStamp="1713498128" label="Analyze Target Configuration Results" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_2[Design]|G[Build Fs Macro]" taskName="design_Fs_Macro_Script_Builder" row="4" taskType="0" taskDir="" timeStamp="1713498128" label="Build Fs Macro Script" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_2[Design]|G[Build Fs Macro]" taskName="design_Fs_Macro" row="5" taskType="1" taskDir="" timeStamp="1713498128" label="Build Fs Macro Library" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[Initial Check]" taskName="Vcs_Version_Checker" row="1" taskType="1" taskDir="" timeStamp="1713498128" label="Check Vcs Binaries Version" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[Initial Check]" taskName="FE_Version_Checker" row="1" taskType="1" taskDir="" timeStamp="1713498128" label="Check Front-End Binaries Version" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[Initial Check]" taskName="BE_Version_Checker" row="1" taskType="1" taskDir="" timeStamp="1713498128" label="Check Back-End Binaries Version" className="AddTaskEvent"/>
+  <Event timeStamp="1713498128" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="BE_Version_Checker" success="1" comment="Pid: 29648" timeStamp="1713498130" queue="queue ZebuLocal, 1 used" className="RunTaskEvent"/>
+  <Event taskName="FE_Version_Checker" success="1" comment="Pid: 29649" timeStamp="1713498130" queue="queue ZebuLocal, 2 used" className="RunTaskEvent"/>
+  <Event taskName="Vcs_Version_Checker" success="1" comment="Pid: 29650" timeStamp="1713498130" queue="queue ZebuLocal, 3 used" className="RunTaskEvent"/>
+  <Event taskName="FE_Version_Checker" taskStatus="1" eventType="0" comment="" timeStamp="1713498133" className="TaskFinishEvent"/>
+  <Event taskName="BE_Version_Checker" taskStatus="1" eventType="0" comment="" timeStamp="1713498133" className="TaskFinishEvent"/>
+  <Event taskName="Vcs_Version_Checker" taskStatus="1" eventType="0" comment="" timeStamp="1713498133" className="TaskFinishEvent"/>
+  <Event taskName="Target_Config" success="1" comment="Pid: 29812" timeStamp="1713498133" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="Target_Config" taskStatus="1" eventType="0" comment="" timeStamp="1713498135" className="TaskFinishEvent"/>
+  <Event toolTipText="Target Configuration" timeStamp="1713498135" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+   </values>
+  </Event>
+  <Event taskName="Target_Config_Analyzer" success="1" comment="" timeStamp="1713498135" queue="" className="RunTaskEvent"/>
+  <Event taskName="Target_Config_Analyzer" taskStatus="1" eventType="0" comment="" timeStamp="1713498136" className="TaskFinishEvent"/>
+  <Event timeStamp="1713498136" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_SingleBackend_Compilation_Checker" v_1="21"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_zTopBuild" row="10" taskType="1" taskDir="" timeStamp="1713498136" label="Build System" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_zTopBuildResultAnalyzer" row="11" taskType="0" taskDir="" timeStamp="1713498136" label="Analyze System Building Results" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_PreParScriptBuilder" row="13" taskType="0" taskDir="" timeStamp="1713498136" label="Pre PAR Script Builder" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_PostZCoreCompilationJoin" row="12" taskType="0" taskDir="" timeStamp="1713498136" label="Post ZCore Compilation Join" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_zPar" row="14" taskType="1" taskDir="" timeStamp="1713498136" label="Place and Route System" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_5[Final Check]" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer" row="12" taskType="1" taskDir="" timeStamp="1713498136" label="Compilation Profiler (after ZTopBuildAnalyzer)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_Design_FPGA_Dispatch" row="15" taskType="0" taskDir="" timeStamp="1713498136" label="Analyze zPar result" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_PostFpgaCompilationJoin" row="16" taskType="0" taskDir="" timeStamp="1713498136" label="Post FPGA Compilation Join" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_FpgaResultAnalyzer" row="17" taskType="1" taskDir="" timeStamp="1713498136" label="FPGA PaRs Analyzer" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_zTime" row="17" taskType="1" taskDir="" timeStamp="1713498136" label="Create Timing DB" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_5[Final Check]" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer" row="16" taskType="1" taskDir="" timeStamp="1713498136" label="Compilation Profiler (after ZParAnalyzer)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[Global DB Controller]" taskName="backend_default_zDB_Global_Controller" row="16" taskType="0" taskDir="" timeStamp="1713498136" label="Global DB Controller" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_Build_ZDBPostProc_Script" row="17" taskType="0" taskDir="" timeStamp="1713498136" label="Create Script (DB PP)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_preparezTimeFpga" row="18" taskType="0" taskDir="" timeStamp="1713498136" label="Prepare Timing DB (post FPGA)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_zTimeFpga" row="19" taskType="1" taskDir="" timeStamp="1713498136" label="Create Timing DB (post FPGA)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_zAuditReport" row="20" taskType="1" taskDir="" timeStamp="1713498136" label="zAudit Report" className="AddTaskEvent"/>
+  <Event timeStamp="1713498136" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="design_Fs_Macro_Script_Builder" success="1" comment="" timeStamp="1713498138" queue="" className="RunTaskEvent"/>
+  <Event taskName="design_Fs_Macro_Script_Builder" taskStatus="1" eventType="0" comment="" timeStamp="1713498138" className="TaskFinishEvent"/>
+  <Event taskName="design_Fs_Macro" success="1" comment="Pid: 30005" timeStamp="1713498140" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="design_Fs_Macro" taskStatus="1" eventType="0" comment="" timeStamp="1713498142" className="TaskFinishEvent"/>
+  <Event taskName="vcs_splitter_VCS_Task_Builder" success="1" comment="Pid: 30066" timeStamp="1713498142" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="vcs_splitter_VCS_Task_Builder" taskStatus="0" eventType="1" comment="Return status 255" timeStamp="1713498146" className="TaskFinishEvent"/>
+  <Event toolTipText="Elaboration" timeStamp="1713498146" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+   </values>
+  </Event>
+  <Event success="0" timeStamp="1713498146" className="CompilationFinishEvent"/>
+ </events>
+ <actions>
+  <BE_Version_Checker synthName="" taskName="BE_Version_Checker" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/log/BE_Version_Checker.log"/>
+      <item v="Check Back-End Binaries Version"/>
+      <item v="BE_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="BE_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/why/BE_Version_Checker.why"/>
+      <item v="Check Back-End Binaries Version"/>
+      <item v="BE_Version_Checker"/>
+     </v_1>
+    </item>
+   </actionList>
+  </BE_Version_Checker>
+  <FE_Version_Checker synthName="" taskName="FE_Version_Checker" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/log/FE_Version_Checker.log"/>
+      <item v="Check Front-End Binaries Version"/>
+      <item v="FE_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="FE_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/why/FE_Version_Checker.why"/>
+      <item v="Check Front-End Binaries Version"/>
+      <item v="FE_Version_Checker"/>
+     </v_1>
+    </item>
+   </actionList>
+  </FE_Version_Checker>
+  <Post_Vcs_Task_Builder synthName="" taskName="Post_Vcs_Task_Builder" className="SendActionMessage">
+   <actionList/>
+  </Post_Vcs_Task_Builder>
+  <Target_Config synthName="" taskName="Target_Config" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/log/Target_Config.log"/>
+      <item v="Target Configuration"/>
+      <item v="Target_Config"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="Target_Config"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/why/Target_Config.why"/>
+      <item v="Target Configuration"/>
+      <item v="Target_Config"/>
+     </v_1>
+    </item>
+   </actionList>
+  </Target_Config>
+  <Target_Config_Analyzer synthName="" taskName="Target_Config_Analyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/log/Target_Config_Analyzer.log"/>
+      <item v="Analyze Target Configuration Results"/>
+      <item v="Target_Config_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="Target_Config_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTargetTools Script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/zTargetTools.tcl"/>
+      <item v="Analyze Target Configuration Results"/>
+      <item v="Target_Config_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTargetTools Xcui Result File">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/zTargetTools.xcui"/>
+      <item v="Analyze Target Configuration Results"/>
+      <item v="Target_Config_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/why/Target_Config_Analyzer.why"/>
+      <item v="Analyze Target Configuration Results"/>
+      <item v="Target_Config_Analyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </Target_Config_Analyzer>
+  <VCS_Task_Analyzer synthName="" taskName="VCS_Task_Analyzer" className="SendActionMessage">
+   <actionList/>
+  </VCS_Task_Analyzer>
+  <Vcs_Version_Checker synthName="" taskName="Vcs_Version_Checker" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/log/Vcs_Version_Checker.log"/>
+      <item v="Check Vcs Binaries Version"/>
+      <item v="Vcs_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="Vcs_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/why/Vcs_Version_Checker.why"/>
+      <item v="Check Vcs Binaries Version"/>
+      <item v="Vcs_Version_Checker"/>
+     </v_1>
+    </item>
+   </actionList>
+  </Vcs_Version_Checker>
+  <backend_default_BackendEntry synthName="" taskName="backend_default_BackendEntry" className="SendActionMessage">
+   <actionList/>
+  </backend_default_BackendEntry>
+  <backend_default_Build_ZDBPostProc_Script synthName="" taskName="backend_default_Build_ZDBPostProc_Script" className="SendActionMessage">
+   <actionList/>
+  </backend_default_Build_ZDBPostProc_Script>
+  <backend_default_Design_FPGA_Dispatch synthName="" taskName="backend_default_Design_FPGA_Dispatch" className="SendActionMessage">
+   <actionList/>
+  </backend_default_Design_FPGA_Dispatch>
+  <backend_default_FpgaResultAnalyzer synthName="" taskName="backend_default_FpgaResultAnalyzer" className="SendActionMessage">
+   <actionList/>
+  </backend_default_FpgaResultAnalyzer>
+  <backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer synthName="" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer" className="SendActionMessage">
+   <actionList/>
+  </backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer>
+  <backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer synthName="" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer" className="SendActionMessage">
+   <actionList/>
+  </backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer>
+  <backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer synthName="" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer" className="SendActionMessage">
+   <actionList/>
+  </backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer>
+  <backend_default_PostFpgaCompilationJoin synthName="" taskName="backend_default_PostFpgaCompilationJoin" className="SendActionMessage">
+   <actionList/>
+  </backend_default_PostFpgaCompilationJoin>
+  <backend_default_PostZCoreCompilationJoin synthName="" taskName="backend_default_PostZCoreCompilationJoin" className="SendActionMessage">
+   <actionList/>
+  </backend_default_PostZCoreCompilationJoin>
+  <backend_default_PreParScriptBuilder synthName="" taskName="backend_default_PreParScriptBuilder" className="SendActionMessage">
+   <actionList/>
+  </backend_default_PreParScriptBuilder>
+  <backend_default_Project_Analyzer synthName="" taskName="backend_default_Project_Analyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/log/backend_default_Project_Analyzer.log"/>
+      <item v="Analyze Project"/>
+      <item v="backend_default_Project_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_Project_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/why/backend_default_Project_Analyzer.why"/>
+      <item v="Analyze Project"/>
+      <item v="backend_default_Project_Analyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_Project_Analyzer>
+  <backend_default_SingleBackend_Compilation_Checker synthName="" taskName="backend_default_SingleBackend_Compilation_Checker" className="SendActionMessage">
+   <actionList/>
+  </backend_default_SingleBackend_Compilation_Checker>
+  <backend_default_preparezTimeFpga synthName="" taskName="backend_default_preparezTimeFpga" className="SendActionMessage">
+   <actionList/>
+  </backend_default_preparezTimeFpga>
+  <backend_default_zAuditReport synthName="" taskName="backend_default_zAuditReport" className="SendActionMessage">
+   <actionList/>
+  </backend_default_zAuditReport>
+  <backend_default_zDB_Global_Controller synthName="" taskName="backend_default_zDB_Global_Controller" className="SendActionMessage">
+   <actionList/>
+  </backend_default_zDB_Global_Controller>
+  <backend_default_zPar synthName="" taskName="backend_default_zPar" className="SendActionMessage">
+   <actionList/>
+  </backend_default_zPar>
+  <backend_default_zTime synthName="" taskName="backend_default_zTime" className="SendActionMessage">
+   <actionList/>
+  </backend_default_zTime>
+  <backend_default_zTimeFpga synthName="" taskName="backend_default_zTimeFpga" className="SendActionMessage">
+   <actionList/>
+  </backend_default_zTimeFpga>
+  <backend_default_zTopBuild synthName="" taskName="backend_default_zTopBuild" className="SendActionMessage">
+   <actionList/>
+  </backend_default_zTopBuild>
+  <backend_default_zTopBuildResultAnalyzer synthName="" taskName="backend_default_zTopBuildResultAnalyzer" className="SendActionMessage">
+   <actionList/>
+  </backend_default_zTopBuildResultAnalyzer>
+  <design_Fs_Macro synthName="" taskName="design_Fs_Macro" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/log/design_Fs_Macro.log"/>
+      <item v="Build Fs Macro Library"/>
+      <item v="design_Fs_Macro"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="design_Fs_Macro"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/why/design_Fs_Macro.why"/>
+      <item v="Build Fs Macro Library"/>
+      <item v="design_Fs_Macro"/>
+     </v_1>
+    </item>
+   </actionList>
+  </design_Fs_Macro>
+  <design_Fs_Macro_Script_Builder synthName="" taskName="design_Fs_Macro_Script_Builder" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/log/design_Fs_Macro_Script_Builder.log"/>
+      <item v="Build Fs Macro Script"/>
+      <item v="design_Fs_Macro_Script_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="design_Fs_Macro_Script_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Fs Macro script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/design/fs_macros.tcl"/>
+      <item v="Build Fs Macro Script"/>
+      <item v="design_Fs_Macro_Script_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/why/design_Fs_Macro_Script_Builder.why"/>
+      <item v="Build Fs Macro Script"/>
+      <item v="design_Fs_Macro_Script_Builder"/>
+     </v_1>
+    </item>
+   </actionList>
+  </design_Fs_Macro_Script_Builder>
+  <vcs_splitter_VCS_Task_Builder synthName="" taskName="vcs_splitter_VCS_Task_Builder" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/log/vcs_splitter_VCS_Task_Builder.log"/>
+      <item v="Launch VCS"/>
+      <item v="vcs_splitter_VCS_Task_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="vcs_splitter_VCS_Task_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/zCui/why/vcs_splitter_VCS_Task_Builder.why"/>
+      <item v="Launch VCS"/>
+      <item v="vcs_splitter_VCS_Task_Builder"/>
+     </v_1>
+    </item>
+   </actionList>
+  </vcs_splitter_VCS_Task_Builder>
+ </actions>
+</compilation>

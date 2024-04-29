@@ -1,0 +1,54 @@
+if [ -f "./job.F08.qdel.done" -o -f "./job.F08.bkill.done"  ]; then \
+  echo "" ;\
+  echo "fpga FX=F08 has already a winner ... This job will not start" ;\
+  echo "" ;\
+else \
+    if [[ "L1" == "Original" ]]; then if [ -e  F08.src/zebu_common_env.mk ]; then rm -rf F08.src/zebu_common_env.mk; fi ; if [ -e  F08.src/zebu_lic_error ]; then rm -rf F08.src/zebu_lic_error; fi; echo "export ZEBU_FPGA_SRC_DIR=/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F08.src"            > F08.src/zebu_common_env.mk ; echo "export ZEBU_FPGA_ORIGINAL_DIR=/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F08.L1" >> F08.src/zebu_common_env.mk ; echo "export ZEBU_FPGA_MODULE_DIR=/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0"                  >> F08.src/zebu_common_env.mk ; fi ;\
+	LABEL=L1 FX=F08 zIseManager F08 L1 YES /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vivado_v7/fpgaparameterset_v7.xcui NO  ;\
+fi
+# FX=F08 LABEL=L1 :  
+# FX=F08 LABEL=L1 :                                      ZeBu (R)
+# FX=F08 LABEL=L1 :                                    zIseManager
+# FX=F08 LABEL=L1 :  
+# FX=F08 LABEL=L1 :                Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+# FX=F08 LABEL=L1 :  
+# FX=F08 LABEL=L1 :                      Copyright (c) 2002 - 2022 Synopsys, Inc.
+# FX=F08 LABEL=L1 :     This software and the associated documentation are proprietary to Synopsys,
+# FX=F08 LABEL=L1 :   Inc. This software may only be used in accordance with the terms and conditions
+# FX=F08 LABEL=L1 :   of a written license agreement with Synopsys, Inc. All other use, reproduction,
+# FX=F08 LABEL=L1 :     or distribution of this software is strictly prohibited.  Licensed Products
+# FX=F08 LABEL=L1 :       communicate with Synopsys servers for the purpose of providing software
+# FX=F08 LABEL=L1 :      updates, detecting software piracy and verifying that customers are using
+# FX=F08 LABEL=L1 :      Licensed Products in conformity with the applicable License Key for such
+# FX=F08 LABEL=L1 :    Licensed Products. Synopsys will use information gathered in connection with
+# FX=F08 LABEL=L1 :      this process to deliver software updates and pursue software pirates and
+# FX=F08 LABEL=L1 :                                     infringers.
+# FX=F08 LABEL=L1 :  
+# FX=F08 LABEL=L1 :   Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+# FX=F08 LABEL=L1 :              Inclusivity and Diversity" (Refer to article 000036315 at
+# FX=F08 LABEL=L1 :                          https://solvnetplus.synopsys.com)
+# FX=F08 LABEL=L1 :  
+# FX=F08 LABEL=L1 :  
+# FX=F08 LABEL=L1 : Parsing parameter file /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vivado_v7/fpgaparameterset_v7.xcui
+# FX=F08 LABEL=L1 : Synchronization policy: 2
+# FX=F08 LABEL=L1 : Lock file name: /tmp/zim.lock_zkIOhARwO9
+# FX=F08 LABEL=L1 : pid 26262
+# FX=F08 LABEL=L1 : Monitor father = 26262
+# FX=F08 LABEL=L1 : Monitoring compilation F08.L1
+# FX=F08 LABEL=L1 : 1713637156 : FPGA compilation finished with status 2
+# FX=F08 LABEL=L1 : relaunch param1
+# FX=F08 LABEL=L1 : relaunch param1
+# FX=F08 LABEL=L1 : finished KO
+
+Compilation Log Path : /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/backend_default/U0/M0/F08.L1/compilation.log
+
+# FX=F08 LABEL=L1 : receive TERM for 26262
+# FX=F08 LABEL=L1 : killing Monitor process: 26395
+make: [run] Error 2 (ignored)
+
+# FX=F08 LABEL=L1 : Makefile - End of zIseManager
+# FX=F08 LABEL=L1 : Makefile - Checking Final status from xstep.cui file
+# FX=F08 LABEL=L1 : Makefile - Finished detected
+# FX=F08 LABEL=L1 : Makefile - Finished K0 detected
+make: *** [run] Error 255
+command exit code is '2'

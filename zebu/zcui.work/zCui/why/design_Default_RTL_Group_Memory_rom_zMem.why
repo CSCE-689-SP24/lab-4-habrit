@@ -1,0 +1,5 @@
+ OK input zMem_cmdline same checksum
+ OK input design/synth_Default_RTL_Group/zmem/rom.zmem same date
+ OK input additionalZmemCommandFile.tcl same checksum <- Design/RTL Synthesis : Default_RTL_Group/Analyze Synthesis Results/design_Default_RTL_Group_stable
+ OK input /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/utf_generatefiles/zMem_config.tcl same checksum
+ OK output internal dependency (structural) -> Backend: default backend/System Compilation/Prepare Backend Flow

@@ -1,0 +1,10 @@
+UCSetZcuiWorkDir {/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work}
+UCSetVcsDumpDir {/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/vcs_splitter}
+UCSetUTFDumpDir {/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/utf_generatefiles}
+UCSetUTFFile {/home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/src/project.utf}
+UCSetZfeIsRemoved -true
+UCSetArchitecture -server zs3 -fpga vtx7
+UCSetWlsFlow -default
+UCSetFmCheckDebug -default
+UCSetOverrideFpga -false
+UCSetVcsVerdiFlow -true

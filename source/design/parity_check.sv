@@ -26,4 +26,6 @@ module parity_check #(
     sva_parity_error: assert (!error) $display("SVA: Passing assertion"); else $error ("SVA: Parity error detected.");
 `endif
 
+
+
 endmodule

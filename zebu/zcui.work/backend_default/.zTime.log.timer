@@ -1,0 +1,10 @@
+      elapsed:0 s      user:0 s    system:0.1 s     %cpu:333.33       load:0.74       fm:173277 m      vm:375 m       vm:+0 m       um:94 m       um:+0 m -- IMPORT
+    elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.74       fm:173277 m      vm:377 m       vm:+2 m       um:94 m       um:+0 m -- IMPORT
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.74       fm:173277 m      vm:377 m       vm:+0 m       um:95 m       um:+0 m -- ANALYSIS/initializeAnalysis.
+    elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.74       fm:173277 m      vm:377 m       vm:+0 m       um:95 m       um:+0 m -- ANALYSIS
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.74       fm:173277 m      vm:377 m       vm:+0 m       um:95 m       um:+0 m -- ANALYSIS
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.74       fm:173275 m      vm:401 m      vm:+24 m       um:95 m       um:+0 m -- Build output paths
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.74       fm:173269 m      vm:485 m       vm:+0 m      um:103 m       um:+0 m -- Build output paths
+      elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.74       fm:173271 m      vm:485 m       vm:+0 m      um:103 m       um:+0 m -- ANALYSIS
+    elapsed:0.3 s      user:0 s      system:0 s       %cpu:0.00       load:0.74       fm:173261 m      vm:529 m      vm:+44 m      um:113 m      um:+10 m -- Build output paths
+    elapsed:0.2 s      user:0 s      system:0 s       %cpu:0.00       load:0.74       fm:173324 m      vm:529 m       vm:+0 m      um:113 m       um:+0 m -- Dump Clock Relationship Graph

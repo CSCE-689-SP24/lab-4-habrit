@@ -15,10 +15,12 @@ module fifo_usage_spy #(
 );
 
   reg [WIDTH:0] min;
-
+//Want readenable, writeenable and message into fifo usage spy
   import "DPI-C" context function void fifo_usage_spy_notify (
-    input bit[WIDTH:0] min
+    u_dut.u_fifo.re, u_dut.u_fifo.we, u_dut.u_fifo.q_o, u_dut.u_fifo.d_i
   );
+
+
 
   always @(posedge clk or negedge rstn)
     if (!rstn)
@@ -28,5 +30,6 @@ module fifo_usage_spy #(
         min <= remain;
         fifo_usage_spy_notify(remain);
       end
+
 
 endmodule

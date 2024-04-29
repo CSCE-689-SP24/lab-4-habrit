@@ -1,0 +1,32 @@
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: clkg Parameterized Name: clkg
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '10' with process id '36207'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.07 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Fri Apr 19 21:04:03 2024
+  .
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: stb
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '10' with process id '36229'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.14 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Fri Apr 19 21:04:04 2024
+  .
+

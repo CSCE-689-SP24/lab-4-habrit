@@ -1,0 +1,14 @@
+stb
+    OK input design/synth_Default_RTL_Group/script/stb.tcl same checksum
+    OK input design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl same checksum
+    OK input /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc same checksum
+    OK input /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc same checksum
+    KO input design/synth_Default_RTL_Group/src/stb.scm out of date (non equal checksum)
+    OK output design/synth_Default_RTL_Group/edif/stb/stb.edf.gz
+top
+    OK input design/synth_Default_RTL_Group/script/top.tcl same checksum
+    OK input design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl same checksum
+    OK input /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc same checksum
+    OK input /home/grads/h/hbritton/csce689LabsBritton/lab-4-habrit/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc same checksum
+    KO input design/synth_Default_RTL_Group/src/top.scm out of date (non equal checksum)
+    OK output design/synth_Default_RTL_Group/edif/top/top.edf.gz
